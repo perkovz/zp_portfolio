@@ -1,15 +1,15 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Zvonimir",
+  lastName: "Perkovic",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Product Designer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Croatian"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -17,8 +17,8 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I occasionally write about design, technology, and share thoughts on the
+      intersection of design, product and engineering.
     </>
   ),
 };
@@ -34,29 +34,31 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/zvonimirperkovic/",
   },
   {
     name: "X",
     icon: "x",
-    link: "",
+    link: "https://x.com/zvonimir031",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:zperkovi@gmail.com",
   },
 ];
 
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  description: `Zvonimir Perkovic portfolio website showcasing my work as a ${person.role}`,
   headline: <>Design engineer and builder</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Zvonimir, a Product designer at{" "}
+      <InlineCode>FORTUNE BRANDS</InlineCode>, where I craft intuitive
+      <br /> user experiences for Connected products. After hours, I hike,
+      medidate and spend time with my family.
     </>
   ),
 };
@@ -81,9 +83,10 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Zvonimir is a Cleveland-based product designer with a passion for
+        transforming complex challenges into simple, elegant design solutions.
+        His work spans digital interfaces, interactive experiences, connected
+        products and the convergence of design and technology.
       </>
     ),
   },
@@ -92,41 +95,62 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "Fortune Brands Innovations",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        role: "Product Designer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Responsible for all stages of the UX design process—from research
+            and analysis to user flows and wireframes. Working closely with
+            Product Management, Engineering and CMI to validate assumptions and
+            determine technical feasibility of recommended features.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Created 50+ interactive prototypes and ran over 100+ usability
+            studies and interviews testing current and new features for Moen
+            Smart Water Network and Master Lock Vault Enterprise, resulting in
+            incresed usability and contributing to user-based product decisions.
+          </>,
+          <>
+            Created 100+ user flows, and facilitated 3 product design working
+            sessions weekly to bring the most value to our customers in a timely
+            manner, leading to decrease in development times with 4.7 appstore
+            and 4.2 Google Play rating.
+          </>,
+          <>
+            Created 10+ competitive analysis and 10+ customer ratings studies.
+          </>,
+          <>
+            Developed and maintained comprehensive design systems used across 2
+            brand lines.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "Smart Kitchen Faucet Project",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "edX",
+        timeframe: "2022 - 2024",
+        role: "UX/UI Instructor",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Facilitated online workshops and discussions with 10 and 15 students
+            per class, resulting in 22 online portfolios.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Lectured UX syllabus, leading design critiques, providing feedback,
+            and creating a culture of trust and inclusion.
+          </>,
+          <>
+            Led the class and providing career guidance influencing over 35% job
+            placement during 1.5 year period.
           </>,
         ],
         images: [],
@@ -138,12 +162,14 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Cuyahoga Community College",
+        description: <>Studied visual communications and design.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "University of J.J.Strossmayer",
+        description: (
+          <>Studied law and graduated with the Law degree in civil law.</>
+        ),
       },
     ],
   },
@@ -153,7 +179,9 @@ const about = {
     skills: [
       {
         title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        description: (
+          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+        ),
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -172,7 +200,9 @@ const about = {
       },
       {
         title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        description: (
+          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+        ),
         // optional: leave the array empty if you don't want to display images
         images: [
           {
