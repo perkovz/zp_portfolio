@@ -166,6 +166,68 @@ const about = {
         ],
         images: [],
       },
+      {
+        company: "Cleveland Clinic",
+        timeframe: "2019 - 2022",
+        role: "Frontend Developer",
+        achievements: [
+          <>
+            Developed my.clevelandclinic.org and 2 supporting applications and
+            collaborated with business partners, interpreting business needs,
+            setting requirements, and writing frontend code.
+          </>,
+          <>
+            Led design system efforts by setting workflows, UI and visual
+            guidelines, patterns, and component libraries.
+          </>,
+          <>
+            Mentored stakeholders regarding the efficient design process and
+            best UX and development practices.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Aztek: A Web Design, Development & Digital Marketing Agency",
+        timeframe: "2017 - 2019",
+        role: "Web Designer and Frontend Developer",
+        achievements: [
+          <>
+            Owned the complete production process from communication with
+            clients, feature reviews and product presentations to frontend
+            Umbraco development.
+          </>,
+          <>
+            Created 11 functional prototypes, wireframes, mockups, and other
+            assets and communicated technical feasibility expectations to
+            clients.
+          </>,
+          <>
+            Developed 7 mobile-first Umbraco websites and 2 web application UIs.
+            Designed several style guides and pattern libraries while daily
+            resolving issues, fixing bugs, maintaining older websites and
+            updating content for clients.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "RPM International",
+        timeframe: "2015 - 2017",
+        role: "Web and Graphic Designer",
+        achievements: [
+          <>Designed 8 web user interfaces and style guides.</>,
+          <>
+            Illustrated and animated 3, 2 minute long 2D animated movies for
+            websites and marketing campaigns using Adobe Creative Suite.
+          </>,
+          <>
+            Collaborated with other designers and engineers to develop 2 visual
+            languages and pattern libraries for clients.
+          </>,
+        ],
+        images: [],
+      },
     ],
   },
   studies: {
@@ -189,20 +251,16 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Crank Storyboard",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Able to design and prototype in Crank Storyboard and create GUI's.
+          </>
         ),
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/images/projects/StorybookDesign.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -210,10 +268,8 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
+        title: "Connected Products",
+        description: <>Building next gen of connected products.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
