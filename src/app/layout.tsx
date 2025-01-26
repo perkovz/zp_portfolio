@@ -19,7 +19,7 @@ export async function generateMetadata() {
     description: home.description,
     openGraph: {
       title: `${person.firstName}'s Portfolio`,
-      description: "Portfolio website showcasing my work.",
+      description: "Zvonimir Perkovic portfolio website showcasing my work.",
       url: baseURL,
       siteName: `${person.firstName}'s Portfolio`,
       locale: "en_US",
@@ -87,11 +87,17 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         primary.variable,
         secondary ? secondary.variable : "",
         tertiary ? tertiary.variable : "",
-        code.variable,
+        code.variable
       )}
     >
       <ToastProvider>
-        <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
+        <Column
+          style={{ minHeight: "100vh" }}
+          as="body"
+          fillWidth
+          margin="0"
+          padding="0"
+        >
           <Background
             mask={{
               cursor: effects.mask.cursor,

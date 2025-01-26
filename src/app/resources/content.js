@@ -261,7 +261,7 @@ const about = {
         images: [
           {
             src: "/images/projects/StorybookDesign.jpg",
-            alt: "Project image",
+            alt: "Crank Storyboard dashboard with the smart shower GUI.",
             width: 16,
             height: 9,
           },
@@ -273,8 +273,8 @@ const about = {
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "/images/projects/nio_set1.jpg",
+            alt: "Handle free faucet with components under the sink.",
             width: 16,
             height: 9,
           },
