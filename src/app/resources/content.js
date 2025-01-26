@@ -29,7 +29,7 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/perkovz",
   },
   {
     name: "LinkedIn",
@@ -52,13 +52,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Zvonimir Perkovic portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Full-stack Product Designer and Builder</>,
   subline: (
     <>
       I'm Zvonimir, a Product designer at{" "}
       <InlineCode>FORTUNE BRANDS</InlineCode>, where I craft intuitive
-      <br /> user experiences for Connected products. After hours, I hike,
-      medidate and spend time with my family.
+      <br /> user experiences for Connected products.
     </>
   ),
 };
@@ -128,7 +127,7 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/Flow_Control_Settings.mp4",
             alt: "Smart Kitchen Faucet Project",
             width: 16,
             height: 9,
