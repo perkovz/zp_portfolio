@@ -1,0 +1,138 @@
+---
+title: "Component driven design in 5 steps 🚀"
+publishedAt: "2024-03-05"
+summary: "Component architecture in Figma. How to structure Figma components developers will love."
+tag: "Design Systems"
+---
+
+Great front-end development starts with great design. How to structure Figma components developers will love.
+
+No time to read? Here is the summary:
+
+- Front-end developers use pre-processors that enable them to reuse their code. When designers follow the same patterns and reuse their styles, it's easier to transform them into code and keep the codebase lean.
+- Set up your patterns and style libraries first. Then take advantage of Figma's auto layout and nesting features to ensure consistency.
+- To design a component in the same way it will be developed, start with the master component.
+- Begin with assigning core styles to the master component. Then use the master component to build the modifier. Finally, use the modified version to create its state.
+- The result is a mirroring effect between the code base and design style guide. Components have the same names, rules, and architecture in Figma as they will have in code.
+
+Before we begin, I want to disclaim that the examples I'm going to write about are not the only nor the best methods of organizing design files or writing code in a component-driven way. The best structure will be decided base on circumstances, needs, and personal preferences.
+
+## Component driven design.
+
+Front-end developers have superpowers. One of them is to keep the stylesheets organized, maintainable, and lean. That job got a lot easier since the arrival of pre-processors like SCSS and LESS. Repetition and lack of readability became less common. Unfortunately, other problems emerged. Somehow our stylesheets kept growing, and lines of unused code got out of control. It was not always the FED's fault.
+
+The problem here is that with every new mock, a developer will reuse what is obvious, scope the rest, and move on. Not knowing the bigger picture, the next developer will do the same. From that day on, stylesheets will become unmaintainable.
+
+Meantime, the designer will create something new based on the latest business requirement. Let's take a new sign-up button as an example. She might reuse and reference what is useful from an old button. Brand colors, typography, or primary styles rarely change. They might as well be a starting point for a new button. From here, she might tweak a property that needs adjustment or swap icons. What she should do instead is extending the main button component and adding a new style to it. Designing this way, we are creating a new modified instance, not a new version of an old element. What is more important is the relationship between the two that is visible and obvious.
+
+The more the system grows more important component-driven design becomes. It is a system where front-end development starts with the design and where every new element is unique or based on its parent. There is a clear hierarchy between components. A developer can see the bigger picture, and the designer sets up the path for development. The result is resolved problem of style inheritance and bloated stylesheets even before opening a code editor.
+
+## How to keep consistency while scaling? Create your patterns and style libraries first.
+
+Before starting any work on the component architecture, we should define our patterns.
+
+What is a pattern? A pattern is any property used to build a CSS framework or design a set of components. I like to start with spacing, typography, colors, and grids. Some familiar, easy to follow pattern would look like this:
+
+![Color library in Figma.](https://dev-to-uploads.s3.amazonaws.com/i/ari0brrwedvzw1502o64.jpg)
+
+Once we add patterns to our local style library in the Figma file, they will serve as a base for any design work. Then when development work begins, the developer will set up pattern libraries first.
+
+There are two more things. Make sure to understand Figma's auto layout and nesting features before starting your work. Working with them is almost like building UI with code. Auto-layout makes it possible to control spacing, and the behavior of the component is Figma like it is an HTML element in the browser. Nesting a layout frame is much like nesting tags in HTML.
+
+## Master components. A new way of designing like a developer.
+
+To set yourself for success and design a component in the same way that will be developed, start with the master. The master component is a template that controls all other elements made from it. That means thinking in advance how many variations of this element we will have and which styles we will reuse.
+
+One possibility is to create a separate master template that stands alone. That component is not used for the actual design process. I use this standalone piece when I want to design other elements of the same type.
+
+Let's look at our button example again. Place a picture of the button here:
+
+I created three master buttons based on their sizes. Each one has all the pieces and properties any other button can have. The differences between them are padding, font sizes, line-height, and icon thickness. Their children will, however, inherit all the properties they have. For example, all large primary buttons are going to have a font-size defined here.
+
+It's open for debate, but properties I don't want to set at this level are background and border colors. I will arrange those at the child levels. I'm also not creating any states here. They are going to be placed later on primary and secondary button levels.
+
+Pro tip: it's a good practice to leave notes and guidelines others can reference when working with your file.
+
+Looking at this design, SCSS I want to write without much thinking would look something like this:
+
+```
+%btn-m {
+  font-size: 1rem;
+  line-height: 1.2;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+}
+```
+
+(I would handle icons in separate placeholders as well.)
+
+Easy enough! Since the designer already thought this through, I know I will extend these styles and not use them independently. I can plan my code accordingly and put them in SCSS placeholder "%." The result of this approach is going to be a cleaner and leaner code.
+
+With that, we finished the most critical step. We know how many master components we need and which CSS properties we need to share. Let's move on.
+
+## Creating modifiers and states
+
+Modifiers are nothing more than versions of the master component.
+
+We can use our master button to create primary, secondary, and other buttons in their respective sizes in our example. The process would be as easy as drag and drop from the component library or direct copy and paste.
+
+Detaching a copied instance is the next step. Detaching is like moving away from your parent's house. You are still under the influence, but you can change some things in your life. For example, you can paint the walls of your home bright-green.
+
+Once the color (or any other property) changes, you can create a new component and save it in the library. All styles specific for the version would get set here — for example, background, border, and font colors. And the process would repeat for every new instance.
+
+The last step here is to create states. Our button has five. Those states are normal or base, out of which we created active, hover, focus, and disabled states. The process of creating those states is the same as creating a version. Drag and drop our primary button modifier, detach, make a change, and create a new Figma component.
+
+We can repeat this process as many times as needed, keeping in mind that extending too much will make our design and CSS files hard to follow. Another thing to keep in mind is Figma's autosave feature. By default, it will nest all related components, so make sure your naming convention makes sense and it's easy to follow.
+
+Things change. Our buttons will change. When that happens, we will have a couple of options. Updating a master component will update all modifiers and their states. Updating a modifier will update its instances and states. Lastly, updating a state will update every instance of that state.
+
+To make a change in the CSS file, we would follow the same pattern. Updating the main placeholder class will update all the elements. Updating an element will update its states, and so on.
+
+## The mirroring effect: Design styles == front-end code.
+
+When components are using styles defined in local and global asset libraries, they are naturally using predefined colors, typography, and effects. Styles that are not in the libraries will be stored in the master components and extended to their modified versions. Modified versions will have their own set of unique styles, and the same is applied to their states.
+
+Writing the front-end code based on the described component structure is a dream come true for every developer. The main selling points are:
+Patterns are clear and easy to implement because a developer can see both the big picture and all the used styles.
+Clear patterns will make a lean codebase. One-offs should be rare and planned.
+Improved collaboration between designers and developers. This one is priceless, as it will enhance both process and the end product.
+
+Finally, our SCSS code could look something like this:
+
+```
+%btn-m {
+  padding: 10px 20px;
+  font-size: 1rem;
+  line-height: 1.2;
+  border-radius: 4px;
+}
+.btn--primary {
+  @extend%btn-m;
+  background-color: $primary;
+  border-color: $primary;
+  color: $white;
+
+  &:hover {
+    background-color: $primary--hover;
+    border-color: $primary--hover;
+  }
+}
+.btn--secondary {
+  @extend %btn-m;
+  background-color: $secondary;
+  border-color: $secondary;
+  color: $primary;
+
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+```
+
+## Conclusion
+
+As mentioned at the beginning of this article, the best way to structure your components will depend on your environment, front-end architecture, and design habits. It's always a good idea, before jumping into design, to start collaborating early and talk about different solutions with your team.
+
+Let me know what you think and how you do it. I would love to get feedback and improve our process where possible. Thanks!
