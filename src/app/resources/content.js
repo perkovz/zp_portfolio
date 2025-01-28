@@ -114,7 +114,7 @@ const about = {
           <>
             Created 100+ user flows, and facilitated 3 product design working
             sessions weekly to bring the most value to our customers in a timely
-            manner, leading to decrease in development times with 4.7 appstore
+            manner, leading to decrease in development times with 4.7 Appstore
             and 4.2 Google Play rating.
           </>,
           <>
