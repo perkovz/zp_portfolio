@@ -52,12 +52,13 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Zvonimir Perkovic portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Full-stack Product Designer and Builder</>,
+  headline: <>Full-stack Product Designer</>,
   subline: (
     <>
       I'm Zvonimir, a Product designer at{" "}
-      <InlineCode>FORTUNE BRANDS</InlineCode>, where I craft intuitive
-      <br /> user experiences for Connected products.
+      <InlineCode>FORTUNE BRANDS INNOVATIONS</InlineCode>, where I craft
+      intuitive
+      <br /> user experiences for connected products.
     </>
   ),
 };
@@ -164,7 +165,20 @@ const about = {
             placement during 1.5 year period.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/project-reviews.jpeg",
+            alt: "Loom gallery with project review videos.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/student-satisfaction-ratings.jpeg",
+            alt: "Graph with student satsifaction ratings month to month.",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Cleveland Clinic",
