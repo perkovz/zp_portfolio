@@ -145,6 +145,12 @@ const about = {
             width: 16,
             height: 9,
           },
+          {
+            src: "/images/projects/features_demo.mp4",
+            alt: "Shower prototype demo.",
+            width: 16,
+            height: 9,
+          },
         ],
       },
       {
