@@ -167,13 +167,13 @@ const about = {
         ],
         images: [
           {
-            src: "/images/project-reviews.jpeg",
+            src: "/images/resume/project-reviews.jpeg",
             alt: "Loom gallery with project review videos.",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/student-satisfaction-ratings.jpeg",
+            src: "/images/resume/student-satisfaction-ratings.jpeg",
             alt: "Graph with student satsifaction ratings month to month.",
             width: 16,
             height: 9,
@@ -201,13 +201,13 @@ const about = {
         ],
         images: [
           {
-            src: "/images/cc-design-system.jpg",
+            src: "/images/resume/cc-design-system.jpg",
             alt: "Figma screenshot of the Cleveland clinic design system prototype.",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/appointment-form-cover.jpg",
+            src: "/images/resume/appointment-form-cover.jpg",
             alt: "Appointment form mobile images.",
             width: 16,
             height: 9,
@@ -236,7 +236,32 @@ const about = {
             updating content for clients.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/resume/polychem.png",
+            alt: "Polychem landing page.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/resume/tribute.jpg",
+            alt: "Tribute landing page.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/resume/cure.jpg",
+            alt: "Cure dashboard.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/resume/dreambook2.jpg",
+            alt: "Dreambook dashboard.",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "RPM International",
