@@ -199,7 +199,20 @@ const about = {
             best UX and development practices.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/cc-design-system.jpg",
+            alt: "Figma screenshot of the Cleveland clinic design system prototype.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/appointment-form-cover.jpg",
+            alt: "Appointment form mobile images.",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Aztek: A Web Design, Development & Digital Marketing Agency",
