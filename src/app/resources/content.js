@@ -238,18 +238,6 @@ const about = {
         ],
         images: [
           {
-            src: "/images/resume/polychem.png",
-            alt: "Polychem landing page.",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/resume/tribute.jpg",
-            alt: "Tribute landing page.",
-            width: 16,
-            height: 9,
-          },
-          {
             src: "/images/resume/cure.jpg",
             alt: "Cure dashboard.",
             width: 16,
@@ -278,7 +266,20 @@ const about = {
             languages and pattern libraries for clients.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/resume/kop-coat.jpg",
+            alt: "Kop coat landing page.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/resume/kwik-seal.jpg",
+            alt: "Dap Kwik seal landing page.",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
