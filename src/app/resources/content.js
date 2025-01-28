@@ -358,6 +358,11 @@ const gallery = {
       alt: "image",
       orientation: "horizontal",
     },
+    {
+      src: "/images/gallery/kbiz-24.jpeg",
+      alt: "image",
+      orientation: "horizontal",
+    },
   ],
 };
 
