@@ -192,17 +192,33 @@ const about = {
         role: "Frontend Developer",
         achievements: [
           <>
-            Developed my.clevelandclinic.org and 2 supporting applications and
-            collaborated with business partners, interpreting business needs,
-            setting requirements, and writing frontend code.
+            Built the UI for the Provider directory search app v1 and v2. This
+            involved use of Figma and advanced HTML, SCSS, and JavaScript.
           </>,
           <>
-            Led design system efforts by setting workflows, UI and visual
-            guidelines, patterns, and component libraries.
+            Wrote frontend code for the Pediatric fracture assessment tool using
+            SCSS and JavaScript.
           </>,
           <>
-            Mentored stakeholders regarding the efficient design process and
-            best UX and development practices.
+            Created new style libraries, patterns, components, and layouts for
+            the Health Library and History/Centennial projects.
+          </>,
+          <>
+            Provided frontend code for the 2020 Presidential Debate website and
+            served as a single Frontend point of contact for Google Optimize
+            tests.
+          </>,
+          <>
+            Started, organized, and led Figma + Codesandbox design system
+            project. Collaborated with stakeholders and improved the design to
+            the development process by creating standards, workflows, and style
+            libraries. Integrated Figma with other tools and cross-team
+            processes and onboarded new stakeholders.
+          </>,
+          <>
+            Created design patterns and built the foundation of the new frontend
+            framework. Provided direction and solutions for the Design system
+            implementation on both the design and development sides.
           </>,
         ],
         images: [
@@ -237,6 +253,8 @@ const about = {
           </>,
           <>
             Developed 7 mobile-first Umbraco websites and 2 web application UIs.
+          </>,
+          <>
             Designed several style guides and pattern libraries while daily
             resolving issues, fixing bugs, maintaining older websites and
             updating content for clients.
@@ -264,12 +282,13 @@ const about = {
         achievements: [
           <>Designed 8 web user interfaces and style guides.</>,
           <>
-            Illustrated and animated 3, 2 minute long 2D animated movies for
-            websites and marketing campaigns using Adobe Creative Suite.
+            Developed 3 websites for DayGlo color company, DAP and AD Protection
+            Systems.
           </>,
           <>
-            Collaborated with other designers and engineers to develop 2 visual
-            languages and pattern libraries for clients.
+            Wrote the script, created storyboards, illustrated, animated, and
+            synchronized sound for 3, two minute long animated videos for DayGlo
+            color company.
           </>,
         ],
         images: [
