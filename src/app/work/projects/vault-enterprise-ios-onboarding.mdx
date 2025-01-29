@@ -6,43 +6,65 @@ images:
   - "/images/projects/Vault_Home_Onboarding.mp4"
 ---
 
+**Team:** Product designer & iOS developer <br />
+**Timeline:** 1 week
+
+# Overview
+
+**Users reported difficulty in locating key features and were unaware that pulling the screen down could refresh active locks.**
+
+In response to those usability issues, Brandon and I designed and developed an onboarding tutorial for the Master Lock Enterprise iOS app as an extra task at the end of our sprint.
+
+`In the 6 month period after the launch, we received 0 complaints for the
+  features that we addressed in the tutorial.`
+
+---
+
+## Objectives
+
+1. **Enhance User Understanding**: Create a resource that helps users quickly grasp the app’s features.
+2. **Reduce Support Queries**: Minimize the volume of customer support requests related to navigation and usage.
+3. **Improve User Experience**: Foster a more intuitive interaction with the app, leading to higher satisfaction and retention rates.
+
 ![Requirements polished in Figma.](/images/projects/masterlock-tutorial/requirements-and-links.jpg)
 
-## Overview
+---
 
-I collaborated with an iOS developer to transform our app’s onboarding tutorial from initial conceptualization to deployment in just five days.
-
-Many new users expressed confusion over key features in our Master Lock Enterprise Vault app, prompting us to create a clear, engaging guide that highlights what they need to know right from the start.
-
-Our redesigned tutorial enhances user awareness and ensures a smoother onboarding process, making it easier for users to navigate and enjoy the app's features. Six months after its deployment, we haven't received any new complaints, which confirms the success of our redesign.
+## Design Process
 
 ![Sketching on the paper.](/images/projects/masterlock-tutorial/research-and-sketching.png)
 
-## Key Features
+Key stages of the process included:
 
-- **Addressing Immediate User Issues**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Most Important Features First**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Integrations**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
+1. **Research and Analysis**: We analyzed customer feedback and identified common pain points, which helped shape our approach.
+2. **Wireframing**: Developed wireframes to outline the tutorial’s structure, ensuring a logical flow of information.
+3. **Content Creation**: Drafted clear instructions and visual aids, making sure to use simple language that resonates with users.
+4. **Testing and Iteration**: I conducted accessibility and guerilla testing with real users to gather insights and refine the tutorial.
 
 ![Many, many iterations.](/images/projects/masterlock-tutorial/iterations.png)
 
-## Technologies Used
+---
 
-- **Figma**: For creating and managing design assets and prototypes.
-- **UserTesting**: For styling usability testing components with a modular, themable approach.
-- **Crank Storybook**: For building an interactive live prototype on the Linux Yocto system.
+## Accessibility Testing
 
-![Pictures before and after accessibility testing.](/images/projects/masterlock-tutorial/testing.png)
+![accessibility testing results.](/images/projects/masterlock-tutorial/testing.png)
 
-## Challenges and Learnings
+## Key Features
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+• **Step-by-Step Guidance**: Each section provides straightforward instructions accompanied by visuals, making it easy for users to follow along. <br />
+• **Highlighting Important Functions**: We emphasize crucial features, such as refreshing locks and navigating menus, to boost user confidence. <br />
+• **Interactive Elements**: Incorporating interactive components to engage users and enhance their learning experience.
 
-![Tutorial before.](/images/projects/masterlock-tutorial/before.png)
-![Tutorial after.](/images/projects/masterlock-tutorial/after.png)
+---
+
+## Before and After
+
+![Before and after comparison.](/images/projects/masterlock-tutorial/before-and-after.png)
+
+---
 
 ## Outcome
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+Since the tutorial’s implementation, we have observed a **significant decrease (0!) in support inquiries related to onboarding**. Users have reported feeling more empowered when using the app, indicating that the tutorial has successfully met its objectives. Feedback has highlighted the clarity of instructions and the effectiveness of visual aids as key strengths.
 
 ![Final deliverable.](/images/projects/masterlock-tutorial/deliverable.jpg)
