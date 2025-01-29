@@ -19,7 +19,8 @@ export async function generateMetadata() {
     description: home.description,
     openGraph: {
       title: `${person.firstName}'s Portfolio`,
-      description: "Zvonimir Perkovic portfolio website showcasing my work.",
+      description:
+        "Zvonimir Perkovic is a full-stack product designer from Cleveland, OH specialized in connected smart home products.",
       url: baseURL,
       siteName: `${person.firstName}'s Portfolio`,
       locale: "en_US",
