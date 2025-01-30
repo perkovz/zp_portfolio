@@ -1,7 +1,7 @@
 ---
-title: "Building Smart Shower HMI with Crank Storyboard"
+title: "Creating an Advanced Shower GUI with Crank Storyboard"
 publishedAt: "2024-09-08"
-summary: "Research, Design, Prototyping, and Testing of a flexible and highly customizable GUI using Crank Storyboard for Moen Smart Water Network."
+summary: "Research, design, prototyping, and testing of a flexible and highly customizable GUI using Crank Storyboard for an embedded shower system, aimed at enhancing user experience and functionality."
 images:
   - "/images/projects/Spotify_Control_On_The_Smart_Shower_GUI.mp4"
   - "/images/projects/Crank_Demo_Dribbble.jpg"
@@ -21,14 +21,14 @@ team:
 
 # Overview
 
-Research, Design, Prototyping, and Testing of a flexible and highly customizable GUI and mobile app for Moen Smart Water Network.
+The main challenge was to create an advanced shower GUI on an NXP board and 5” screen running on a Linux Yocto system. This task needed to be completed quickly and effectively. Tom and I tackled this problem head-on and figured it out in just five weeks!
 
-## Key Features
+## Product Key Features
 
-- **Personalization**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Remote Start**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Integrations**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
-- **Precise Water Temperature Control**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
+- **Personalization**:
+- **Remote Start**:
+- **Integrations**:
+- **Precise Water Temperature Control**:
 
 ![Crank Storyboard demo](/images/projects/ShowerWidget.jpg)
 
@@ -38,14 +38,38 @@ Research, Design, Prototyping, and Testing of a flexible and highly customizable
 - **UserTesting**: For styling usability testing components with a modular, themable approach.
 - **Crank Storybook**: For building an interactive live prototype on the Linux Yocto system.
 
-## Challenges and Learnings
+## Research Insights
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+To ensure we met user needs, I conducted thorough research:
+
+- **User Testing**: I recruited and interviewed 28 smart home enthusiasts to gather insights on desired features and user experience.
+- **Competitive Analysis**: I evaluated other smart home products to identify gaps and opportunities for improvement.
+- **User flows**
+
+## Designing for Embedded Hardware
+
+Finding the right design tool for prototyping on hardware was quite the adventure!
+
+- I started by connecting the board to my laptop using HDMI and USB cables to mirror my Figma prototypes.
+- Next, I dove into researching HMI design tools and landed on Crank. However, learning how to use Crank Storyboard wasn’t straightforward, especially since it’s not a free tool. I reached out to their sales team and successfully obtained a free license!
+- The main reason I’ve choose Crank Storyboard were its embedded features, which, with a little bit of Lua scripting enabled me to create a prototype.
+
+## Design solution
+
+I developed a comprehensive GUI prototype that included:
+
+- **Intuitive Navigation**: Designed screens in Figma, focusing on easy access to Home, Presets, and other essential features.
+- **Interactive Features**: Leveraged Crank to implement key flows and wrote Lua scripts to enhance user interaction.
+- **Seamless Integration**: Collaborated with Tom to set up the NXP MCIMX8ULP - SOM board, using a 5” NXP BV screen running on a Linux Yocto system.
 
 ![Shower Prototype example](/images/projects/Spotify_Control_On_The_Smart_Shower_GUI.mp4)
 
-## Outcome
+## Impact and Results
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+The new prototype effectively resolved business AND user pain points:
+
+- We made the prototype in **5 weeks**, in-house, with a budget of **$0**.
+- We substantially shortened development times by introducing new tool and new ways of working to the company, where designers can generate code ready designs.
+- We were able to test designs easily and quickly retiring risks early and further lowering development costs.
 
 ![Crank Storyboard demo](/images/projects/features_demo.mp4)
