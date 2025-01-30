@@ -424,6 +424,11 @@ const gallery = {
       alt: "image",
       orientation: "vertical",
     },
+    {
+      src: "/images/gallery/chaligraphy.jpeg",
+      alt: "image",
+      orientation: "vertical",
+    },
   ],
 };
 
