@@ -385,19 +385,9 @@ const gallery = {
   // Images from https://pexels.com
   images: [
     {
-      src: "/images/gallery/rex.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
       src: "/images/gallery/backyard-work.jpg",
       alt: "image",
       orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/nxp-board.jpg",
-      alt: "image",
-      orientation: "vertical",
     },
     {
       src: "/images/gallery/moen-office.jpg",
@@ -406,11 +396,6 @@ const gallery = {
     },
     {
       src: "/images/gallery/working-monday.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/kbiz-24.jpeg",
       alt: "image",
       orientation: "horizontal",
     },
@@ -432,7 +417,7 @@ const gallery = {
     {
       src: "/images/gallery/testing-lock.jpeg",
       alt: "image",
-      orientation: "vertical",
+      orientation: "horizontal",
     },
     {
       src: "/images/gallery/tower-2.jpeg",
