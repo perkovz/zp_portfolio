@@ -429,6 +429,41 @@ const gallery = {
       alt: "image",
       orientation: "vertical",
     },
+    {
+      src: "/images/gallery/buggy.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/cakes.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/drava.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/legos.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/osijek-2.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/shiny-moon.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/tvrda-1.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
   ],
 };
 
