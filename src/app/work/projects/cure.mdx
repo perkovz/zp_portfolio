@@ -1,0 +1,117 @@
+---
+title: "Cure - Patient Management System"
+publishedAt: "2017-03-12"
+summary: "Refreshing navigation and the main functionality of long-term patient care managemetn app."
+images:
+  - "/images/projects/cure/cure-dash.jpg"
+
+team:
+  - name: "Zvonimir Perkovic"
+    role: "Product Designer and Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/zperkovi"
+    link: "https://youtu.be/yQBBIRcrIuU?feature=shared"
+---
+
+**My Role:** User flows, UI desing, Interactions, Frontend developer
+**Timeline:** 1.5 month
+
+---
+
+# Overview
+
+Provider Services (now Foundations Health Solutions) came to Aztek with the request of updating their long-term care management app.
+
+The client used their proprietary software "Cure" to manage long-term healthcare facilities, patients, and insurance information. The first iteration of the application was build in .NET with Bootstrap 3 as the front-end framework. We were supposed to follow that pattern in the redesign.
+
+---
+
+## The Main Takeaways
+
+1. Two types of active meetings, Daily and Weekly, with subcategories (depending on the type of the patient).
+2. Four types of users: Super admin, IT admin, System admin, and Basic (Core) user
+3. Archived meetings as a particular sub-group.
+
+---
+
+## Defining the Persona
+
+In everyday use, the Core user is going to use the app the most. That is the user we focused the most attention on when redesigning the app. In their everyday work, Core users will focus on these areas:
+• Is the patient assigned to one or more buildings
+• View payer insurance info for their assigned buildings
+• Manage patients for their assigned buildings
+• Review residents for their assigned buildings
+• Begin, view, and edit meetings
+
+---
+
+## My Role
+
+As a Lead Designer and Front-end developer, I designed components and created user flows for:
+• Navigation
+• Dashboard 
+• Daily and Weekly meeting pages
+
+---
+
+## The Problem
+
+The first iteration of the Cure application was built using Bootstrap 3 as a front-end framework with about 1500 lines of custom styles. LESS was used as a preprocessor of choice. There were no system nor style guide to follow, only very detailed business requirements.
+
+---
+
+## Design Goal
+
+1. Every user currently logged in should have access to every part of the application from the dashboard, but the daily and weekly meeting sections should stand out the most and take up most of the screen.
+2. End-users should be able to start daily or weekly meetings straight from the home dashboard. They should be able to pick a type of meeting, building, or choose sessions in progress. All actions should happen in 1 or 2 clicks.
+3. Action items related to the specific meeting should be easy to understand and interact with. Since there are many different subsections, form fields, and controls, it should be clear which fields and controls go together. All form fields should be accessible, and the goal we set for ourselves was AA standard.
+
+---
+
+## Solution
+
+Focusing on our core user, we kept the division of the dashboard into three main sections. To accommodate the requests mentioned above for visual clarity, we used a combination of background colors, typography, and horizontal dividers to visually separate different groups. The first design iterations were heavy on interactions. Elements that were hidden would show as users would request them, which resulted in a clear, somewhat fancy dashboard. That approach also forced our users to “work,” to dig inside the app to get things done, and it had some learning curve. Since the application was already complex, we decided to ditch that approach and create not as beautiful but ultimately a functional dashboard.
+
+The final result was the dashboard where the user had direct access to all types of meetings immediately from the home page. We made as many features as possible visible from the moment the app would load. Only one interaction demanded five clicks: choosing an archived meeting on a specific date in a specific building. All other interactions took one to three clicks to start.
+
+![Choosing a building and meeting from the dashboard.](/images/projects/cure/choose-meeting.gif)
+
+---
+
+## Navigation
+
+I moved the navigation far to the left, to the easily accessible fixed position. Meetings sections still dominated the screen. I gave it that position because all user types used it, but not as often as meetings sections. I separated it visually with the dark blue color and kept it persistent throughout the app. I organized the icons by the sequence of importance based on the data available. We determined the significance by the number of users that are going to use the action button.
+
+Sub-menus, notes, settings, and other options on the buttons that are not links were handled by the Bootstrap ‘toggle’ events, which was a downgrade from the ‘on/off canvas’ transitions we developed first.
+
+![Navigating throught the app sections.](/images/projects/cure/sections.gif)
+
+---
+
+## Custom components and micro-interactions
+
+Custom components and micro-interactions were a specific part of this project and a part I enjoyed working on the most. The client remarked that users would overlook questions and form controls, such as check-boxes and radio buttons. One of the main requests was to make them stand out. 
+
+On the pages mostly filled with form fields and buttons, it was easy to miss the less important ones. Following the client's request, we came with a couple of different solutions. In the example below, we broke the form with the large headers containing check-boxes related to the switch labels, everything wrapped inside the cards. If the patient is going to physical therapy, click on the big switch label, will change the label's color, message, and color of the header. Check-boxes themselves are also stylized and hard to miss.
+
+![Choosing a building and meeting from the dashboard.](/images/projects/cure/toggle.gif)
+
+---
+
+## Meetings
+
+Once the user selects the daily or weekly meeting, we had to make two critical choices: 
+“How to make different subcategories of meetings accessible from their landing pages?” 
+“How to incorporate the different action items specific for the type of the meeting on the page.”
+
+As an answer to the first question, we decided to use tabs to switch between meeting subcategories. Since the maximum number of tabs never exceeds 5, the solution worked well on the smaller screens. 
+
+![Choosing a building and meeting from the dashboard.](/images/projects/cure/tabs.gif)
+
+With the action items, we kept the same general feel and functionality of the main navigation. We showed decisive action first. All related parts of the application, such as patient listings or adding a patient or a meeting note, were accessible from here but hidden behind the event. The idea was to encourage the user to finish working on a single patient at the time, to fill all mandatory fields, and when all necessary data is in, to naturally continue to the next section of the meeting or to the next patient. Interactions used here were mostly made as a series of Bootstrap drop-downs, modals, and pop-ups.
+
+---
+
+## Conclusion
+
+A fun project to work on, Cure became an application designed and built according to the client’s wishes. Initial feedback from the project owner and the very users was excellent, both functionality and design-wise. In the retrospective, I wish I had done some things differently: creating an even more detailed, component-based style guide with all possible feature combinations being one of them. Or designing my own icon set, set up as an SVG sprite, being another.
