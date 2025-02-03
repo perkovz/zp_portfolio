@@ -56,9 +56,8 @@ const home = {
   subline: (
     <>
       I'm Zvonimir, a Product designer at{" "}
-      <InlineCode>FORTUNE BRANDS INNOVATIONS</InlineCode>, where I craft
-      intuitive
-      <br /> user experiences for connected products.
+      <InlineCode>FORTUNE BRANDS INNOVATIONS</InlineCode> where I craft
+      intuitive user experiences for connected products.
     </>
   ),
 };
