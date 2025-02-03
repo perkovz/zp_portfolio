@@ -15,26 +15,32 @@ team:
     linkedIn: "https://www.linkedin.com/in/tom-drobnak"
 ---
 
-**Team:** Product Designer & Firmware Engineer <br />
-**Timeline:** 5 weeks
+**My Role:** Product Design Lead <br />
+**Timeline:** 5 weeks <br />
+**Platform:** NXP MCIMX8ULP - SOM board, 5” NXP BV screen, Linux Yocto OS
 
 ---
 
 # Overview
 
-The main challenge was to create an advanced shower GUI on an NXP board and 5” screen running on a Linux Yocto system. This task needed to be completed quickly and effectively. Tom and I tackled this problem head-on and figured it out in just five weeks!
+Moen’s smart shower development program needed a solution that would enable product and design teams to quickly validate, test, and iterate shower features, GUI, and advanced interactions. Without specific expertise on the team, the project was stuck in limbo, so we decided to take the initiative and innovate within the design team. The solution, based on Crank, shortened firmware GUI development time by 30% in just five weeks.
 
 ![NXP MCIMX8ULP - SOM board, and 5” NXP BV screen.](/images/projects/shower-gui/nxp.jpeg)
 
 ---
 
-## Key Features
+## My Contribution
 
-- **Starting a Shower**: Start a shower from the home screen.
-- **Choosing a Preset**: Users can customize their shower experience by saving preferred settings for temperature, water flow, and duration, allowing for a tailored and enjoyable shower each time..
-- **Integrations**: The shower system seamlessly integrates with smart home devices, enabling voice control and automation for a convenient and hands-free experience.
-- **Precise Water Temperature Control**: Users can achieve their ideal shower temperature with precise control, ensuring comfort and satisfaction while conserving water.
-- **UI Interactions**: Test Cranks abilities to create complex UI interactions.
+As a lead on this initiative:
+- I researched the most known tools including Protopie, QT Design Studio and Embedded Wizard.
+- I reached out to Cranks sales team and successfully obtained a free license!
+- I collaborated with one firmware engineer on the NXP board setup.
+- I learned the basics of Crank Storyboard and Lua scripting.
+- I created a working prototype of the smart shower interface using Crank Storyboard. 
+- I ran early-stage user tests.
+- And finally, I documented and evangelized solutions within the company.
+
+This innovation also enabled designers to deliver Figma components directly to engineers, improving collaboration and the quality of the final product. 
 
 ---
 
@@ -45,6 +51,17 @@ The main challenge was to create an advanced shower GUI on an NXP board and 5”
 - **Figma**: For creating and managing design assets and prototypes.
 - **UserTesting**: For styling usability testing components with a modular, themable approach.
 - **Crank Storybook**: For building an interactive live prototype on the Linux Yocto system.
+- **YouTube**: For learning on the go!
+
+---
+
+## Key Features
+
+- **Starting a Shower**: Start a shower from the home screen.
+- **Choosing a Preset**: Users can customize their shower experience by saving preferred settings for temperature, water flow, and duration, allowing for a tailored and enjoyable shower each time.
+- **Integrations**: The shower system seamlessly integrates with smart home devices, enabling voice control and automation for a convenient and hands-free experience.
+- **Precise Water Temperature Control**: Users can achieve their ideal shower temperature with precise control, ensuring comfort and satisfaction while conserving water.
+- **UI Interactions**: Test Cranks abilities to create complex UI interactions.
 
 ---
 
@@ -54,27 +71,27 @@ The main challenge was to create an advanced shower GUI on an NXP board and 5”
 
 To ensure we met user needs, I organized a thorough research through the UserTesting platform:
 
-- **User Testing**: I recruited and interviewed 28 smart home enthusiasts to gather insights on desired features and user experience.
-
-With the most important interactions confirmed, I focused on execution.
+- We recruited and interviewed 28 smart home enthusiasts and smart shower owners to gather insights on desired features and user experience.
 
 ---
 
 ## Designing for Embedded Hardware
 
-Finding the right design tool for prototyping on hardware was quite an adventure!
-
-Layering and naming styles are determined by the software where they will be imported into.
+Learning to design in Crank Storyboard and creating a prototype on hardware was quite an adventure! 
 
 ![Component list prepared for Crank Import.](/images/projects/shower-gui/prepping-for-crank.png)
 
 - I started by connecting the board to my laptop using HDMI and USB cables to mirror my Figma prototypes.
-- Next, I dove into researching HMI design tools and landed on Crank. However, learning how to use Crank Storyboard wasn’t straightforward, especially since it’s not a free tool. I reached out to their sales team and successfully obtained a free license!
-- The main reason I’ve choose Crank Storyboard were its embedded features, which, with a little bit of Lua scripting enabled me to create a prototype.
+- Next, Tom (firmware engineer) was able to create a connection with Yocto OS, which enabled me to move the whole Crank application through fileZilla to the board.
+- I've used embedded functionality within the Sotware to create navigation and key transitions.
+- The big accomplishement was adding custom transitions and eventns with Lua scripting.
 
 ![Crank Storyboard dashboard.](/images/projects/shower-gui/crank-dashboard.png)
 
+---
+
 Designing for HMI. One interaction at a time.
+
 ![All components connected with the hardware.](/images/projects/shower-gui/cranking-from-home.jpg)
 
 ---
@@ -83,9 +100,9 @@ Designing for HMI. One interaction at a time.
 
 Once in Crank, I developed a comprehensive GUI prototype that included:
 
-- **Intuitive Navigation**: Designed screens in Figma, focusing on easy access to Home, Presets, and other essential features.
-- **Interactive Features**: Leveraged Crank to implement key flows and wrote Lua scripts to enhance user interactions with the interface.
-- **Seamless Integration**: Collaborated with Tom to set up the NXP MCIMX8ULP - SOM board, using a 5” NXP BV screen running on a Linux Yocto system.
+- **Intuitive Navigation**: Focusing on easy access to Home, Presets, and other essential features.
+- **Interactive Features**: Including screen transitions, toggle animation and temperature sliders.
+- **Seamless Integration**: With third-party system such as Spotify music.
 
 ![Crank Storyboard demo](/images/projects/shower-gui/crank-demo.mp4)
 
