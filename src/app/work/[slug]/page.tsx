@@ -99,7 +99,7 @@ export default function Project({ params }: WorkParams) {
           }),
         }}
       />
-      <Column maxWidth="xs" gap="16">
+      <Column maxWidth="s" gap="16">
         <Button href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
