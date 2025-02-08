@@ -114,7 +114,7 @@ export default function Project({ params }: WorkParams) {
           src={post.metadata.images[0]}
         />
       )}
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+      <Column style={{ margin: "auto" }} as="article" maxWidth="s">
         <Flex gap="12" marginBottom="24" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
           <Text variant="body-default-s" onBackground="neutral-weak">
