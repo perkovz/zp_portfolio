@@ -101,13 +101,21 @@ To save time I organized all the findings in the same FigJam file that we used f
 
 ## Design System for Embedded Hardware
 
-Learning to design in Crank Storyboard and creating a prototype on hardware was quite an adventure!
+When creating a design system for embedded hardware, there are three key takeaways to consider:
+
+1. Components must be compatible with the target software on the specific hardware, ensuring seamless integration and functionality.
+2. Components should be designed with flexibility in mind, allowing for easy testing and adaptation in remote settings. This is crucial for troubleshooting and maintaining the system's performance.
+3. Remote Human-Machine Interface (HMI) collaboration is an essential aspect of the design system, enabling users to interact with the system and make adjustments, even from a distance.
 
 ![Component list prepared for Crank Import.](/images/projects/shower-gui/prepping-for-crank.png)
 
-- I started by connecting the board to my laptop using HDMI and USB cables to mirror my Figma prototypes.
-- Next, Tom (firmware engineer) connected Crank with Yocto OS, enabling me to work independently and stage the whole Crank application through FileZilla to the board as needed for testing.
-- I’ve used embedded functionality within the Stroyboard to create navigation and transitions.
+---
+
+### Importing Figma Components Into Crank Storyboard
+
+After importing Figma components into Crank Storyboard, I created component events like state changes and seamless transitions between screens in embedded hardware. This contributed to a consistent design language while leveraging Crank Storyboard's powerful real-time interaction design capabilities.
+
+- I’ve used embedded functionality within the Storyboard to create navigation and transitions.
 - The significant breakthrough was adding custom transitions and events with Lua scripting, which was the final functionality needed for a working prototype.
 
 ![Crank Storyboard dashboard.](/images/projects/shower-gui/crank-dashboard.png)
