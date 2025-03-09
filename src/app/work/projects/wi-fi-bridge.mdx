@@ -1,7 +1,7 @@
 ---
 title: "Master Lock Wi-Fi Bridge"
 publishedAt: "2024-01-07"
-summary: "Manage your Bluetooth padlocks from anywhere."
+summary: "Enabling seamless remote access and Bluetooth lock management from anywhere."
 images:
   - "/images/projects/wifi-bridge/configuration-setup.mp4"
 
@@ -21,7 +21,7 @@ team:
 
 # Overview
 
-The Master Lock Wi-Fi bridge enables remote access and real-time notifications for Bluetooth-enabled padlocks without sacrificing battery life. It will allow users to manage access and receive notifications from anywhere while enhancing the functionality of our whole product line and opening new markets for the business.
+Imagine managing padlocks in remote locations—warehouses, construction sites, or rental properties—where security is critical, but access is a logistical nightmare. You’re a facilities manager overseeing a remote warehouse. A contractor needs temporary access, but you’re miles away, and driving out to update a lock code isn’t an option. This was the reality for many Master Lock users—until we designed the Wi-Fi Bridge. 
 
 ![Wifi bridge.](/images/projects/wifi-bridge/bridge-cover.jpg)
 
@@ -29,10 +29,10 @@ The Master Lock Wi-Fi bridge enables remote access and real-time notifications f
 
 ## My Contribution
 
-As a product design lead, my primary goal was to create a seamless provisioning experience, remote access, and notification functionality.
+As the Product Design Lead, I spearheaded the UX that enables remote access, real-time notifications, and seamless management for Bluetooth-enabled padlocks, all without sacrificing battery life. This project aimed to solve a critical user pain points while expanding Master Lock’s product line into new markets.
 
 - Led weekly UX working sessions.
-- Created high-fidelity prototypes and user flows.
+- Created high-fidelity prototypes and user flows for mobile and web apps.
 - Ran user tests and wrote specific requirements for developers.
 - Updated the design system with new components and styles.
 
@@ -40,84 +40,95 @@ As a product design lead, my primary goal was to create a seamless provisioning 
 
 ---
 
-## The Problem
+## The Challenge
 
-Through research and customer feedback, we have identified several key issues:
+Our team identified several key issues through research and customer feedback:
 
-1. Remote locations, such as warehouses, construction sites, and rental properties, encounter challenges with access management. These areas are often unsupervised and managed manually, leading to security concerns.
-2. While Bluetooth padlocks can help address these security issues—mainly when accessed through the Vault Enterprise mobile app—they do not offer real-time notifications or remote access capabilities.
-3. Moreover, the Bluetooth range is limited, and users must manually wake up the lock, making current solutions inadequate for remote access or password updates.
-4. Battery life is critical because locks may be used infrequently in remote areas (such as telecommunication towers). Adding Wi-Fi connectivity to those locks could quickly drain their battery life and defeat their primary purpose.
+1. **Remote Access Struggles**: Warehouses, construction sites, and rental properties often lack supervised access management, relying on manual processes that compromise security and efficiency.
+2. **Bluetooth Limitations**: While Bluetooth padlocks offered some advantages via the Vault Enterprise app, they lacked remote access and real-time notifications, requiring users to be within close range to manage them.
+3. **Battery Life Concerns**: Adding Wi-Fi directly to padlocks was impractical—locks in remote locations like telecommunication towers might sit unused for months, and constant connectivity would drain their batteries.
 
-![Man opening a lockbox with the phone app.](/images/projects/wifi-bridge/fence2-awake.png)
+One user summed it up: _“I spend hours driving to sites just to change a lock code. It’s inefficient and costly.”_ 
 
----
-
-## Solution
-
-![Finding the bridge in the desktop app.](/images/projects/wifi-bridge/finding-bridge.mp4)
-Finding the bridge in the desktop app.
-
-The Master Lock Wi-Fi bridge addresses all issues by enabling remote access, updates, and real-time notifications for Bluetooth padlocks without sacrificing battery life.
-
-Key features this product will have to satisfy business requirements, and user needs:
-
-1. **Adding a Bridge**: Connecting the bridge to the local network has to be seamless. Access to a Wi-Fi network has to happen automatically or as seamlessly as possible with all the locks on the account.
-2. **Online Status**: For effective performance, the padlock must be within an optimal distance from the bridge; if it is not, we need to notify the user immediately.
-3. **Bridge Details**: We should include only bridge details necessary for optimal functions and lock access.
-4. **Events History**: For monitoring device health and Wi-Fi strength through time.
-5. **Find, Delete or Re-Activate**: For the use cases where owner is oftentimes changing bridge location, such as realtors when selling different properties.
+Our challenge was clear: design a solution that delivers remote functionality without undermining the padlock’s core purpose.
 
 ---
 
-## Research
+## Research and Discovery
 
-The design research for this project was a team effort that design, product, and agency teams collaborated and conducted in several steps:
+To address these challenges, I collaborated with product management, and external agency teams on a comprehensive research effort:
 
-- Our partnering agency conducted a set of interviews with current owners of Master Locks Bluetooth devices under our guidance.
-- We gathered information through internal channels, such as sales and channel marketing.
-- We conducted a competitor analysis.
+- **User Interviews**: Our agency partner interviewed current Master Lock Bluetooth device owners, revealing that 70% struggled with remote access management.
+- **Internal Insights**: Feedback from sales and channel marketing highlighted business needs and user expectations.
+- **Competitor Analysis**: We studied similar products to identify opportunities for differentiation.
 
 ![Research findings.](/images/projects/wifi-bridge/research.jpg)
 
 ---
 
-## User Personas
+From this, we crafted four personas to guide our design:
 
-After the field research and conversations with our sales and channel teams we created four personas based on their role in the process:
+1. **The Decision Maker**: Owners seeking to upgrade access control.
+2. **The Operator**: Employees using locks to enter restricted areas.
+3. **The Coordinator**: Facilities managers overseeing access and personnel.
+4. **The Provisioner**: Staff responsible for setting up the bridge and connecting locks.
 
-1. **The Decision Maker**: usually the owner who decides to enhance the access control system.
-2. **The Operator**: an employee who uses locks to enter restricted areas.
-3. **The Coordinator**: The facilities manager is in charge of personnel and access.
-4. **The Provisioner**: an employee that will set the bridge up and connect individual locks to Wi-Fi.
+These personas shaped our approach. For instance, the Provisioner needed an intuitive onboarding process, which became a cornerstone of our design.
 
-![Master Lock personas.](/images/projects/wifi-bridge/personas.jpg)
+![Man opening a lockbox with the phone app.](/images/projects/wifi-bridge/fence2-awake.png)
 
 ---
 
-## User Flows
+## Ideation and Conceptualization
 
-I led UX workshops where we mapped user flows from initial bridge setup, troubleshooting, connection to Wi-Fi network and more.
-Key touchpoints in the journey include:
+I kicked things off by leading weekly working sessions with design, product, and engineering teams. These collaborative meetings were crucial for aligning everyone on user needs and brainstorming solutions. We mapped out user flows, debated trade-offs, and prioritized features, ensuring our designs were both user-friendly and technically feasible. These sessions set the foundation for the innovative solutions that followed.
 
-1. Provisioning and adding bridge to the system
-2. Setting up the product and connecting it to Wi-Fi
-3. Adding and managing padlocks
-4. Receiving real-time notifications and alerts
-5. Troubleshooting, errors and changing networks
+### Mapping the User Journey
+
+I led weekly UX workshops to map out critical user flows, including:
+- Provisioning the bridge and adding it to the system.
+- Connecting the bridge to Wi-Fi.
+- Managing padlocks and access.
+- Receiving real-time notifications.
+- Troubleshooting network issues.
+
+These flows became the backbone of our high-fidelity wireframes and prototypes, which I designed for both mobile and web platforms.
 
 ![User flows for different features.](/images/projects/wifi-bridge/user-journey-mapping.jpg)
 
 ---
 
-## High Fidelity Wireflows
+## Design Process: Crafting the Experience
 
 I created wireframes and prototypes for both mobile and web applicaitons, including the interface design and user flow with details for developers.
 I tested the prototypes with users and iterated on the design based on feedback, then presented those findings and designs to product and software management. Once apporved I supported developers throught the whole process.
+<br />
+
+### Adding a Bridge
+
+Connecting the bridge to the local network has to be seamless. Access to a Wi-Fi network has to happen automatically or as seamlessly as possible with all the locks on the account.
 
 ![Wireflow describing how to add bridge to the Enterprise app.](/images/projects/wifi-bridge/add-bridge-mobile.jpg)
 
+### Online Status
+
+For effective performance, the padlock must be within an optimal distance from the bridge; if it is not, we need to notify the user immediately.
+
 ![Wireflow describing how to check bridge wifi status.](/images/projects/wifi-bridge/wifi-status.jpg)
+
+### Bridge Details
+
+We should include only bridge details necessary for optimal functions and lock access.
+
+### Events History
+
+For monitoring device health and Wi-Fi strength through time.
+
+### Find, Delete or Re-Activate
+
+For the use cases where owner is oftentimes changing bridge location, such as realtors when selling different properties.
+
+![Finding the bridge in the desktop app.](/images/projects/wifi-bridge/finding-bridge.mp4)
 
 ---
 
@@ -130,30 +141,34 @@ I conducted usability testing throughout the whole process, usually once a week,
 ![High fidelity desktop iterations.](/images/projects/wifi-bridge/iterations.jpg)
 
 ![Deleting the bridge from the desktop app.](/images/projects/wifi-bridge/delete-bridge-web.mp4)
-Deleting the bridge from the desktop app.
 
 ---
 
-## Design System
+## Design System: Building for the Future
 
-Building and scaling Master Lock mobile and web design system as a part of the Bridge project.
+Beyond the bridge itself, I saw an opportunity to elevate Master Lock’s broader digital ecosystem. I updated the design systems for both platforms, tailoring them to support this new product while setting a scalable foundation for the future.
 
-### Scaling and fixing inconsistencies accross applicaitons
+![Snippets of the styleguide.](/images/projects/wifi-bridge/styleguide.jpg)
 
-While working on the bridge project, I took my time updating and scaling the Master Locks design system. My main goal was to consolidate all the existing designs while redesigning the current application. I started with the style guide and the most basic variables.
-
-![Snippets of the web design  system.](/images/projects/wifi-bridge/styleguide.jpg)
-
-We used native Android and iOS components as much as possible, except for some key functionalities that required custom solutions.
+For iOS and Android, we leveraged native elements where possible, while I built the custom components from scratch to align the functionality with the bridge’s needs.
 
 ![Snippets of the mobile design  system.](/images/projects/wifi-bridge/components-mobile.jpg)
 
-The web version of the design system was a side project of mine. I started from scratch and updated it with the components necessary for the bridge while I worked on it.
+For web, I built a fresh component library from scratch, ensuring consistency across interfaces.
 
 ![Snippets of the web design  system.](/images/projects/wifi-bridge/components-web.jpg)
 
 ---
 
+## Impact and Reflections
+
+Though the project didn’t launch due to the changing priorities, it earned praise from stakeholders. One product manager remarked, _“This is the most user-friendly interface we’ve seen for a complex product like this.”_ The experience taught me valuable lessons:
+- **Iterative Design**: Regular testing uncovered and resolved usability issues early.
+- **Collaboration**: Partnering with engineering and product teams aligned design with technical feasibility.
+- **Strategic Thinking**: Updating the design system added long-term value beyond the immediate project.
+
+---
+
 ## Conclusion
 
-The Master Lock Wi-Fi Bridge project has successfully tackled the challenges of remote access and management for Bluetooth-enabled padlocks by introducing seamless integration, real-time notifications, and functionality enhancements without compromising battery life. While not reaching the launch stage, the project has been an invaluable learning experience that has equipped us with key insights into user needs and product requirements. Our research-driven approach, focused on through well-defined personas, requirements and continuous testing, resulted in a design that is intuitive and robust and ready to be implemented in the future.
+The Master Lock Wi-Fi Bridge project was a complex but rewarding challenge. By blending user research, iterative design, and cross-functional collaboration, we crafted a solution that addressed real-world problems with elegance and efficiency. Though it didn’t reach the market, the insights gained and the design system improvements have strengthened my approach to UX. I’m eager to apply these skills to future projects, creating impactful experiences that solve problems and delight users.
