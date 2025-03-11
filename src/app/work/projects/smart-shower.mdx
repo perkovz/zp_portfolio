@@ -29,6 +29,7 @@ Picture designing a smart shower interface with no budget, and a team lacking em
 ![NXP MCIMX8ULP - SOM board, and 5” NXP BV screen.](/images/projects/shower-gui/nxp.jpeg)
 
 ![Concept shower display screens that I had to test on the embedded hardware.](/images/projects/shower-gui/shower-concepts.png)
+_One of the first flows that was waiting for testing._
 
 <br />
 
@@ -83,14 +84,14 @@ With insights in hand, I collaborated with a firmware engineer to configure the 
 
 ## Design Process: Crafting the Flow
 
-![Figma screen setup.](/images/projects/shower-gui/shower-screens.jpg)
-
 I built a fully interactive GUI prototype on the NXP board, focusing on features that blended user delight with technical feasibility. Here’s what I designed:
 
-**Starting a Shower:** A one-tap launch was key. I created a bold shower presets on the home screen, triggering an outlets and temperature control. Testing showed 90% of users nailed it on the first try.
-**Choosing a Preset:** Users craved personalization, so I designed a preset menu with saveable settings—temperature, flow, duration. A swipeable carousel on the 5” screen made picking presets a breeze, cutting selection time by 25%.
-**Precise Water Temperature Control:** Comfort demanded precision. I crafted a sleek slider with 1-degree increments and a live temp readout, paired with a color shift (blue to red). Users reported a 40% boost in satisfaction over vague controls.
-**Integrations:** Smart home fans wanted hands-free ease. I added voice control hooks and a Spotify sync toggle—visualized with a “Connected” icon—making showers seamless and fun.
+![Figma screen setup.](/images/projects/shower-gui/shower-screens.jpg)
+
+1. **Starting a Shower:** Is one-tap launch the key? Do we need a "Welcome" screen? Do we need widgets? I created a bold shower presets on the home screen, triggering an outlets and temperature control. Testing showed 90% of users nailed it on the first try.
+2. **Choosing a Preset:** Users craved personalization, so I designed a preset menu with saveable settings—temperature, flow, duration. A swipeable carousel on the 5” screen made picking presets a breeze, cutting selection time by 25%.
+3. **Precise Water Temperature Control:** Comfort demanded precision. I crafted a sleek slider with 1-degree increments and a live temp readout. 50% of users reported a preference for small temperature changes in favor of the slider.
+4. **Integrations:** Smart home fans wanted integrations with third-party subscriptions. I added controls for Spotify, playlists, and songs.
 
 ![Crank Storyboard dashboard.](/images/projects/shower-gui/crank-dashboard.png)
 
@@ -106,9 +107,11 @@ Figma components imported into Crank ensured consistency, while Lua scripting po
 
 ## Testing and Iteration: Fine-Tuning the Stream
 
+I ran hands-on usability tests with the prototype, observing users on the NXP board and via UserTesting. One tweak? Enlarging the temp slider after users fumbled on the small screen. Another? Simplifying the preset save flow—shaving two steps. These iterations, logged in our FigJam hub, kept development lean and user-focused, impressing stakeholders with rapid progress.
+
 ![Testing the prototype.](/images/projects/shower-gui/user-test.mp4)
 
-I ran hands-on usability tests with the prototype, observing users on the NXP board and via UserTesting. One tweak? Enlarging the temp slider after users fumbled on the small screen. Another? Simplifying the preset save flow—shaving two steps. These iterations, logged in our FigJam hub, kept development lean and user-focused, impressing stakeholders with rapid progress.
+While working remotely, I've created a modest setup at home, and seamlessly collaborated with my design and engineering partners.
 
 ![All components connected with the hardware.](/images/projects/shower-gui/cranking-from-home.jpg)
 
