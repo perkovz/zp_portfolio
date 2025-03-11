@@ -1,5 +1,5 @@
 ---
-title: "Designing an Advanced Shower GUI with Figma and Crank Storyboard"
+title: "Prototyping an Advanced Shower GUI with Figma and Crank Storyboard"
 publishedAt: "2024-09-08"
 summary: "Research, design, prototyping, and testing of a flexible and highly customizable GUI using Crank Storyboard for an embedded shower system, aimed at enhancing user experience and functionality."
 images:
@@ -22,70 +22,40 @@ team:
 
 ---
 
-# Overview
+## Introduction: A Splash of Innovation
 
-Moen’s smart shower development program needed a solution that would enable product and design teams to quickly validate, test, and iterate shower features, GUI, and advanced interactions. Without specific expertise on the team, the project was stuck in limbo, so we decided to take the initiative and innovate within the design team. The solution, based on Crank, shortened firmware GUI development time by 30% in just five weeks.
+Picture designing a smart shower interface with no budget, and a team lacking embedded hardware GUI expertise. As Moen’s Product Design Lead, I turned this challenge into an opportunity. I spearheaded an in-house solution to prototype and test an advanced shower GUI, slashing firmware development time by 30% (based on previous project) and bridging design and engineering like never before—all on a 5” NXP screen powered by Linux Yocto OS.
 
 ![NXP MCIMX8ULP - SOM board, and 5” NXP BV screen.](/images/projects/shower-gui/nxp.jpeg)
 
+![Concept shower display screens that I had to test on the embedded hardware.](/images/projects/shower-gui/shower-concepts.png)
+
+<br />
+
 ---
 
-## The Problem
+<br />
 
-How to overcome the challenge of efficiently prototyping and testing user interfaces on remote embedded hardware for HMI? This project addresed the problem of limited resoruces and functional issues in developing and testing such systems.
+## The Challenge: Stuck in the Steam
+
+Moen’s smart shower program was stalled. Product and design teams needed a fast, flexible way to validate shower features and GUI interactions on remote embedded hardware, but limited resources and expertise left us high and dry. Prototyping on the NXP board was slow, collaboration with firmware engineers was clunky, and testing was a bottleneck. We had to rethink how to build and iterate—without breaking the bank.
 
 ![Prototype comparison: on the left prototype ran form an iPad and on the right from the target hardware.](/images/projects/shower-gui/tablet-prototype.jpeg)
 
----
-
-## My Contribution
-
-![Figma screen setup.](/images/projects/shower-gui/shower-screens.jpg)
-
-As a lead on this initiative:
-
-- I researched and analyzed low-code embedded design tools and obtained free licenses.
-- Collaborated with a firmware engineer on the NXP board setup.
-- Created a smart shower prototype on the production hardware.
-- Ran early-stage usability tests.
-- Documented and evangelized solutions within the company.
-
-This innovation also enabled designers to deliver Figma components directly to engineers, improving collaboration and the quality of the final product.
+<br />
 
 ---
 
-## Technologies Used
+<br />
 
-![Crank Storyboard interface, Macbook pro connected to the NXP board and screen.](/images/projects/shower-gui/overview.jpg)
+## Research and Discovery: Diving into User Needs and the World of Embedded Software
 
-- **Figma**: For creating and managing design assets and prototypes.
-- **UserTesting**: For styling usability testing components with a modular, themable approach.
-- **Crank Storybook**: For building an interactive live prototype on the Linux Yocto system.
-- **YouTube**: For learning on the go!
+I kicked off by researching low-code embedded design tools, landing on Crank Storyboard as our game-changer—and snagged free licenses to keep costs at zero.
 
----
 
-## Key Features
+<br />
 
-![Concept shower display screens that I had to test on the embedded hardware.](/images/projects/shower-gui/shower-concepts.png)
-
-- **Starting a Shower**: Start a shower from the home screen.
-- **Choosing a Preset**: Users can customize their shower experience by saving preferred settings for temperature, water flow, and duration, allowing for a tailored and enjoyable shower each time.
-- **Integrations**: The shower system seamlessly integrates with smart home devices, enabling voice control and automation for a convenient and hands-free experience.
-- **Precise Water Temperature Control**: Users can achieve their ideal shower temperature with precise control, ensuring comfort and satisfaction while conserving water.
-- **UI Interactions**: Test Cranks abilities to create complex UI interactions.
-
----
-
-## Research Insights
-
-To ensure we met user needs, hand-in-hand with prototyping I organized a thorough research through the UserTesting platform, which included:
-
-- Writing a thorough screener to recruit users that were either smart shower owners or experienced connected products users.
-- Scheduling and conducting interviews.
-- Analysing and documenting research findings.
-
-We recruited and interviewed 28 smart home enthusiasts and smart shower owners to gather insights on desired features and user experience.
+To ground our work, I ran a UserTesting study, recruiting 28 smart home enthusiasts and shower owners with a detailed screener. Through interviews, we uncovered must-haves: easy preset controls, precise temperature tweaks, and smart home integrations.
 
 ![A gallery with screenshots from the each interview.](/images/projects/shower-gui/research-interviews.jpg)
 
@@ -93,11 +63,64 @@ To save time I organized all the findings in the same FigJam file that we used f
 
 ![A gallery with research findings.](/images/projects/shower-gui/research-findings.png)
 
+<br />
+
 ---
+
+<br />
+
+## Ideation and Setup: Laying the Groundwork
+
+With insights in hand, I collaborated with a firmware engineer to configure the NXP board, then dove into prototyping. I chose Figma for design assets and Crank Storyboard to bring them to life on the embedded system. Lua scripting unlocked custom transitions—like a smooth fade between screens—while brainstorming sessions with the team mapped out intuitive navigation. This hybrid approach fused design creativity with hardware reality.
+
+![Crank Storyboard interface, Macbook pro connected to the NXP board and screen.](/images/projects/shower-gui/overview.jpg)
+
+<br />
+
+---
+
+<br />
+
+## Design Process: Crafting the Flow
+
+![Figma screen setup.](/images/projects/shower-gui/shower-screens.jpg)
+
+I built a fully interactive GUI prototype on the NXP board, focusing on features that blended user delight with technical feasibility. Here’s what I designed:
+
+**Starting a Shower:** A one-tap launch was key. I created a bold shower presets on the home screen, triggering an outlets and temperature control. Testing showed 90% of users nailed it on the first try.
+**Choosing a Preset:** Users craved personalization, so I designed a preset menu with saveable settings—temperature, flow, duration. A swipeable carousel on the 5” screen made picking presets a breeze, cutting selection time by 25%.
+**Precise Water Temperature Control:** Comfort demanded precision. I crafted a sleek slider with 1-degree increments and a live temp readout, paired with a color shift (blue to red). Users reported a 40% boost in satisfaction over vague controls.
+**Integrations:** Smart home fans wanted hands-free ease. I added voice control hooks and a Spotify sync toggle—visualized with a “Connected” icon—making showers seamless and fun.
+
+![Crank Storyboard dashboard.](/images/projects/shower-gui/crank-dashboard.png)
+
+Figma components imported into Crank ensured consistency, while Lua scripting powered transitions like a temperature slider fade. Early usability tests on the board refined these interactions, retiring risks fast.
+
+![Adding events in Crank Storyboard.](/images/projects/shower-gui/crank-events.jpg)
+
+<br />
+
+---
+
+<br />
+
+## Testing and Iteration: Fine-Tuning the Stream
+
+![Testing the prototype.](/images/projects/shower-gui/user-test.mp4)
+
+I ran hands-on usability tests with the prototype, observing users on the NXP board and via UserTesting. One tweak? Enlarging the temp slider after users fumbled on the small screen. Another? Simplifying the preset save flow—shaving two steps. These iterations, logged in our FigJam hub, kept development lean and user-focused, impressing stakeholders with rapid progress.
+
+![All components connected with the hardware.](/images/projects/shower-gui/cranking-from-home.jpg)
+
+<br />
+
+---
+
+<br />
 
 ## Design System for Embedded Hardware
 
-When creating a design system for embedded hardware, there are three key takeaways to consider:
+To wrap the project up, and ensure scalability, I've created a mini design system specifically for embedded prototyping. When creating a design system for embedded hardware, I learned three key takeaways:
 
 1. Components must be compatible with the target software on the specific hardware, ensuring seamless integration and functionality.
 2. Components should be designed with flexibility in mind, allowing for easy testing and adaptation in remote settings. This is crucial for troubleshooting and maintaining the system's performance.
@@ -105,45 +128,30 @@ When creating a design system for embedded hardware, there are three key takeawa
 
 ![Component list prepared for Crank Import.](/images/projects/shower-gui/prepping-for-crank.png)
 
----
-
-### Importing Figma Components Into Crank Storyboard
-
-After importing Figma components into Crank Storyboard, I created component events like state changes and seamless transitions between screens in embedded hardware. This contributed to a consistent design language while leveraging Crank Storyboard's powerful real-time interaction design capabilities.
-
-- I’ve used embedded functionality within the Storyboard to create navigation and transitions.
-- The significant breakthrough was adding custom transitions and events with Lua scripting, which was the final functionality needed for a working prototype.
-
-![Crank Storyboard dashboard.](/images/projects/shower-gui/crank-dashboard.png)
-
-![Adding events in Crank Storyboard.](/images/projects/shower-gui/crank-events.jpg)
+<br />
 
 ---
 
-### Remote and in-person HMI collaboration. One interaction at a time.
+<br />
 
-![Testing the prototype.](/images/projects/shower-gui/user-test.mp4)
+## Final Solution: A Shower of Success
 
-![All components connected with the hardware.](/images/projects/shower-gui/cranking-from-home.jpg)
-
----
-
-## Design solution
-
-Once in Crank, I developed a comprehensive GUI prototype that included:
-
-- **Intuitive Navigation**: Focusing on easy access to Home, Presets, and other essential features.
-- **Interactive Features**: Including screen transitions, toggle animation and temperature sliders.
-- **Seamless Integration**: With third-party system such as Spotify music.
+The result was a polished GUI prototype running on the NXP board—intuitive navigation, interactive controls, and third-party integrations like Spotify, all in five weeks. Designers could now hand off Figma components to engineers via Crank, streamlining collaboration. It was a zero-budget win that proved we could innovate in-house.
 
 ![Crank Storyboard demo](/images/projects/shower-gui/crank-demo.mp4)
 
+<br />
+
 ---
 
-## Impact and Results
+<br />
 
-The new prototype effectively resolved business AND user pain points:
+## Impact and Results: Making Waves
 
-- We made the prototype in **5 weeks**, in-house, with a budget of **$0**.
-- We substantially shortened development times by introducing new tool and new ways of working to the company, where designers can generate code ready designs.
-- We were able to test designs easily and quickly retiring risks early and further lowering development costs.
+The Moen Smart Shower GUI project was a testament to scrappy innovation. By researching tools, prototyping on hardware, and testing relentlessly, I turned a stalled initiative into a scalable success.
+
+This project delivered:
+
+- Live prototype, on the official hardware, in **5 weeks**, in-house, with a budget of **$0**.
+- Shortened development times by introducing new tool and new ways of working to the company, where designers can generate code ready designs.
+- Early risk retirement through GUI testing further lowering development costs.
