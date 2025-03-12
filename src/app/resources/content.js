@@ -127,19 +127,19 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/Flow_Control_Settings.mp4",
+            src: "/images/projects/faucet/Flow_Control_Settings.mp4",
             alt: "Animated video on how to set a water flow on handle free faucet.",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/How_To_Control_Kitchen_Faucet_With_Gestures.mp4",
+            src: "/images/projects/faucet/How_To_Control_Kitchen_Faucet_With_Gestures.mp4",
             alt: "Animated video on how to control handle free faucet with hand gestures.",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/Vault_Home_Onboarding.mp4",
+            src: "/images/projects/masterlock-tutorial/Vault_Home_Onboarding.mp4",
             alt: "Animated video of the most important features of Master Lock Vault Enterprise mobile app.",
             width: 16,
             height: 9,
