@@ -3,9 +3,9 @@ title: "Moen Smart Faucet: Redefining Touchless Control"
 publishedAt: "2022-09-02"
 summary: "Explore redesigned user experience for a handle-free faucet, overcoming mental model challenges and technical limitations through innovative app-based training."
 images:
-  - "/images/projects/faucet/Flow_Control_Settings.mp4"
-  - "/images/projects/faucet/Set_and_Try_Temperature.mp4"
-  - "/images/projects/faucet/How_To_Control_Kitchen_Faucet_With_Gestures.mp4"
+  - "/images/projects/faucet/flow-control.mp4"
+  - "/images/projects/faucet/try-temperature.mp4"
+  - "/images/projects/faucet/gesture-control.mp4"
 
 team:
   - name: "Zvonimir Perkovic"
@@ -84,37 +84,128 @@ I broke the design process into three stages:
 2. **Update Visuals:** Revamp illustrations, animations, and content (including French translations), and create the first motion design system.
 3. **Test & Refine:** Validate high-fidelity prototypes via UserTesting and guerrilla tests, ensuring accessibility in light and dark modes.
 
-
+<br />
 
 ---
 
-## Problem #1: Temperature Control
+## Temperature Control
 
-![User flow before the redesign.](/images/projects/faucet/before.jpg)
+The original Temperature Control experience for the Moen Smart Faucet left users frustrated. Without a traditional handle, setting and adjusting the temperature was unintuitive, especially in homes with multiple faucets or when using voice commands. 
 
-Original flow introduced with first gesture activated faucet communicated the message, but failed to excite the user, and communicate all the information in visual form. Pages looked flat and uninviting resulting in low completion rates.
+The gesture-based controls also suffered from low tutorial completion rates and poor retention, as users struggled to learn and apply them confidently. User feedback highlighted these pain points, with low engagement and frequent errors undermining the smart faucet’s potential.
 
 ---
 
 ### Setting a Temperature
 
-What does “hot” means without a handle?
+Under "Setting the Temperature," I tackled three specific problems to empower users with control and confidence:
 
-![Updated flow with all edge cases.](/images/projects/faucet/try-temp-flow.jpg)
+#### Try and Save Feature
 
----
+**Problem:** Users couldn’t test the water temperature before committing to a setting, leading to hesitation and dissatisfaction.
 
-### Using Motion Gestures for Temperature Control
+**Solution:** I designed a "Set and Try" feature, allowing users to run the water at their chosen temperature, feel it, and tweak it in real-time before saving. This hands-on approach bridged the gap between digital input and physical feedback.
 
-With the help of QA and mobile teams, I’ve created new flows using existing assets and reviewed them with design team. We agreed new flows were good, but are uninviting and have to be tested. Testing confirmed our suspicions, where 7 our of 10 users couldn’t paraphrase the feature after completing tutorial.
-
-My next step was clear. I created detailed tutorial to include all modes with visual instructions for flow control, temperature and On/Off modes. I updated all copy, tested it several times to confirm understanding, and created new visually crispier animations, with and without text to improve users interest and retention.
-
-![Updated flow with all edge cases.](/images/projects/faucet/Main_User_Flow.jpg)
+![Updated temperature flow with all edge cases.](/images/projects/faucet/try-temp-flow.jpg)
 
 ---
 
-### Evolution of Visual Language
+#### Handling Multiple Faucets
+
+**Problem:** In households with multiple smart faucets, users struggled to set temperatures for specific faucets without confusion.
+
+**Solution:** I created a scalable flow where users could select a faucet, set its temperature, and save the setting—all within a clear, streamlined interface. This made the app adaptable to any home setup.
+
+---
+
+#### Voice Command Integration
+
+**Problem:** Users wanted to adjust temperatures hands-free via voice but lacked guidance on how to do so effectively.
+
+**Solution:** I developed flows and screens that seamlessly integrated voice commands (e.g., via Alexa or Google Home), guiding users through setup and adjustments with clear prompts and confirmations.
+
+---
+
+#### Using Motion Gestures
+
+**Problem:** The original gesture tutorial was dry and ineffective, resulting in low engagement and poor gesture accuracy. Users couldn’t retain how to use gestures for flow, temperature, or On/Off controls.
+
+**Solution:** I overhauled the tutorial into a detailed, gamified experience covering all gesture modes. By introducing sharp, interactive animations and clear step-by-step guidance, I made learning fun and memorable. The new animations provided visual cues that improved gesture precision.
+
+**Outcome:** User testing revealed a marked increase in gesture accuracy and confidence, with higher tutorial completion rates.
+
+![Updated motion gesture user flow in Figma.](/images/projects/faucet/Main_User_Flow.jpg)
+
+---
+
+#### The Impact
+
+These changes transformed the Temperature Control experience:
+
+- The **"Set and Try"** feature reduced user frustration by letting them experiment confidently.
+- **Multiple faucet flows** made the app versatile and user-friendly for complex households.
+- **Voice command integration** added convenience and accessibility.
+- The **gamified tutorial** boosted engagement and gesture success rates, turning a pain point into a strength.
+
+Together, these improvements contributed to a 1.5-point increase in app store ratings, reflecting a more intuitive and enjoyable user experience.
+
+![Animation describing how to control kitchen faucet with gestures.](/images/projects/faucet/gesture-control.mp4)
+
+<br />
+
+---
+
+<br />
+
+## Flow Control
+
+**Challenge:** Users needed clarity on adjusting water flow without a handle.
+
+![Design iterations screens.](/images/projects/faucet/iterations.jpg)
+
+**Solution:** I defined two flow settings—100% (regular) and 60% (low, due to motor limitations)—and designed an intuitive interface to make adjustments seamless.
+
+**Outcome:** Users could confidently control flow, with clear defaults enhancing usability.
+
+---
+
+### Defining the Flow
+
+Handle free faucet was designed with 2 flow settings, a regular flow and a low flow. During this process we had to define what each one of those flows mean to users and what default values should be. We settled on 100% flow for regular which is completely open valve, and 60% as low. Faucet motor had issues with mixing water lower under 60% so we decided to limit the flow to minimally 60%.
+
+![Flow control wireframe.](/images/projects/faucet/default-control.jpg)
+
+---
+
+### Final Version
+
+Handle free faucet was designed with 2 flow settings, a regular flow and a low flow. During this process we had to define what each one of those flows mean to users and what default values should be. We settled on 100% flow for regular which is completely open valve, and 60% as low. Faucet motor had issues with mixing water lower under 60% so we decided to limit the flow to minimally 60%.
+
+![Flow control settings video.](/images/projects/faucet/flow-control.mp4)
+
+<br />
+
+---
+
+<br />
+
+## LED Notifications
+
+What are the meanings of different LED signals?
+
+![Faucet with a sensor. Top view.](/images/projects/faucet/vak.jpg)
+
+![Video of the mobile app with LED interactions.](/images/projects/faucet/led.mp4)
+
+![Cover page of faucets with different LED states.](/images/projects/faucet/led-cover.jpg)
+
+<br />
+
+---
+
+<br />
+
+## Design System Evolution
 
 Redesigned illustration library including faucets and hands, and created new animations for all temperature and flow modes. Purpose of new libraries was to create a sense of pleasure and excitement in the users when interacting with gamified tutorial to improve attention and retention, resulting in higher gesture success rate.
 
@@ -158,59 +249,18 @@ This new library was based on freshly minted illustrations based on the new art 
 
 ---
 
-### Bringing It All Together
+### Light and Dark Modes
 
 ![Dark and light mode.](/images/projects/faucet/modes.jpg)
 
 After many iterations and testing of our new illustrations and animations, I’ve created interactive prototypes, tested them in UserTesting as well as in guerrilla tests in our HQ, and after couple of smaller updates I’ve wrapped up Temperature control solution with the prototype bellow. Since QA and mobile dev team were part of the whole process, with prototype feature was ready for development.
 
-![Animation describing how to control kitchen faucet with gestures.](/images/projects/faucet/How_To_Control_Kitchen_Faucet_With_Gestures.mp4)
+<br />
 
 ---
 
-## Problem #2: Flow Control
+<br />
 
-How to change water flow without handle?
+## Impact
 
-![Boy rinsing salad.](/images/projects/faucet/boy.jpg)
-
----
-
-### Defining the Flow
-
-Handle free faucet was designed with 2 flow settings, a regular flow and a low flow. During this process we had to define what each one of those flows mean to users and what default values should be. We settled on 100% flow for regular which is completely open valve, and 60% as low. Faucet motor had issues with mixing water lower under 60% so we decided to limit the flow to minimally 60%.
-
-![Design iterations screens.](/images/projects/faucet/iterations.jpg)
-
----
-
-### Final Version
-
-Handle free faucet was designed with 2 flow settings, a regular flow and a low flow. During this process we had to define what each one of those flows mean to users and what default values should be. We settled on 100% flow for regular which is completely open valve, and 60% as low. Faucet motor had issues with mixing water lower under 60% so we decided to limit the flow to minimally 60%.
-
-![Flow control wireframe.](/images/projects/faucet/default-control.jpg)
-![Flow control settings video.](/images/projects/faucet/Flow_Control_Settings.mp4)
-
----
-
-## Problem #3: LED Notifications
-
-What are the meanings of different LED signals?
-
-![Faucet with a sensor. Top view.](/images/projects/faucet/vak.jpg)
-
----
-
-### Clear visual language
-
-I followed the similar process and created a clear visual and written language to communicate with the users different faucet states, achieving 100% pass score in the user tests.
-
-![Video of the mobile app with LED interactions.](/images/projects/faucet/led.mp4)
-
----
-
-## Conclusion
-
-In conclusion, the evolution of the visual language and the creation of a comprehensive design system library, together with gamification and new "how-to" tutorials enhanced the overall user experience which we monitored through new app rating submissions contributing to a 1.5-point increase in app store ratings.
-
-![Cover page of faucets with different LED states.](/images/projects/faucet/led-cover.jpg)
+The redesigned features—new tutorials, gamified elements, and a robust design system contributed to a **1.5-point increase in app store ratings**, reflecting improved user satisfaction. The LED tutorial’s **100% pass rate** in testing further validated the success of the visual language updates.
