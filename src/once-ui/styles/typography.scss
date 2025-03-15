@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-.font-body {
+.font-body{
     font-family: var(--font-family-body);
 
     &.font-strong, & > .font-strong {
@@ -196,4 +196,10 @@ h1, h2, h3, h4, h5, h6, p {
         font-size:   calc(var(--font-size-label-s) * var(--font-size-label-multiplier));
         line-height: calc(var(--line-height-label-s) * var(--line-height-label-multiplier));
     }
+}
+
+ol, ul {
+    font-family: var(--font-family-body);
+    font-size:   calc(var(--font-size-body-m) * var(--font-size-body-multiplier));
+    line-height: calc(var(--line-height-body-m) * var(--line-height-body-multiplier));
 }

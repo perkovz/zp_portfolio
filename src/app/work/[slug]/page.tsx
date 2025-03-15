@@ -99,8 +99,8 @@ export default function Project({ params }: WorkParams) {
           }),
         }}
       />
-      <Column maxWidth="s" gap="16">
-        <Button href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
+      <Column maxWidth="m" gap="16">
+        <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
           Projects
         </Button>
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
@@ -114,10 +114,10 @@ export default function Project({ params }: WorkParams) {
           src={post.metadata.images[0]}
         />
       )}
-      <Column style={{ margin: "auto" }} as="article" maxWidth="s">
+      <Column style={{ margin: "auto" }} as="article" maxWidth="m">
         <Flex gap="12" marginBottom="24" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
-          <Text variant="body-default-s" onBackground="neutral-weak">
+          <Text variant="body-default-m" onBackground="neutral-weak">
             {formatDate(post.metadata.publishedAt)}
           </Text>
         </Flex>
