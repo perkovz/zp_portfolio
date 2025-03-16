@@ -393,11 +393,6 @@ const gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/working-monday.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/gallery/osijek.jpeg",
       alt: "image",
       orientation: "horizontal",
@@ -409,11 +404,6 @@ const gallery = {
     },
     {
       src: "/images/gallery/journey-1.jpeg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/testing-lock.jpeg",
       alt: "image",
       orientation: "horizontal",
     },
@@ -439,6 +429,56 @@ const gallery = {
     },
     {
       src: "/images/gallery/tvrda-1.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/books.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/ice-lake.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/promenada.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/park.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/sketching.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/work-ani.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/rrpark.JPG",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/metroparks.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lakewood.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/edgewater.jpg",
       alt: "image",
       orientation: "horizontal",
     },
