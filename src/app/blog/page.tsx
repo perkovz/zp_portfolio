@@ -35,7 +35,7 @@ export async function generateMetadata() {
 
 export default function Blog() {
   return (
-    <Column maxWidth="s">
+    <Column maxWidth="m">
       <script
         type="application/ld+json"
         suppressHydrationWarning
