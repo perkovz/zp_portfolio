@@ -99,30 +99,26 @@ const about = {
         role: "Product Designer",
         achievements: [
           <>
-            Responsible for all stages of the UX design process—from research
-            and analysis to user flows and wireframes. Working closely with
-            Product Management, Engineering and CMI to validate assumptions and
-            determine technical feasibility of recommended features.
+            Designed over 50 interactive prototypes for Moen Smart Water Network and Master Lock Vault Enterprise applications and digital interfaces.
           </>,
           <>
-            Created 50+ interactive prototypes and ran over 100+ usability
-            studies and interviews testing current and new features for Moen
-            Smart Water Network and Master Lock Vault Enterprise, resulting in
-            incresed usability and contributing to user-based product decisions.
+            Conducted over 100 usability studies and interviews, improving usability scores by 20% (UserTesting data).
           </>,
           <>
-            Created 100+ user flows, and facilitated 3 product design working
-            sessions weekly to bring the most value to our customers in a timely
-            manner, leading to decrease in development times with 4.7 Appstore
-            and 4.2 Google Play rating.
+            Facilitated three design sessions per week, aligning design strategy with business goals and achieving 4.7 App Store and 4.2 Google Play ratings for the Vault Enterprise Mobile app.
           </>,
           <>
             Created 10+ competitive analysis and 10+ customer ratings studies.
           </>,
           <>
-            Developed and maintained comprehensive design systems used across 2
-            brand lines.
+             Developed over 100 user flows and collaborated with product managers to define and prioritize features, ensuring alignment with user needs and business objectives.
           </>,
+          <>
+            Created over 20 competitive analysis and customer ratings studies.
+          </>,
+          <>
+            Built and maintained design systems for two brand lines (Moen and MasterLock), enhancing brand language, consistency, and scalability.
+          </>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -162,12 +158,10 @@ const about = {
             per class, resulting in 22 online portfolios.
           </>,
           <>
-            Lectured UX syllabus, leading design critiques, providing feedback,
-            and creating a culture of trust and inclusion.
+            Refined, updated, and lectured UX/UI and frontend curriculum. Led design critiques and created a culture of trust and inclusion.
           </>,
           <>
-            Led the class and providing career guidance influencing over 35% job
-            placement during 1.5 year period.
+            Mentored 22 students throughout the job preparation process, contributing to over 20% job placement during a 1.5-year period.
           </>,
         ],
         images: [
@@ -279,9 +273,11 @@ const about = {
         timeframe: "2015 - 2017",
         role: "Web and Graphic Designer",
         achievements: [
-          <>Designed 8 web user interfaces and style guides.</>,
+          <>Responsible for visual design, conceptualization, and development of marketing materials for RPM's corporate
+          websites, events, online campaigns, and digital products.
+          </>,
           <>
-            Developed 3 websites for DayGlo color company, DAP and AD Protection
+            Designed 8 web user interfaces and style guides for brands like DayGlo color company, DAP and AD Protection
             Systems.
           </>,
           <>
@@ -289,6 +285,10 @@ const about = {
             synchronized sound for 3, two minute long animated videos for DayGlo
             color company.
           </>,
+          <>
+            Conducted user research with Google Analytics, presenting insights to stakeholders and using them to refine UI
+            designs and UX flows.
+          </>
         ],
         images: [
           {
@@ -313,12 +313,12 @@ const about = {
     institutions: [
       {
         name: "Cuyahoga Community College",
-        description: <>Studied visual communications and design.</>,
+        description: <>Associate’s Degree in Visual Communication and Design</>,
       },
       {
         name: "University of J.J.Strossmayer",
         description: (
-          <>Studied law and graduated with the Law degree in civil law.</>
+          <>Masters’s Degree in Legal Studies</>
         ),
       },
     ],
@@ -384,6 +384,11 @@ const gallery = {
   images: [
     {
       src: "/images/gallery/backyard-work.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/workstation.jpg",
       alt: "image",
       orientation: "horizontal",
     },
