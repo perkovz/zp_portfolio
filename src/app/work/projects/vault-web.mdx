@@ -28,8 +28,8 @@ As a single designer embedded into the world-class development team, I was taske
 Through customer feedback, user research, iterative design, and collaboration with developers, I focused on three critical updates:
 
 1. **Lock Details UI Design Update** – Improving the usability of the lock details page.
-2. **Lock Updates, Schedules, and Billing Information** – Streamlining billing access and settings management.
-3. **Shared Access and Bulk Code Name Update** – Simplifying key management for admins.
+2. **Schedules and Billing Management** – Streamlining user schedules and billing management.
+3. **Shared Access and Bulk Code Name Update** – Enabling management of multiple users and locks at once.
 
 This case study showcases how these updates transformed the app into a more intuitive and efficient tool, supported by user feedback, testing insights, and visual assets.
 
@@ -43,7 +43,7 @@ This case study showcases how these updates transformed the app into a more intu
 
 ### Problem
 
-The lock details page, a central hub for viewing and managing individual locks, was a source of confusion. User testing revealed that many users expected to upgrade a lock directly from this page but couldn’t. For example, 7 out of 11 users in our usability assessment tried to initiate an upgrade from the lock details screen first, only to find no clear option. 
+The lock details page, a central hub for viewing and managing individual locks, was a source of confusion. Customer feedback revealed and user testing confirmed that many users expected to upgrade a lock directly from this page but couldn’t. For example, 7 out of 11 users in our usability assessment tried to initiate an upgrade from the lock details screen first, only to find no clear option. 
 
 ![Screenshots of original product details screens in tablet and mobile layout.](/images/projects/vault-web/details-process.png)
 
@@ -51,12 +51,12 @@ The lock details page, a central hub for viewing and managing individual locks, 
 
 ### Objective
 
-The goal was to redesign the lock details page to make it more intuitive, enabling users to easily upgrade locks and access key information without frustration.
+The goal was to redesign the lock details page to make it more intuitive and modern, enabling users to easily upgrade locks and access key information without frustration.
 
 <br />
 
 <img
-  src="/images/projects/vault-web/details-quote.png"
+  src="/images/projects/vault-web/quote-details.png"
   alt="User quote: It’s interesting you can see upgrades you have from the detail page, but you can’t upgrade from there."
   style={{ height: "auto", width: "100%" }}
 />
@@ -67,7 +67,7 @@ The goal was to redesign the lock details page to make it more intuitive, enabli
 
 ### Process
 
-1. **User Testing:** I conducted assessments of the existing lock details page to pinpoint usability issues, focusing on tasks like adding and upgrading locks.
+1. **User Testing:** I conducted assessments of the existing lock details page to pinpoint usability issues, focusing on tasks like adding codes and upgrading locks.
 2. **Feedback Collection:** Gathered insights from users, confirming the upgrade confusion as a primary pain point.
 3. **Design Iterations:** Created new interfaces with clear calls-to-action, such as an "Upgrade Lock" button, and reorganized the layout for better information flow.
 4. **Validation:** Tested these designs with users to ensure they addressed the identified issues.
@@ -79,33 +79,44 @@ The goal was to redesign the lock details page to make it more intuitive, enabli
 
 ### Solution
 
-The redesigned lock details page now features a prominent "Upgrade Lock" button, allowing users to initiate upgrades directly. The layout was streamlined to present lock information—such as status, schedules, and permissions—in a logical, skimmable format. Visuals like before-and-after screenshots (insert assets here) illustrate the transformation from a cluttered, confusing page to a clean, actionable interface.
+The redesigned lock details page now features a prominent "Upgrade Lock" button, allowing users to initiate upgrades directly. The layout was streamlined to present lock information—such as status, properties, and lock details in a logical, skimmable format. 
 
 ![Images of lock details page in read-only and edit modes.](/images/projects/vault-web/lock-details.jpg)
 
----
-
-### Benefits
-
-1. **Reduced Confusion:** Users no longer struggle to find upgrade options.
-2. **Increased Efficiency:** Direct access to key actions saves time.
-3. **Enhanced Satisfaction:** A clearer interface improves the overall user experience.
-
 ![A final image of lock details page.](/images/projects/vault-web/lock-details-final.jpg)
 
+---
+
+### Results
+
+1. **Reduced Confusion:** Users no longer struggle to find upgrade options.
+2. **Enhanced Satisfaction:** A clearer interface improves the overall user experience.
+
+![An image of heatmap over the product details page showing most of the heat around lock upgrade areas.](/images/projects/vault-web/lock-details-heatmap.png)
+
+Heatmap of the redesigned lock details page showing user interactions after adding the 'Upgrade Lock' button. Some future refinement is still needed to make a further distinction between 'upgrades' and 'updates'.
+
 <br />
 
 ---
 
 <br />
 
-## 2. Lock Updates, Schedules, and Billing Information
+## 2. Schedules and Billing Information
 
 ### Problem
 
-Admins faced two major challenges: accessing billing information and managing settings. They couldn’t easily find invoices or payment details, often searching in user details or device history, as noted in our usability assessment: "I was expecting invoices on the website." Meanwhile, the settings page—housing Bluetooth schedules and permissions—was plagued by poor information architecture and naming issues. For instance, users didn’t expect schedules under "user settings" due to the ambiguous term "user," and only 8 out of 11 completed permission changes, with comments like, "This app is complicated."
+Admins faced two major challenges: accessing billing information and managing settings. They struggled to find invoices or payment details, often searching in user details or device history. Meanwhile, the settings page—housing user schedules and permissions—was plagued by poor information architecture and neglected UI.
 
-![Sitemap with the main pages.](/images/projects/vault-web/sitemap.jpg)
+<br />
+
+<img
+  src="/images/projects/vault-web/quote-billing.png"
+  alt="User quote: I was expecting invoices on the website."
+  style={{ height: "auto", width: "100%" }}
+/>
+
+<br />
 
 ---
 
@@ -116,22 +127,19 @@ We aimed to:
 1. Create an "Upgrades and Billing" dashboard, accessible from the main navigation, for viewing upgrades and exporting invoices via Stripe.
 2. Redesign the settings page with a clear information architecture and improved UI for managing schedules and permissions.
 
+![Sitemap with the main pages.](/images/projects/vault-web/sitemap.jpg)
+
+Our main objectives required minor navigation changes.
+
 ---
 
-### Process
+### Usability Assessment
 
-**Usability Assessment:** Conducted 5 moderated interviews and 6 unmoderated sessions to evaluate user behavior across tasks like billing management and permission changes. Key findings included:
+I conducted 5 moderated interviews and 6 unmoderated sessions to evaluate user behavior across tasks like billing management and permission changes. Key findings included:
 - Users struggled to locate billing information, with 3 missing a small invoice icon.
 - Settings confusion stemmed from overlapping categories (e.g., Profile vs. User vs. Account settings).
 
----
-
-**Design Solutions**:
-
-- Developed a new dashboard consolidating upgrades and billing, integrated with Stripe for invoice exports.
-- Revamped the settings page, separating sections (e.g., profile, account, permissions) and using descriptive names.
-- Testing: Validated designs with users to ensure clarity and ease of use.
-- Implementation: Collaborated with developers to bring the dashboard and settings overhaul to life.
+![Billing report pages.](/images/projects/vault-web/biling-report.jpg)
 
 ---
 
@@ -144,21 +152,21 @@ We aimed to:
 
 ![Settings page in read-only mode.](/images/projects/vault-web/settings-read-only.png)
 
-![Settings page in edit mode.](/images/projects/vault-web/settings-edit.png)
-
-
 ---
 
-### Benefits
+### Results
+
 - **Billing Access:** Admins can now find and export invoices in seconds, reducing frustration.
 - **Settings Clarity:** Users manage schedules and permissions confidently, with fewer errors.
 - **Improved Usability:** Task completion rates improved post-redesign (assumed from design validation).
 
----
+![Settings page in edit mode.](/images/projects/vault-web/settings-edit.png)
 
 <br />
 
 ---
+
+<br />
 
 ## 3. Shared Access and Bulk Code Name Update
 
@@ -168,9 +176,13 @@ Admins managing multiple locks faced a tedious task: updating key names and code
 
 ![Image of a user flow within user testing.](/images/projects/vault-web/user-test.jpg)
 
+---
+
 ### Objective
 
 The goal was to implement a bulk update feature, allowing admins to modify names and codes for multiple keys simultaneously.
+
+---
 
 ### Process
 
@@ -191,7 +203,7 @@ The new bulk update feature enables admins to select multiple keys—primary or 
 
 ---
 
-### Benefits
+### Results
 
 - **Time Savings:** Updates that once took hours now take minutes.
 - **Efficiency:** Streamlined key management boosts productivity.
