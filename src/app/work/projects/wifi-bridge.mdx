@@ -23,7 +23,7 @@ team:
 
 # Overview
 
-Imagine managing padlocks in remote locations—warehouses, construction sites, or rental properties—where security is critical, but access is a logistical nightmare. You’re a facilities manager overseeing a remote warehouse. A contractor needs temporary access, but you’re miles away, and driving out to update a lock code isn’t an option. This was the reality for many Master Lock users—until we designed the Wi-Fi Bridge.
+Imagine managing padlocks in remote locations—warehouses, construction sites, or rental properties—where security is critical, but access is a logistical nightmare. You’re a facilities manager overseeing a remote warehouse. A contractor needs temporary access, but you’re miles away, and driving out to update a lock code isn’t an option. This was the reality for many Master Lock users—until we designed the WiFi Bridge.
 
 ![Wifi bridge.](/images/projects/wifi-bridge/bridge-cover.jpg)
 
@@ -56,7 +56,7 @@ Our team identified several key issues through research and customer feedback:
 
 1. **Remote Access Struggles**: Warehouses, construction sites, and rental properties often lack supervised access management, relying on manual processes that compromise security and efficiency.
 2. **Bluetooth Limitations**: While Bluetooth padlocks offered some advantages via the Vault Enterprise app, they lacked remote access and real-time notifications, requiring users to be within close range to manage them.
-3. **Battery Life Concerns**: Adding Wi-Fi directly to padlocks was impractical—locks in remote locations like telecommunication towers might sit unused for months, and constant connectivity would drain their batteries.
+3. **Battery Life Concerns**: Adding WiFi directly to padlocks was impractical—locks in remote locations like telecommunication towers might sit unused for months, and constant connectivity would drain their batteries.
 
 <img
   src="/images/projects/wifi-bridge/quote.png"
@@ -112,7 +112,7 @@ I kicked things off by leading weekly working sessions with design, product, and
 We mapped out user flows, debated trade-offs, and prioritized features, ensuring our designs were both user-friendly and technically feasible:
 
 - Provisioning the bridge and adding it to the system.
-- Connecting the bridge to Wi-Fi.
+- Connecting the bridge to WiFi.
 - Managing bridges, padlocks and access.
 - Receiving real-time notifications and history events management.
 - Troubleshooting network issues.
@@ -130,33 +130,55 @@ These flows became the backbone of our high-fidelity wireframes and prototypes, 
 ## Design Process: Crafting the Experience
 
 I created wireframes and prototypes for both mobile and web applicaitons, including the interface design and user flow with details for developers.
-I tested the prototypes with users and iterated on the design based on feedback, then presented those findings and designs to product and software management. Once apporved I supported developers throught the whole process.
+I tested the prototypes with users and iterated on the design based on feedback, then presented those findings and designs to product and software management. Once approved I supported developers throught the whole process.
+
+![Wireflow describing how to add bridge to the Enterprise app.](/images/projects/wifi-bridge/add-bridge-mobile.jpg)
+
+---
 
 <br />
 
 ### Bridge Configuration Setup
 
-A smooth Wi-Fi setup was essential. I designed an intuitive onboarding flow with step-by-step instructions and visual cues, making it easy for users to connect the bridge to their network. Guerrilla testing showed an average configuration time of under 2 minutes, a win for both novice and experienced users.
+A smooth WiFi setup was essential. I designed an intuitive onboarding flow with step-by-step instructions and visual cues, making it easy for users to connect the bridge to their network. Guerrilla testing showed an average configuration time of under 2 minutes, a win for both novice and experienced users.
 
-For the Master Lock Wi-Fi Bridge, I designed an onboarding process that guided users through connecting the bridge to their Wi-Fi network, ensuring a smooth experience on both mobile and web platforms.
-
-**Mobile**: I created an intuitive flow with step-by-step instructions and visual cues (like progress indicators), making it easy for users to set up the bridge using their smartphone.
+For the Master Lock WiFi Bridge, I designed an onboarding process that guided users through connecting the bridge to their WiFi network, ensuring a smooth experience on both mobile and web platforms.
 
 ![Full wifi bridge mobile configuration wireflow.](/images/projects/wifi-bridge/configuration-setup-mobile.jpg)
 
-![Wireflow describing how to add bridge to the Enterprise app.](/images/projects/wifi-bridge/add-bridge-mobile.jpg)
+---
 
 <br />
 
-**Web**: On the web platform, I adapted the flow to leverage the larger screen, adding interactive tooltips and a detailed status bar to enhance the experience for desktop users.
+#### Mobile
 
-![Screenshots of the bridge setup screens in the Enterprise web app.](/images/projects/wifi-bridge/setup-web.jpg)
+I created an intuitive flow with step-by-step instructions and visual cues (like progress indicators), making it easy for users to set up the bridge using their smartphone.
+
+![High-fidelity mockups of WiFi bridge setup.](/images/projects/wifi-bridge/setup.jpg)
+
+![High-fidelity mockups of WiFi bridge connection and success screens.](/images/projects/wifi-bridge/success.jpg)
+
+---
+
+<br />
+
+#### Web
+
+On the web platform, I adapted the existing flow and page structure creating WiFi bridges tab and using add-new-lock modal functionality.
+
+![Screenshots of the bridge setup screens in the Enterprise web app.](/images/projects/wifi-bridge/add-bridge-web1.jpg)
+
+![Screenshots of the bridge setup screens in the Enterprise web app.](/images/projects/wifi-bridge/add-bridge-web2.jpg)
+
+---
 
 This approach ensured consistency across platforms while tailoring the design to each device’s strengths. For example, mobile users could quickly scan a QR code to start the process, while web users had a form with auto-fill options—both leading to the same seamless outcome.
 
+<br />
+
 <img
   src="/images/projects/wifi-bridge/quote-time-to-set.png"
-  alt="User quote: Users were able to set up the Wi-Fi Bridge in under 2 minutes (in the mocked user test), compared to an average of 4 minutes for competitors products."
+  alt="User quote: Users were able to set up the WiFi Bridge in under 2 minutes (in the mocked user test), compared to an average of 4 minutes for competitors products."
   style={{ height: "auto", width: "100%" }}
 />
 
@@ -166,32 +188,47 @@ This approach ensured consistency across platforms while tailoring the design to
 
 ### WiFi Status and Connection Strength
 
-Connectivity hiccups were bound to happen, so I designed a “Connection Health” dashboard to give users real-time visibility and control. This feature displayed Wi-Fi strength and device status with clear, actionable error messages and troubleshooting steps—think “Weak Signal: Move closer to router.”
+Connectivity hiccups were bound to happen, so I designed a “Connection Test” flow to give users real-time visibility and control. This feature displayed WiFi strength and device status with clear, actionable error messages and detailed troubleshooting steps.
 
-**Mobile**: I crafted a compact dashboard with bold icons (e.g., green check for “Connected,” red alert for “Disconnected”) and a tap-to-reveal troubleshooting guide, perfect for on-the-go fixes.
+#### Mobile
+
+I crafted a compact dashboard with bold titles, clear descriptions animated states and a troubleshooting guide, perfect for on-the-go fixes.
 
 ![Wireflow describing how to check bridge wifi status.](/images/projects/wifi-bridge/wifi-status.jpg)
 
+---
+
 <br />
 
-**Web**: For desktop users, I expanded the dashboard into a detailed view with a signal strength graph and hoverable tooltips, leveraging the larger screen to offer deeper insights without clutter.
+#### Web
+
+For desktop users, I expanded the dashboard into a detailed view with a signal strength graph and hoverable tooltips, leveraging the larger screen to offer deeper insights without clutter.
+
 This dual approach ensured consistency while playing to each platform’s strengths—quick fixes on mobile, detailed diagnostics on web.
 
 ![Wireflow describing how to check bridge wifi status in the web app with details for developers.](/images/projects/wifi-bridge/wifi-status-web.jpg)
 
 ---
 
+<br />
+
 ### Managing Bridges, Padlocks and Access
 
 Property owners needed more than just connectivity—they craved real-time oversight and control over their locks, even from miles away. I designed the “Bridge Details” feature to deliver that power, enabling automatic updates (like lock settings or event history) whenever a lock was woken up, no phone required. It also allowed remote tweaks to configurations, security patches, and temporary access codes for users like contractors—all without stepping on-site.
 
-**Mobile**: I created a “Bridge Details” screen with a clean overview of the most important features including location and connectivity, perfect for busy operators and provisioners on the move.
+#### Mobile
+
+I created a “Bridge Details” screen with a clean overview of the most important features including location and connectivity, perfect for busy operators and provisioners on the move.
 
 ![Images of mobile bridge details screens.](/images/projects/wifi-bridge/bridge-details-mobile.jpg)
 
+---
+
 <br />
 
-**Web**: On desktop, I built a robust control hub listing bridge status, firmware version, and access logs, with dropdowns for updating network settings or assigning temporary codes, ideal for detailed management tasks.
+#### Web
+
+On desktop, I built a robust control hub listing bridge status, firmware version, and access logs, with dropdowns for updating network settings or assigning temporary codes, ideal for detailed management tasks.
 
 ![Images of web bridge details screens.](/images/projects/wifi-bridge/bridge-details-web.jpg)
 
@@ -201,25 +238,9 @@ This unified design bridged the gap between real-time monitoring and remote admi
 
 ### Notifications and Events History
 
-Extending Wi-Fi to Locks and Ensuring a Strong Connection with the locks on the account. This panel is also useful for monitoring device health and Wi-Fi strength through time.
+Extending WiFi to Locks and Ensuring a Strong Connection with the locks on the account. This panel is also useful for monitoring device health and WiFi strength through time.
 
-**Mobile**: I created a minimalist, read-only event history list with the option to add notes by each event for tracking purposes in the field.
-
-![Notifications hisotry web page.](/images/projects/wifi-bridge/history-mobile.jpg)
-
-<br />
-
-**Web**: For desktop, I designed a lock management panel listing all paired locks, each with a signal strength bar and clickable alerts, giving coordinators a full overview.
-
-![Images of web bridge details screens.](/images/projects/wifi-bridge/history-web.jpg)
-
----
-
-### Finding, Deleting or Re-Activating Bridges
-
-For the use cases where owner is oftentimes changing bridge location, such as realtors when selling different properties.
-
-![Finding the bridge in the desktop app.](/images/projects/wifi-bridge/finding-bridge.mp4)
+![Notifications hisotry web page.](/images/projects/wifi-bridge/history.jpg)
 
 <br />
 
@@ -229,20 +250,13 @@ For the use cases where owner is oftentimes changing bridge location, such as re
 
 ## Prototyping and Testing
 
-![Example of a prototype in Figma with connections between screens.](/images/projects/wifi-bridge/prototyping-and-testing.png)
-
-![Screenshots of users tests from User Testing app displayed in a grid.](/images/projects/wifi-bridge/test-examples.jpg)
-
-
 I conducted usability testing throughout the whole process, usually once a week, before the design review. As a part of the process, I discovered many other areas of improvement, confusion and frustration and iterated on the design to improve usability of the related features without extending the timeline or development resources.
 
-<br />
+![Example of a prototype in Figma with connections between screens.](/images/projects/wifi-bridge/prototyping-and-testing.png)
 
-<img
-  src="/images/projects/wifi-bridge/quote-user-satisfaction.png"
-  alt="User quote: Users expressed high satisfaction with the design, citing ease of use and smooth setup as key factors."
-  style={{ height: "auto", width: "100%" }}
-/>
+![Finding the bridge in the desktop app.](/images/projects/wifi-bridge/finding-bridge.mp4)
+
+![Screenshots of users tests from User Testing app displayed in a grid.](/images/projects/wifi-bridge/test-examples.jpg)
 
 <br />
 
@@ -256,13 +270,19 @@ Beyond the bridge itself, I saw an opportunity to elevate Master Lock’s broade
 
 ![Snippets of the styleguide.](/images/projects/wifi-bridge/styleguide.jpg)
 
-**Mobile**: For iOS and Android, we leveraged native elements where possible, while I built the custom components from scratch to align the functionality with the bridge’s needs.
+#### Mobile
+
+For iOS and Android, we leveraged native elements where possible, while I built the custom components from scratch to align the functionality with the bridge’s needs.
 
 ![Snippets of the mobile design  system.](/images/projects/wifi-bridge/components-mobile.jpg)
 
+---
+
 <br />
 
-**Web**: I built a fresh component library from scratch, ensuring consistency across interfaces.
+#### Web
+
+I built a fresh component library from scratch, ensuring consistency across interfaces.
 
 ![Snippets of the web design  system.](/images/projects/wifi-bridge/components-web.jpg)
 
@@ -280,6 +300,16 @@ Though the project didn’t launch due to the changing priorities, it earned pra
 - **Collaboration**: Partnering with engineering and product teams aligned design with technical feasibility.
 - **Strategic Thinking**: Updating the design system added long-term value beyond the immediate project.
 
+---
+
+<br />
+
+<img
+  src="/images/projects/wifi-bridge/quote-user-satisfaction.png"
+  alt="User quote: Users expressed high satisfaction with the design, citing ease of use and smooth setup as key factors."
+  style={{ height: "auto", width: "100%" }}
+/>
+
 <br />
 
 ---
@@ -288,4 +318,4 @@ Though the project didn’t launch due to the changing priorities, it earned pra
 
 ## Conclusion
 
-The Master Lock Wi-Fi Bridge project was a complex but rewarding challenge. By blending user research, iterative design, and cross-functional collaboration, we crafted a solution that addressed real-world problems with elegance and efficiency. Though it didn’t reach the market, the insights gained and the design system improvements have strengthened my approach to UX. I’m eager to apply these skills to future projects, creating impactful experiences that solve problems and delight users.
+The Master Lock WiFi Bridge project was a complex but rewarding challenge. By blending user research, iterative design, and cross-functional collaboration, we crafted a solution that addressed real-world problems with elegance and efficiency. Though it didn’t reach the market, the insights gained and the design system improvements have strengthened my approach to UX. I’m eager to apply these skills to future projects, creating impactful experiences that solve problems and delight users.
