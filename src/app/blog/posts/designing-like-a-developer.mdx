@@ -1,15 +1,20 @@
 ---
-title: "Component driven design in 5 steps 🚀"
-publishedAt: "2024-03-05"
-image: "/images/blog/color-library.jpg"
+title: "Designing Like a Developer"
+publishedAt: "2025-03-02"
+image: "/images/blog/component-architecture.png"
 summary: "Component architecture in Figma. How to structure Figma components developers will love."
 tag: "Design Systems"
 ---
 
+![Figma slide with the component architecture.](/images/blog/component-architecture.png)
+
+---
+
 Great front-end development starts with great design. How to structure Figma components developers will love.
 
-No time to read? Here is the summary:
+---
 
+No time to read? Here is the summary:
 - Front-end developers use pre-processors that enable them to reuse their code. When designers follow the same patterns and reuse their styles, it's easier to transform them into code and keep the codebase lean.
 - Set up your patterns and style libraries first. Then take advantage of Figma's auto layout and nesting features to ensure consistency.
 - To design a component in the same way it will be developed, start with the master component.
@@ -18,7 +23,9 @@ No time to read? Here is the summary:
 
 Before we begin, I want to disclaim that the examples I'm going to write about are not the only nor the best methods of organizing design files or writing code in a component-driven way. The best structure will be decided base on circumstances, needs, and personal preferences.
 
-## Component driven design.
+---
+
+## Designing like a developer
 
 Front-end developers have superpowers. One of them is to keep the stylesheets organized, maintainable, and lean. That job got a lot easier since the arrival of pre-processors like SCSS and LESS. Repetition and lack of readability became less common. Unfortunately, other problems emerged. Somehow our stylesheets kept growing, and lines of unused code got out of control. It was not always the FED's fault.
 
@@ -28,7 +35,9 @@ Meantime, the designer will create something new based on the latest business re
 
 The more the system grows more important component-driven design becomes. It is a system where front-end development starts with the design and where every new element is unique or based on its parent. There is a clear hierarchy between components. A developer can see the bigger picture, and the designer sets up the path for development. The result is resolved problem of style inheritance and bloated stylesheets even before opening a code editor.
 
-## How to keep consistency while scaling? Create your patterns and style libraries first.
+---
+
+## How to keep consistency while scaling? Create your patterns and style libraries first
 
 Before starting any work on the component architecture, we should define our patterns.
 
@@ -40,7 +49,9 @@ Once we add patterns to our local style library in the Figma file, they will ser
 
 There are two more things. Make sure to understand Figma's auto layout and nesting features before starting your work. Working with them is almost like building UI with code. Auto-layout makes it possible to control spacing, and the behavior of the component is Figma like it is an HTML element in the browser. Nesting a layout frame is much like nesting tags in HTML.
 
-## Master components. A new way of designing like a developer.
+---
+
+## Master components
 
 To set yourself for success and design a component in the same way that will be developed, start with the master. The master component is a template that controls all other elements made from it. That means thinking in advance how many variations of this element we will have and which styles we will reuse.
 
@@ -72,6 +83,8 @@ Easy enough! Since the designer already thought this through, I know I will exte
 
 With that, we finished the most critical step. We know how many master components we need and which CSS properties we need to share. Let's move on.
 
+---
+
 ## Creating modifiers and states
 
 Modifiers are nothing more than versions of the master component.
@@ -90,7 +103,9 @@ Things change. Our buttons will change. When that happens, we will have a couple
 
 To make a change in the CSS file, we would follow the same pattern. Updating the main placeholder class will update all the elements. Updating an element will update its states, and so on.
 
-## The mirroring effect: Design styles == front-end code.
+---
+
+## The mirroring effect: Design styles == front-end code
 
 When components are using styles defined in local and global asset libraries, they are naturally using predefined colors, typography, and effects. Styles that are not in the libraries will be stored in the master components and extended to their modified versions. Modified versions will have their own set of unique styles, and the same is applied to their states.
 
@@ -132,8 +147,8 @@ Finally, our SCSS code could look something like this:
 }
 ```
 
+---
+
 ## Conclusion
 
 As mentioned at the beginning of this article, the best way to structure your components will depend on your environment, front-end architecture, and design habits. It's always a good idea, before jumping into design, to start collaborating early and talk about different solutions with your team.
-
-Let me know what you think and how you do it. I would love to get feedback and improve our process where possible. Thanks!
