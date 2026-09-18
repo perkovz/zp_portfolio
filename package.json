@@ -38,5 +38,8 @@
     "postcss-custom-media": "^10.0.7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "js-yaml": "3.15.2"
   }
 }
