@@ -12,6 +12,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    localPatterns: [{ pathname: "/images/**" }],
+  },
 };
 
 export default withMDX(nextConfig);

@@ -15,9 +15,11 @@ interface WorkParams {
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts
+    .filter((post) => post.slug !== "fairway-plus")
+    .map((post) => ({
+      slug: post.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: WorkParams) {

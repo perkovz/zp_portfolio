@@ -114,7 +114,14 @@ const about = {
             Designed Propello flows across Softgoods, Price Review, POS, Customers, Accounts Receivable, and Product management — the daily work of independent retailers, not just the happy path at checkout.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/projects/fairway/fairway-plus-hammers-hero-16x9.mp4",
+            alt: "Fairway+ hammers click-through: ask, aisle and price, then product detail.",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Fortune Brands Innovations",
