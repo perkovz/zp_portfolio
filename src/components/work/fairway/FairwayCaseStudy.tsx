@@ -1,4 +1,5 @@
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
+import { HeroVideo } from "./HeroVideo";
 import {
   decisions,
   execSummary,
@@ -83,6 +84,8 @@ export function FairwayCaseStudy() {
           <Tag size="m" variant="brand" label="UX/UI" />
         </Flex>
       </Column>
+
+      <HeroVideo />
 
       <Column id="overview" gap="l" paddingY="l">
         <SectionLabel n="01 — Summary" title="Overview" />
