@@ -55,9 +55,9 @@ const home = {
   headline: <>Full-stack Product Designer</>,
   subline: (
     <>
-      I'm Zvonimir, a Product designer at{" "}
-      <InlineCode>FORTUNE BRANDS INNOVATIONS</InlineCode> where I craft
-      intuitive user experiences for connected products.
+      I'm Zvonimir, a Senior Product designer at{" "}
+      <InlineCode>EPICOR SOFTWARE</InlineCode> where I craft
+      intuitive user experiences for Retail products.
     </>
   ),
 };
@@ -94,8 +94,31 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
+        company: "Epicor Software",
+        timeframe: "Apr 2025 – Present",
+        role: "Senior Product Designer",
+        achievements: [
+          <>
+            Design for Retail Operations, Inventory &amp; Commerce: Epicor&apos;s flagship Propello and Decor products.
+          </>,
+          <>
+            Designed Epicor Fairway+, an AI assistant for store clerks now on Google Play. Voice in and voice out, plain-language questions, live inventory and solutions.
+          </>,
+          <>
+            Designed core Decor Fusion Mobile flows, including inventory transfer, barcode scanning, filtering, physical inventory, invoice detail, customer CRM, and purchase ordering for paint and decorating retailers on the floor or in the warehouse.
+          </>,
+          <>
+            Designed the Decor Contractor App, so contractors can deal with the store on their own time: check invoices, pay, and order product without a phone call to the counter.
+          </>,
+          <>
+            Designed Propello flows across Softgoods, Price Review, POS, Customers, Accounts Receivable, and Product management — the daily work of independent retailers, not just the happy path at checkout.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Fortune Brands Innovations",
-        timeframe: "2022 - Present",
+        timeframe: "2022 - 2024",
         role: "Product Designer",
         achievements: [
           <>
