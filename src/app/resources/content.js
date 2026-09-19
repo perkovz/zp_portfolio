@@ -99,25 +99,19 @@ const about = {
         role: "Senior Product Designer",
         achievements: [
           <>
-            Design for Retail Operations, Inventory &amp; Commerce — Epicor&apos;s flagship Propello and Decor products, and the mobile and AI surfaces that sit on the store floor.
+            Design for Retail Operations, Inventory &amp; Commerce: Epicor&apos;s flagship Propello and Decor products.
           </>,
           <>
-            Designed Epicor Fairway+, an AI assistant for store clerks now on Google Play. Voice in and voice out, plain-language questions, live inventory — so associates get answers on the floor instead of digging through screens.
+            Designed Epicor Fairway+, an AI assistant for store clerks now on Google Play. Voice in and voice out, plain-language questions, live inventory and solutions.
           </>,
           <>
-            Extended Fairway+ into project help: a clerk who isn&apos;t the specialist can still find the right product, check price and stock across locations, start a quote in the aisle, or hand the mic and camera to Prism.
-          </>,
-          <>
-            Designed core Decor Fusion Mobile flows — Play Store — including inventory transfer, barcode scanning, filtering, physical inventory, invoice detail, customer CRM, and purchase ordering for paint and decorating retailers on the floor or in the warehouse.
+            Designed core Decor Fusion Mobile flows, including inventory transfer, barcode scanning, filtering, physical inventory, invoice detail, customer CRM, and purchase ordering for paint and decorating retailers on the floor or in the warehouse.
           </>,
           <>
             Designed the Decor Contractor App, so contractors can deal with the store on their own time: check invoices, pay, and order product without a phone call to the counter.
           </>,
           <>
             Designed Propello flows across Softgoods, Price Review, POS, Customers, Accounts Receivable, and Product management — the daily work of independent retailers, not just the happy path at checkout.
-          </>,
-          <>
-            Through-line across Fairway+, Decor, and Propello: take knowledge that used to live in a specialist&apos;s head or a back-office terminal and put it in the hand of the person standing next to the customer.
           </>,
         ],
         images: [],
