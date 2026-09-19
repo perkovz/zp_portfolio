@@ -69,13 +69,13 @@ export function FairwayCaseStudy() {
 
       <Column gap="m">
         <Text variant="label-default-s" onBackground="neutral-weak">
-          Zvonimir Perkovic · Case study · 2025–2026
+          Zvonimir Perkovic · Case study · March 2026
         </Text>
         <Heading as="h1" variant="display-strong-l">
           Fairway+
         </Heading>
         <Text variant="heading-default-l" onBackground="neutral-weak">
-          AI associate assistant for in-store retail.
+          AI assistant for retail associates.
         </Text>
         <Flex gap="8" wrap>
           <Tag size="m" variant="neutral" label="Epicor" />
@@ -161,9 +161,6 @@ export function FairwayCaseStudy() {
 
       <Column id="flows" gap="xl" paddingY="l">
         <SectionLabel n="04 — Flows" title="Six surfaces, one thread." />
-        <Text variant="body-default-l" onBackground="neutral-weak">
-          Captured from the shipped build. Store label “Ace Ohio” is the test instance.
-        </Text>
         {flowSections.map((flow) => (
           <Column key={flow.id} id={flow.id} gap="l">
             <Column gap="8" maxWidth="s">
