@@ -1,8 +1,7 @@
 import { getPosts } from "@/app/utils/utils";
 import { Column } from "@/once-ui/components";
 import { SideProjects } from "@/components/projects/Projects";
-import { baseURL } from "@/app/resources";
-import { person, projects } from "@/app/resources/content";
+import { baseURL, person, projects } from "@/app/resources";
 
 export async function generateMetadata() {
   const title = projects.title;
