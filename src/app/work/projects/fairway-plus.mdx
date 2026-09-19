@@ -1,0 +1,157 @@
+---
+title: "Fairway+: An AI associate for the aisle"
+publishedAt: "2026-09-01"
+summary: "An in-store AI assistant for Ace Hardware associates — designed at Epicor so a vague floor question returns aisle, price, and stock before the customer walks away."
+images:
+  - "/images/projects/fairway/cover.png"
+
+team:
+  - name: "Zvonimir Perkovic"
+    role: "Product Designer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/zperkovi"
+---
+
+**My Role:** UX/UI, end to end <br />
+**Timeline:** Shipped 2025–2026 <br />
+**Platforms:** iOS and Android (Epicor Fairway+)
+
+---
+
+## Overview
+
+Fairway+ is an AI associate assistant for in-store retail, built at Epicor with Ace Hardware as lead customer. A floor associate gets stopped mid-aisle with a half-remembered product question, and needs an answer — price, aisle, availability — before the customer walks away.
+
+The assistant inside the app is **Prism**, Epicor’s proprietary AI. The two names are deliberate: Fairway+ is the product an associate installs and logs into; Prism is the intelligence they talk to, and it also powers other Epicor surfaces.
+
+I owned UX and UI end to end: the conversational model, the answer hierarchy inside a chat bubble, disambiguation, comparison in-thread, follow-up for related SKUs, and the detail surface underneath it.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/splash.png" alt="Welcome to Prism splash" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/home-ready.png" alt="Ready to ask" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/one-product.png" alt="One hammer in stock with product card" style={{ width: "180px", height: "auto" }} />
+</div>
+
+---
+
+## The problem
+
+Three constraints from the floor, not the mock:
+
+1. **The question is vague by nature.** Associates repeat what a customer said, not what a catalog indexes: “the black deck screws, the long ones.” A search box punishes that. A conversation absorbs it.
+2. **The environment is hostile to reading.** Noise, one free hand, a customer standing there waiting. Any answer that requires scanning a results page has already lost. The first line has to carry the payload.
+3. **Wrong answers cost more than slow ones.** Sending someone to the wrong aisle burns trust twice — with the customer and with the associate who stops using the tool. Ambiguity had to be surfaced, not silently resolved.
+
+---
+
+## Decisions
+
+### Chat as the operating system
+
+Every task — lookup, compare, stock check, detail — resolves in one thread instead of separate tabs. One place to return to, one history to scroll, no mode switching while holding a box of screws.
+
+### Answer in the bubble
+
+The response leads with the two facts an associate is actually being asked for: aisle and price. Specs, alternates, and imagery sit below, reachable but never in the way of the answer.
+
+### Disambiguate, don’t dump
+
+When a query maps to multiple SKUs, Prism asks one clarifying question with a small set of distinguishable options. A 40-row result set is a failure state disguised as thoroughness.
+
+### Compare inside the thread
+
+Comparison renders as a compact table in the conversation, scoped to the attributes that differ. The associate keeps their place and can keep talking to it.
+
+### Deep detail when needed
+
+A full product surface — carousel, specs, aisle — is one tap from the bubble. Depth exists for the 20% of questions that need it.
+
+---
+
+## Onboarding
+
+Enterprise setup, not consumer signup. The associate’s device is configured against a store instance before anyone logs in, so first run is three short steps and out.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/signup.png" alt="Server configuration with tenant ID and URLs" style={{ width: "200px", height: "auto" }} />
+  <img src="/images/projects/fairway/login.png" alt="Login with store picker" style={{ width: "200px", height: "auto" }} />
+</div>
+
+---
+
+## Home
+
+A splash that names the assistant, then a greeting and a single input. Home is not a dashboard — it is a prompt with as little standing between the associate and their first question as possible.
+
+The splash reads “Welcome to Prism” by design, so the associate learns the name of the thing answering them — not the name of the icon they tapped.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/splash.png" alt="Welcome to Prism" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/home-ready.png" alt="Greeting and composer" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/home-faucet.png" alt="First faucet reply" style={{ width: "180px", height: "auto" }} />
+</div>
+
+---
+
+## Message
+
+Text is the primary path, with voice as an equal-access alternate, sized for one thumb while the other hand holds product. Type-first and TTS-off were unglamorous calls that came from picturing a noisy aisle.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/voice.png" alt="Voice compose, mic armed" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/text.png" alt="Text compose, send armed" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/message.png" alt="Sent query with Prism thinking" style={{ width: "180px", height: "auto" }} />
+</div>
+
+---
+
+## Response
+
+A vague ask goes to thinking, then an aisle-and-price answer in the thread — with a product card underneath, and compare still in the conversation when the associate needs it.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/response-loading.png" alt="Prism thinking on a faucet ask" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/one-product.png" alt="One Milwaukee hammer in stock with expanded card" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/compare.png" alt="In-thread hammer comparison table" style={{ width: "180px", height: "auto" }} />
+</div>
+
+---
+
+## Follow-up
+
+When the ask is still broad, Prism offers related SKUs in the thread — clarifying questions, a chip to pick a family, a refine sheet for material and length, then a short list of matching sets.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/followup.png" alt="Clarifying questions and related SKU chips" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/followup-drawer.png" alt="Refine results sheet for material and length" style={{ width: "180px", height: "auto" }} />
+  <img src="/images/projects/fairway/followup-products.png" alt="Three related reciprocating blade sets" style={{ width: "180px", height: "auto" }} />
+</div>
+
+---
+
+## Details
+
+The layer underneath the answer. Full imagery, item and UPC, aisle, and the spec sheet — for the questions a single line cannot close.
+
+<div style={{ display: "flex", justifyContent: "center", margin: "24px 0" }}>
+  <img src="/images/projects/fairway/details.png" alt="Product details for Milwaukee framing hammer" style={{ width: "240px", height: "auto" }} />
+</div>
+
+---
+
+## Outcome
+
+- **Shipped** on Google Play and the App Store as Epicor Fairway+.
+- **Lead customer:** Ace Hardware, onboarded with access to the shipped build.
+- **Distribution** is enterprise and limited — a public Play listing with 1+ downloads is expected for a gated rollout, not a usage signal.
+- **Adoption** data is still pending. Store and associate usage counts are not yet reported.
+
+---
+
+## Reflections
+
+**The naming question was a systems question.** Two names in one app reads as a bug until you see the surface map. Prism is a platform capability; Fairway+ is one of its clients. I designed the moment of introduction so the distinction teaches itself rather than arguing for a rename that would have cost Epicor its cross-product identity.
+
+**I designed the answer, not the screen.** Most of the work was deciding what belongs in the first two lines of a bubble. Once aisle-then-price was settled, layout, disambiguation, and the detail layer all fell out of it.
+
+**What I would pressure-test next.** Adoption data is still pending, so the honest open question is whether associates return to the thread after their first answer. That is the metric I would instrument first: repeat questions per shift, not downloads.
