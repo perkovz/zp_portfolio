@@ -1,4 +1,3 @@
-// import a pre-defined template for config and content options
 export {
   routes,
   protectedRoutes,
@@ -16,6 +15,6 @@ export {
   about,
   blog,
   work,
-  projects,
   gallery,
 } from "@/app/resources/content";
+export { projects } from "@/app/resources/content-projects";
