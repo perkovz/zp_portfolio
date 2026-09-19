@@ -182,12 +182,7 @@ export function FairwayCaseStudy() {
                 {flow.summary}
               </Text>
             </Column>
-            <Grid
-              columns={flow.screens.length === 1 ? "2" : "3"}
-              tabletColumns={flow.screens.length === 1 ? "2" : "3"}
-              mobileColumns="1"
-              gap="l"
-            >
+            <Grid columns="3" tabletColumns="3" mobileColumns="1" gap="l">
               {flow.screens.map((screen, i) => (
                 <Phone key={screen.label} {...screen} index={i} />
               ))}
