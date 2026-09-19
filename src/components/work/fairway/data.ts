@@ -1,12 +1,3 @@
-export const navSections = [
-  { id: "overview", label: "Overview" },
-  { id: "problem", label: "Problem" },
-  { id: "decisions", label: "Decisions" },
-  { id: "flows", label: "Flows" },
-  { id: "outcomes", label: "Outcomes" },
-  { id: "reflection", label: "Reflection" },
-] as const;
-
 export const metaItems = [
   { label: "Role", value: "UX/UI", note: "Research & PM owned by others" },
   { label: "Platform", value: "iOS · Android", note: "Native app shell" },

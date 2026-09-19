@@ -1,5 +1,4 @@
 import { Button, Column, Flex, Grid, Heading, SmartImage, Tag, Text } from "@/once-ui/components";
-import { SectionNav } from "./SectionNav";
 import {
   decisions,
   execSummary,
@@ -84,8 +83,6 @@ export function FairwayCaseStudy() {
           <Tag size="m" variant="brand" label="UX/UI" />
         </Flex>
       </Column>
-
-      <SectionNav />
 
       <Column id="overview" gap="l" paddingY="l">
         <SectionLabel n="01 — Summary" title="Overview" />
