@@ -1,4 +1,4 @@
-import { Button, Column, Flex, Grid, Heading, SmartImage, Tag, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
 import {
   decisions,
   execSummary,
@@ -221,6 +221,20 @@ export function FairwayCaseStudy() {
             </Column>
           ))}
         </Grid>
+      </Column>
+
+      <Column gap="12" paddingY="xl" style={{ borderTop: "1px solid var(--neutral-alpha-medium)" }}>
+        <Text variant="label-default-s" onBackground="neutral-weak">
+          Next project
+        </Text>
+        <SmartLink href="/work/smart-shower">
+          <Heading as="h2" variant="heading-strong-l">
+            Prototyping an Advanced Shower GUI with Figma and Crank Storyboard
+          </Heading>
+        </SmartLink>
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          Research, design, prototyping, and testing of a flexible GUI using Crank Storyboard for an embedded shower system.
+        </Text>
       </Column>
     </Column>
   );
