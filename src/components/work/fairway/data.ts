@@ -82,10 +82,11 @@ export const flowSections = [
     number: "00",
     title: "Onboarding",
     summary:
-      "Enterprise setup, not consumer signup. The associate’s device is configured against a store instance before anyone logs in, so first run is two short steps and out.",
+      "Enterprise setup, not consumer signup. The associate’s device is configured against a store instance before anyone logs in, so first run is three short steps and out.",
     screens: [
       { label: "Server configuration", caption: "Tenant ID, server & service URL", state: "Config", image: shot("signup.png") },
       { label: "Login", caption: "Credentials and store picker", state: "Auth", image: shot("login.png") },
+      { label: "Welcome to Fairway+", caption: "Prism intro before the first ask", state: "First run", image: shot("welcome.png") },
     ],
   },
   {
@@ -143,7 +144,7 @@ export const flowSections = [
     summary:
       "The layer underneath the answer. Full imagery, item and UPC, aisle, and the spec sheet — for the questions a single line cannot close.",
     screens: [
-      { label: "Product detail", caption: "Carousel, aisle, features", state: "Detail", image: shot("details.png") },
+      { label: "Product detail", caption: "Carousel, aisle, features", state: "Detail", image: shot("product-detail.png") },
     ],
   },
 ];

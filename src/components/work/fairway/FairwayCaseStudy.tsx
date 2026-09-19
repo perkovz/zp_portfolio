@@ -1,4 +1,4 @@
-import { Button, Column, Flex, Grid, Heading, Tag, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, SmartImage, Tag, Text } from "@/once-ui/components";
 import { SectionNav } from "./SectionNav";
 import {
   decisions,
@@ -25,7 +25,15 @@ function Phone({
 }) {
   return (
     <Column gap="12" fillWidth>
-      <img src={image} alt={label} style={{ width: "100%", height: "auto", display: "block" }} />
+      <SmartImage
+        src={image}
+        alt={label}
+        aspectRatio="9 / 19"
+        objectFit="contain"
+        unoptimized
+        radius="l"
+        sizes="(max-width: 960px) 90vw, 280px"
+      />
       <Flex gap="8" vertical="center">
         <Text variant="label-default-s" onBackground="neutral-weak" style={{ fontVariantNumeric: "tabular-nums" }}>
           {String(index + 1).padStart(2, "0")}

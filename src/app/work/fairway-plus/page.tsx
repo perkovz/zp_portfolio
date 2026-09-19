@@ -7,7 +7,7 @@ const description =
   "An in-store AI assistant for Ace Hardware associates — designed at Epicor so a vague floor question returns aisle, price, and stock before the customer walks away.";
 
 export async function generateMetadata() {
-  const ogImage = `https://${baseURL}/images/projects/fairway/cover.png`;
+  const ogImage = `https://${baseURL}/images/projects/fairway/cover.jpg`;
   return {
     title,
     description,
@@ -40,7 +40,7 @@ export default function FairwayPlus() {
             headline: title,
             description,
             url: `https://${baseURL}/work/fairway-plus`,
-            image: `https://${baseURL}/images/projects/fairway/cover.png`,
+            image: `https://${baseURL}/images/projects/fairway/cover.jpg`,
             author: { "@type": "Person", name: person.name },
           }),
         }}
