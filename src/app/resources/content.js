@@ -55,9 +55,9 @@ const home = {
   headline: <>Full-stack Product Designer</>,
   subline: (
     <>
-      I'm Zvonimir, a Product designer at{" "}
-      <InlineCode>FORTUNE BRANDS INNOVATIONS</InlineCode> where I craft
-      intuitive user experiences for connected products.
+      I'm Zvonimir, a Senior Product designer at{" "}
+      <InlineCode>EPICOR SOFTWARE</InlineCode> where I craft
+      intuitive user experiences for Retail products.
     </>
   ),
 };
