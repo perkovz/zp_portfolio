@@ -221,25 +221,39 @@
   display: flex;
   width: min(340px, 48%);
   flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 10px;
 }
 
-.quiet {
+.step {
+  border: 1px solid #343a37;
+  border-radius: 16px;
+  background: rgb(16 18 17 / 0.72);
+  color: inherit;
+  overflow: hidden;
+  transition: background 420ms ease, border-color 420ms ease;
+}
+
+.stepOpen {
+  border-color: transparent;
+  background: #0f5139;
+}
+
+.stepHit {
   display: grid;
   grid-template-columns: 28px 1fr;
   gap: 10px;
   align-items: center;
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #343a37;
-  border-radius: 16px;
-  background: rgb(16 18 17 / 0.72);
+  border: 0;
+  background: transparent;
   color: inherit;
   text-align: left;
 }
 
-.quiet:focus-visible,
-.note:focus-visible,
+.stepHit:focus-visible,
 .noteAction:focus-visible {
   outline: 2px solid #7dcea8;
   outline-offset: 3px;
@@ -257,64 +271,63 @@
   font-weight: 650;
 }
 
-.quiet strong,
-.note strong {
+.stepOpen .num {
+  border-color: rgb(255 255 255 / 0.45);
+  color: #f4fff8;
+}
+
+.stepHit strong {
   display: block;
   color: #f4f7f6;
   font-size: 0.95rem;
   font-weight: 600;
 }
 
-.quiet span,
-.note p {
+.hint {
+  display: block;
   color: #aeb6b2;
   font-size: 0.82rem;
   line-height: 1.4;
 }
 
-.note {
-  margin-top: auto;
-  padding: 20px 20px 16px;
-  border: 0;
-  border-radius: 18px;
-  background: #0f5139;
+.stepOpen .hint {
+  color: #d5e6dc;
+}
+
+.expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 450ms ease;
+}
+
+.stepOpen .expand {
+  grid-template-rows: 1fr;
+}
+
+.expandInner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 16px 16px 52px;
+}
+
+.expandInner h3 {
+  margin: 2px 0 0;
   color: #f7f7f5;
-  text-align: left;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 220ms ease 80ms, transform 220ms ease 80ms;
-}
-
-.noteEntering {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.kicker {
-  margin: 0 0 12px;
-  color: #9ee0c0;
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 0.12em;
-}
-
-.note h3 {
-  margin: 0;
-  font-size: 1.65rem;
+  font-size: 1.45rem;
   font-weight: 600;
   letter-spacing: -0.04em;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
-.note p {
-  margin: 14px 0 0;
+.expandInner p {
+  margin: 12px 0 0;
   color: #d5e6dc;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   line-height: 1.45;
 }
 
 .noteAction {
-  margin-top: 18px;
+  margin-top: 16px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -382,10 +395,6 @@
     margin-top: 18px;
   }
 
-  .note {
-    margin-top: 4px;
-  }
-
   .hotspotActive::after,
   .leader {
     display: none;
@@ -395,16 +404,12 @@
 @media (prefers-reduced-motion: reduce) {
   .screen,
   .hotspot,
-  .note {
-    transition: opacity 120ms linear;
-    transform: none;
+  .expand,
+  .step {
+    transition: none;
   }
 
   .hotspotActive .dot {
     animation: none;
-  }
-
-  .noteEntering {
-    transform: none;
   }
 }

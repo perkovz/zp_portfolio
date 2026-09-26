@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import styles from "./guided-hero.module.css";
 
 type StepId = 0 | 1 | 2;
@@ -59,15 +59,8 @@ type GuidedHeroProps = {
 
 export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
   const [active, setActive] = useState<StepId>(0);
-  const [noteReady, setNoteReady] = useState(true);
   const labelId = useId();
   const step = STEPS[active];
-
-  useEffect(() => {
-    setNoteReady(false);
-    const frame = requestAnimationFrame(() => setNoteReady(true));
-    return () => cancelAnimationFrame(frame);
-  }, [active]);
 
   function activate(id: StepId) {
     setActive(id);
@@ -129,32 +122,39 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
           </div>
 
           <div className={styles.cards}>
-            {STEPS.filter((item) => item.id !== active).map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={styles.quiet}
-                onClick={() => activate(item.id)}
-              >
-                <span className={styles.num}>0{item.id + 1}</span>
-                <span>
-                  <strong>{item.label}</strong>
-                  <span>{item.hint}</span>
-                </span>
-              </button>
-            ))}
-            <div className={`${styles.note} ${noteReady ? "" : styles.noteEntering}`}>
-              <p className={styles.kicker}>{step.kicker}</p>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-              <button
-                type="button"
-                className={styles.noteAction}
-                onClick={() => activate(((active + 1) % 3) as StepId)}
-              >
-                {active === 2 ? "Restart the tour ↻" : "Next →"}
-              </button>
-            </div>
+            {STEPS.map((item) => {
+              const open = item.id === active;
+              return (
+                <article key={item.id} className={`${styles.step} ${open ? styles.stepOpen : ""}`}>
+                  <button
+                    type="button"
+                    className={styles.stepHit}
+                    aria-expanded={open}
+                    aria-current={open ? "step" : undefined}
+                    onClick={() => activate(item.id)}
+                  >
+                    <span className={styles.num}>0{item.id + 1}</span>
+                    <span>
+                      <strong>{item.label}</strong>
+                      <span className={styles.hint}>{item.hint}</span>
+                    </span>
+                  </button>
+                  <div className={styles.expand}>
+                    <div className={styles.expandInner}>
+                      <h3>{item.title}</h3>
+                      <p>{item.body}</p>
+                      <button
+                        type="button"
+                        className={styles.noteAction}
+                        onClick={() => activate(((item.id + 1) % 3) as StepId)}
+                      >
+                        {item.id === 2 ? "Restart the tour ↻" : "Next →"}
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
           <p className={styles.live} aria-live="polite">
