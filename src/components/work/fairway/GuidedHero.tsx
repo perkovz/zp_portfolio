@@ -12,10 +12,9 @@ type Step = {
   kicker: string;
   title: string;
   body: string;
-  action: string;
   image: string;
   alt: string;
-  spots: Record<StepId, { x: number; y: number }>;
+  spot: { x: number; y: number };
 };
 
 const STEPS: Step[] = [
@@ -26,14 +25,9 @@ const STEPS: Step[] = [
     kicker: "01 · Ask naturally",
     title: "Start with the customer’s words.",
     body: "Text, voice, camera, and barcode inputs meet the associate where the conversation already is.",
-    action: "Continue",
     image: "home-ready.png",
-    alt: "Fairway+ home, ready for a question, with text, voice, and barcode in the composer",
-    spots: {
-      0: { x: 58, y: 80 },
-      1: { x: 83.5, y: 64.4 },
-      2: { x: 91.5, y: 64.8 },
-    },
+    alt: "Fairway+ home, ready for a question, with the keyboard open",
+    spot: { x: 58, y: 80 },
   },
   {
     id: 1,
@@ -42,14 +36,9 @@ const STEPS: Step[] = [
     kicker: "02 · Refine intent",
     title: "Ask only what changes the answer.",
     body: "One useful follow-up narrows the search without turning the conversation into a form.",
-    action: "Continue",
     image: "followup.png",
     alt: "Fairway+ asking which saw blade, with one focused follow-up and suggestion chips",
-    spots: {
-      0: { x: 24, y: 68 },
-      1: { x: 38, y: 44 },
-      2: { x: 58, y: 68 },
-    },
+    spot: { x: 38, y: 44 },
   },
   {
     id: 2,
@@ -58,14 +47,9 @@ const STEPS: Step[] = [
     kicker: "03 · Ground the answer",
     title: "Evidence, then recommendation.",
     body: "Fit, availability, and product documentation stay visible so the associate can answer with confidence.",
-    action: "Restart tour",
     image: "one-product.png",
     alt: "One hammer in stock, with aisle, price, and the product card still visible",
-    spots: {
-      0: { x: 68, y: 18 },
-      1: { x: 36, y: 34 },
-      2: { x: 42, y: 58 },
-    },
+    spot: { x: 42, y: 58 },
   },
 ];
 
@@ -75,25 +59,18 @@ type GuidedHeroProps = {
 
 export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
   const [active, setActive] = useState<StepId>(0);
-  const [preview, setPreview] = useState<StepId>(0);
   const [noteReady, setNoteReady] = useState(true);
   const labelId = useId();
   const step = STEPS[active];
-  const shown = STEPS[preview];
 
   useEffect(() => {
     setNoteReady(false);
     const frame = requestAnimationFrame(() => setNoteReady(true));
     return () => cancelAnimationFrame(frame);
-  }, [preview]);
+  }, [active]);
 
   function activate(id: StepId) {
     setActive(id);
-    setPreview(id);
-  }
-
-  function reveal(id: StepId) {
-    setPreview(id);
   }
 
   return (
@@ -109,15 +86,11 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
           An AI sales assistant that turns a customer question into the right product, evidence, and next step.
         </p>
         <div className={styles.instructions}>
-          <p>Hover a marker to reveal the design decision.</p>
-          <p>Click to move through the product story →</p>
+          <p>Use Next, or pick a step, to move through the product story.</p>
         </div>
       </div>
 
-      <div
-        className={styles.stage}
-        onMouseLeave={() => setPreview(active)}
-      >
+      <div className={styles.stage}>
         <div className={styles.stageHeader}>
           <span>Live walkthrough · 0{active + 1} / 03</span>
           <div className={styles.progress} role="group" aria-label="Tour progress">
@@ -146,37 +119,21 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
                 />
               ))}
             </div>
-            {STEPS.map((item) => {
-              const spot = step.spots[item.id];
-              const isActive = item.id === preview;
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  className={`${styles.hotspot} ${isActive ? styles.hotspotActive : ""}`}
-                  style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
-                  aria-pressed={item.id === active}
-                  aria-label={`${item.label}. ${item.title}`}
-                  onMouseEnter={() => reveal(item.id)}
-                  onFocus={() => reveal(item.id)}
-                  onClick={() => activate(item.id)}
-                >
-                  <span className={styles.dot} aria-hidden="true">
-                    {item.id + 1}
-                  </span>
-                </button>
-              );
-            })}
+            <span
+              className={`${styles.hotspot} ${styles.hotspotActive}`}
+              style={{ left: `${step.spot.x}%`, top: `${step.spot.y}%` }}
+              aria-hidden="true"
+            >
+              <span className={styles.dot}>{active + 1}</span>
+            </span>
           </div>
 
           <div className={styles.cards}>
-            {STEPS.filter((item) => item.id !== preview).map((item) => (
+            {STEPS.filter((item) => item.id !== active).map((item) => (
               <button
                 key={item.id}
                 type="button"
                 className={styles.quiet}
-                onMouseEnter={() => reveal(item.id)}
-                onFocus={() => reveal(item.id)}
                 onClick={() => activate(item.id)}
               >
                 <span className={styles.num}>0{item.id + 1}</span>
@@ -187,15 +144,15 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
               </button>
             ))}
             <div className={`${styles.note} ${noteReady ? "" : styles.noteEntering}`}>
-              <p className={styles.kicker}>{shown.kicker}</p>
-              <h3>{shown.title}</h3>
-              <p>{shown.body}</p>
+              <p className={styles.kicker}>{step.kicker}</p>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
               <button
                 type="button"
                 className={styles.noteAction}
-                onClick={() => activate(((preview + 1) % 3) as StepId)}
+                onClick={() => activate(((active + 1) % 3) as StepId)}
               >
-                {shown.id === 2 ? "Restart the tour ↻" : "Click to continue →"}
+                {active === 2 ? "Restart the tour ↻" : "Next →"}
               </button>
             </div>
           </div>
