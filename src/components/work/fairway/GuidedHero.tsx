@@ -98,7 +98,7 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
       const root = body.getBoundingClientRect();
       const from = spot.getBoundingClientRect();
       const to = num.getBoundingClientRect();
-      const x1 = from.left + from.width / 2 - root.left;
+      const x1 = from.left + from.width / 2 - root.left + 12;
       const y1 = from.top + from.height / 2 - root.top;
       const x2 = to.left - root.left;
       const y2 = to.top + to.height / 2 - root.top;
@@ -106,16 +106,7 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
         setLine(null);
         return;
       }
-      const dx = x2 - x1;
-      const dy = y2 - y1;
-      const len = Math.hypot(dx, dy) || 1;
-      const rim = 14;
-      setLine({
-        x1: x1 + (dx / len) * rim,
-        y1: y1 + (dy / len) * rim,
-        x2,
-        y2,
-      });
+      setLine({ x1, y1, x2, y2 });
     };
 
     const started = performance.now();
