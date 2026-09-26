@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useLayoutEffect, useRef, useState } from "react";
 import styles from "./guided-hero.module.css";
 
 type StepId = 0 | 1 | 2;
@@ -59,12 +59,64 @@ type GuidedHeroProps = {
 
 export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
   const [active, setActive] = useState<StepId>(0);
+  const [line, setLine] = useState<{ x1: number; y1: number; x2: number; y2: number } | null>(null);
   const labelId = useId();
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const spotRef = useRef<HTMLSpanElement>(null);
+  const numRef = useRef<HTMLSpanElement>(null);
   const step = STEPS[active];
 
   function activate(id: StepId) {
     setActive(id);
   }
+
+  useLayoutEffect(() => {
+    const body = bodyRef.current;
+    const spot = spotRef.current;
+    const num = numRef.current;
+    if (!body || !spot || !num) return;
+
+    let frame = 0;
+    const measure = () => {
+      const root = body.getBoundingClientRect();
+      const from = spot.getBoundingClientRect();
+      const to = num.getBoundingClientRect();
+      const x1 = from.left + from.width / 2 - root.left;
+      const y1 = from.top + from.height / 2 - root.top;
+      const x2 = to.left - root.left;
+      const y2 = to.top + to.height / 2 - root.top;
+      if (x2 < x1 + 24) {
+        setLine(null);
+        return;
+      }
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+      const len = Math.hypot(dx, dy) || 1;
+      const rim = 14;
+      setLine({
+        x1: x1 + (dx / len) * rim,
+        y1: y1 + (dy / len) * rim,
+        x2,
+        y2,
+      });
+    };
+
+    const started = performance.now();
+    const tick = (now: number) => {
+      measure();
+      if (now - started < 520) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(body);
+    window.addEventListener("resize", measure);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [active]);
 
   return (
     <section className={styles.hero} aria-labelledby={labelId}>
@@ -99,7 +151,7 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
           </div>
         </div>
 
-        <div className={styles.stageBody}>
+        <div className={styles.stageBody} ref={bodyRef}>
           <div className={styles.phone}>
             <div className={styles.screenStack}>
               {STEPS.map((item) => (
@@ -113,6 +165,7 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
               ))}
             </div>
             <span
+              ref={spotRef}
               className={`${styles.hotspot} ${styles.hotspotActive}`}
               style={{ left: `${step.spot.x}%`, top: `${step.spot.y}%` }}
               aria-hidden="true"
@@ -133,7 +186,9 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
                     aria-current={open ? "step" : undefined}
                     onClick={() => activate(item.id)}
                   >
-                    <span className={styles.num}>0{item.id + 1}</span>
+                    <span className={styles.num} ref={open ? numRef : undefined}>
+                      0{item.id + 1}
+                    </span>
                     <span>
                       <strong>{item.label}</strong>
                       <span className={styles.hint}>{item.hint}</span>
@@ -156,6 +211,12 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
               );
             })}
           </div>
+
+          {line ? (
+            <svg className={styles.leader} aria-hidden="true">
+              <line x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} />
+            </svg>
+          ) : null}
 
           <p className={styles.live} aria-live="polite">
             Step {active + 1} of 3. {step.label}. {step.title}
