@@ -53,6 +53,23 @@ const STEPS: Step[] = [
   },
 ];
 
+function elbow(x1: number, y1: number, x2: number, y2: number) {
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  if (Math.abs(dy) < 10) return `M ${x1} ${y1} H ${x2}`;
+  const dir = dy > 0 ? 1 : -1;
+  const radius = Math.min(36, Math.abs(dx) * 0.42, Math.abs(dy) / 2);
+  const vx = Math.min(x1 + Math.max(radius + 12, dx * 0.38), x2 - radius - 8);
+  return [
+    `M ${x1} ${y1}`,
+    `H ${vx - radius}`,
+    `Q ${vx} ${y1} ${vx} ${y1 + dir * radius}`,
+    `V ${y2 - dir * radius}`,
+    `Q ${vx} ${y2} ${vx + radius} ${y2}`,
+    `H ${x2}`,
+  ].join(" ");
+}
+
 type GuidedHeroProps = {
   assetBase?: string;
 };
@@ -214,7 +231,7 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
 
           {line ? (
             <svg className={styles.leader} aria-hidden="true">
-              <line x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} />
+              <path d={elbow(line.x1, line.y1, line.x2, line.y2)} />
             </svg>
           ) : null}
 
