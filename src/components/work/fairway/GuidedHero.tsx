@@ -31,8 +31,8 @@ const STEPS: Step[] = [
     alt: "Fairway+ home, ready for a question, with text, voice, and barcode in the composer",
     spots: {
       0: { x: 58, y: 80 },
-      1: { x: 36, y: 80 },
-      2: { x: 22, y: 80 },
+      1: { x: 83.5, y: 64.4 },
+      2: { x: 91.5, y: 64.8 },
     },
   },
   {
