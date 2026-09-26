@@ -1,0 +1,410 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: end;
+  color: #f4f7f6;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  min-height: 640px;
+  padding-bottom: 8px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #7dcea8;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.headline {
+  margin: 28px 0 0;
+  max-width: 9ch;
+  color: #f7f7f5;
+  font-size: clamp(3.4rem, 5.6vw, 5.4rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.summary {
+  margin: 28px 0 0;
+  max-width: 34ch;
+  color: #c5cdc9;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.instructions {
+  margin-top: auto;
+  padding-top: 48px;
+  color: #8b9692;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.instructions p {
+  margin: 0;
+}
+
+.instructions p + p {
+  margin-top: 10px;
+}
+
+.stage {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  border: 1px solid #2a2f2c;
+  border-radius: 28px;
+  background: #101211;
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid #262b28;
+  color: #9aa39f;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.progress {
+  display: flex;
+  gap: 6px;
+}
+
+.progress button {
+  width: 28px;
+  height: 4px;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  background-clip: content-box;
+  background-color: #3a403d;
+}
+
+.progress button[aria-current="step"] {
+  width: 42px;
+  background-color: #3dbe86;
+}
+
+.progress button:focus-visible {
+  outline: 2px solid #7dcea8;
+  outline-offset: 3px;
+}
+
+.stageBody {
+  position: relative;
+  height: calc(100% - 49px);
+  min-height: 660px;
+}
+
+.phone {
+  position: absolute;
+  top: 22px;
+  left: 16px;
+  z-index: 2;
+  width: min(292px, 44%);
+  aspect-ratio: 9 / 19.4;
+}
+
+.screenStack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 36px;
+  background: #050505;
+  box-shadow: 0 30px 70px -36px rgb(0 0 0 / 0.9);
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  transform: scale(0.985);
+  transition: opacity 460ms ease, transform 460ms ease;
+}
+
+.screenActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hotspot {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  transition: left 450ms ease, top 450ms ease;
+}
+
+.dot {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1.5px solid rgb(255 255 255 / 0.72);
+  border-radius: 999px;
+  background: rgb(8 10 9 / 0.55);
+  color: #f4f7f6;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px rgb(0 0 0 / 0.25);
+}
+
+.hotspotActive .dot {
+  border-color: #3dbe86;
+  background: #3dbe86;
+  color: #06281b;
+  animation: pulse 1.8s ease-out infinite;
+}
+
+.hotspotActive::after {
+  content: "";
+  position: absolute;
+  left: 68%;
+  top: 50%;
+  width: 56px;
+  height: 1px;
+  background: #3dbe86;
+  pointer-events: none;
+}
+
+.hotspot:focus-visible .dot,
+.hotspot:hover .dot {
+  border-color: #7dcea8;
+}
+
+.leader {
+  position: absolute;
+  z-index: 2;
+  height: 1px;
+  background: #3dbe86;
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.hotspot:focus-visible {
+  outline: 2px solid #d8fff0;
+  outline-offset: 2px;
+}
+
+.cards {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  bottom: 18px;
+  z-index: 4;
+  display: flex;
+  width: min(340px, 48%);
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiet {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #343a37;
+  border-radius: 16px;
+  background: rgb(16 18 17 / 0.72);
+  color: inherit;
+  text-align: left;
+}
+
+.quiet:focus-visible,
+.note:focus-visible,
+.noteAction:focus-visible {
+  outline: 2px solid #7dcea8;
+  outline-offset: 3px;
+}
+
+.num {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid #4a524e;
+  border-radius: 999px;
+  color: #d7dedb;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.quiet strong,
+.note strong {
+  display: block;
+  color: #f4f7f6;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.quiet span,
+.note p {
+  color: #aeb6b2;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.note {
+  margin-top: auto;
+  padding: 20px 20px 16px;
+  border: 0;
+  border-radius: 18px;
+  background: #0f5139;
+  color: #f7f7f5;
+  text-align: left;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease 80ms, transform 220ms ease 80ms;
+}
+
+.noteEntering {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.kicker {
+  margin: 0 0 12px;
+  color: #9ee0c0;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+
+.note h3 {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.note p {
+  margin: 14px 0 0;
+  color: #d5e6dc;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.noteAction {
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d7fff0;
+  font-size: 0.95rem;
+}
+
+.live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(61 190 134 / 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgb(61 190 134 / 0);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .copy {
+    min-height: 0;
+  }
+
+  .instructions {
+    margin-top: 28px;
+    padding-top: 0;
+  }
+
+  .stage {
+    min-height: 0;
+  }
+
+  .stageBody {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 20px;
+  }
+
+  .phone {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(280px, 78vw);
+  }
+
+  .cards {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .note {
+    margin-top: 4px;
+  }
+
+  .hotspotActive::after,
+  .leader {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen,
+  .hotspot,
+  .note {
+    transition: opacity 120ms linear;
+    transform: none;
+  }
+
+  .hotspotActive .dot {
+    animation: none;
+  }
+
+  .noteEntering {
+    transform: none;
+  }
+}
