@@ -1,5 +1,5 @@
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
-import { HeroVideo } from "./HeroVideo";
+import { GuidedHero } from "./GuidedHero";
 import {
   decisions,
   execSummary,
@@ -68,24 +68,7 @@ export function FairwayCaseStudy() {
         Projects
       </Button>
 
-      <Column gap="m">
-        <Text variant="label-default-s" onBackground="neutral-weak">
-          Zvonimir Perkovic · Case study · March 2026
-        </Text>
-        <Heading as="h1" variant="display-strong-l">
-          Fairway+
-        </Heading>
-        <Text variant="heading-default-l" onBackground="neutral-weak">
-          AI assistant for retail associates.
-        </Text>
-        <Flex gap="8" wrap>
-          <Tag size="m" variant="neutral" label="Epicor" />
-          <Tag size="m" variant="neutral" label="Ace Hardware" />
-          <Tag size="m" variant="brand" label="UX/UI" />
-        </Flex>
-      </Column>
-
-      <HeroVideo />
+      <GuidedHero assetBase="/images/projects/fairway" />
 
       <Column id="overview" gap="l" paddingY="l">
         <SectionLabel n="01 — Summary" title="Overview" />
@@ -189,7 +172,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="outcomes" gap="l" paddingY="l">
-        <SectionLabel n="05 — Outcomes" title="Shipped. Adoption still open." />
+        <SectionLabel n="05 — Outcomes" title="Shipped. Usage validation comes next." />
         <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
           {outcomes.map((item) => (
             <Column key={item.label} gap="8" padding="l" border="neutral-medium" radius="l">
@@ -233,7 +216,7 @@ export function FairwayCaseStudy() {
           </Heading>
         </SmartLink>
         <Text variant="body-default-m" onBackground="neutral-weak">
-          Research, design, prototyping, and testing of a flexible GUI using Crank Storyboard for an embedded shower system.
+          Research, design, prototyping, and usability testing for a flexible embedded shower interface built with Crank Storyboard.
         </Text>
       </Column>
     </Column>
