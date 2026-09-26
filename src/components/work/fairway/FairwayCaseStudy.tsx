@@ -172,7 +172,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="outcomes" gap="l" paddingY="l">
-        <SectionLabel n="05 — Outcomes" title="Shipped. Adoption still open." />
+        <SectionLabel n="05 — Outcomes" title="Shipped. Usage validation comes next." />
         <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
           {outcomes.map((item) => (
             <Column key={item.label} gap="8" padding="l" border="neutral-medium" radius="l">
@@ -216,7 +216,7 @@ export function FairwayCaseStudy() {
           </Heading>
         </SmartLink>
         <Text variant="body-default-m" onBackground="neutral-weak">
-          Research, design, prototyping, and testing of a flexible GUI using Crank Storyboard for an embedded shower system.
+          Research, design, prototyping, and usability testing for a flexible embedded shower interface built with Crank Storyboard.
         </Text>
       </Column>
     </Column>
