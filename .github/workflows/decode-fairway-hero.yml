@@ -1,0 +1,45 @@
+name: Decode Fairway hero assets
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fairway-hero-video-swap
+      - name: Decode base64 assets into public paths
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+          import base64
+          staging = Path('tmp/fairway-hero-b64')
+          mp4_parts = sorted(staging.glob('mp4-part-*.txt'))
+          png_parts = sorted(staging.glob('png-part-*.txt'))
+          assert mp4_parts, 'missing mp4 parts'
+          assert png_parts, 'missing png parts'
+          mp4 = base64.b64decode(''.join(p.read_text().strip() for p in mp4_parts))
+          png = base64.b64decode(''.join(p.read_text().strip() for p in png_parts))
+          out_mp4 = Path('public/images/projects/fairway/fairway-plus-hammers-hero-16x9.mp4')
+          out_png = Path('public/images/projects/fairway/fairway-plus-hammers-hero-16x9-poster.png')
+          out_mp4.write_bytes(mp4)
+          out_png.write_bytes(png)
+          print('wrote', out_mp4, len(mp4))
+          print('wrote', out_png, len(png))
+          assert len(mp4) == 654051, len(mp4)
+          assert len(png) == 268161, len(png)
+          PY
+      - name: Commit decoded assets and remove staging
+        run: |
+          set -euo pipefail
+          rm -rf tmp/fairway-hero-b64
+          rm -f .github/workflows/decode-fairway-hero.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status
+          git commit -m "Decode Fairway+ hero mp4/poster; remove staging"
+          git push origin HEAD:fairway-hero-video-swap
