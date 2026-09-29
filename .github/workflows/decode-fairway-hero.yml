@@ -9,7 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: fairway-hero-video-swap
+          ref: ${{ github.ref_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Decode base64 assets into public paths
         run: |
           set -euo pipefail
@@ -19,8 +20,8 @@ jobs:
           staging = Path('tmp/fairway-hero-b64')
           mp4_parts = sorted(staging.glob('mp4-part-*.txt'))
           png_parts = sorted(staging.glob('png-part-*.txt'))
-          assert mp4_parts, 'missing mp4 parts'
-          assert png_parts, 'missing png parts'
+          assert mp4_parts, f'missing mp4 parts in {staging}'
+          assert png_parts, f'missing png parts in {staging}'
           mp4 = base64.b64decode(''.join(p.read_text().strip() for p in mp4_parts))
           png = base64.b64decode(''.join(p.read_text().strip() for p in png_parts))
           out_mp4 = Path('public/images/projects/fairway/fairway-plus-hammers-hero-16x9.mp4')
@@ -42,4 +43,4 @@ jobs:
           git add -A
           git status
           git commit -m "Decode Fairway+ hero mp4/poster; remove staging"
-          git push origin HEAD:fairway-hero-video-swap
+          git push
