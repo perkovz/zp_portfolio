@@ -116,8 +116,8 @@ const about = {
         ],
         images: [
           {
-            src: "/images/projects/fairway/fairway-plus-hammers-hero-16x9.mp4",
-            alt: "Fairway+ hammers click-through: ask, aisle and price, then product detail.",
+            src: "/images/projects/fairway/fairway-first-login-marketing.mp4",
+            alt: "Fairway+ first login.",
             width: 16,
             height: 9,
           },

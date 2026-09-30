@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { Flex } from "@/once-ui/components";
 
-const POSTER = "/images/projects/fairway/fairway-plus-hammers-hero-16x9-poster.png";
-const MP4 = "/images/projects/fairway/fairway-plus-hammers-hero-16x9.mp4";
+const POSTER = "/images/projects/fairway/fairway-first-login-poster.jpg";
+const MP4 = "/images/projects/fairway/fairway-first-login-marketing.mp4";
 
 export function HeroVideo() {
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -31,7 +31,7 @@ export function HeroVideo() {
       {reduceMotion ? (
         <img
           src={POSTER}
-          alt="Fairway+ hammers click-through: ask, aisle and price, then product detail"
+          alt="Fairway+ first login"
           style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
         />
       ) : (
@@ -42,7 +42,7 @@ export function HeroVideo() {
           playsInline
           preload="metadata"
           poster={POSTER}
-          aria-label="Fairway+ hammers click-through: ask, aisle and price, then product detail"
+          aria-label="Fairway+ first login"
           style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
         >
           <source src={MP4} type="video/mp4" />
