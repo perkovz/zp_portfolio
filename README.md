@@ -1,89 +1,122 @@
-# **Build your portfolio with Once UI's Magic Portfolio**
+# Zvonimir Perkovic — Portfolio
 
-View the [demo here](https://demo.magic-portfolio.com).
+Personal portfolio of Zvonimir Perkovic, a Cleveland-based product designer. The site showcases retail software and connected-product case studies, personal projects, writing, work experience, and photography.
 
-![Magic Portfolio](public/images/cover.png)
+**Website:** [zpportfolio.vercel.app](https://zpportfolio.vercel.app/)
 
+Built from [Magic Portfolio](https://github.com/once-ui-system/magic-portfolio) with a locally bundled [Once UI](https://once-ui.com) component and styling system.
 
-# **Getting started**
+## Current site
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+All six main sections are enabled in `src/app/resources/config.js`:
 
-**1. Clone the repository**
+- `/` — introduction and work cards, ordered by publication date.
+- `/about` — biography, work experience, education, and technical skills.
+- `/work` — six case studies: Fairway+, Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
+- `/projects` — personal products and experiments; currently Subha Choghadiya Muhurta, a Chromium extension.
+- `/blog` — four MDX articles about design systems, design/development collaboration, and design tools.
+- `/gallery` — a photo collection configured in the content file.
+
+Fairway+ has a dedicated React case-study page at `/work/fairway-plus`. It includes a first-login hero video with a poster fallback for reduced motion, a three-step interactive product tour, and sections covering the problem, design decisions, flows, outcomes, and reflections. Its MDX file supplies the listing metadata; the dedicated page supplies the case-study presentation.
+
+The site uses a dark theme with emerald branding and an orange accent. It includes responsive navigation, image/video project cards, generated page metadata and structured data, an Open Graph image endpoint, a sitemap, and robots configuration.
+
+## Stack
+
+- Next.js **15.5.25** with the App Router; authentication endpoints use Pages API routes.
+- React and React DOM **19.2.3**.
+- TypeScript, Sass/SCSS, and PostCSS.
+- MDX content using `@next/mdx`, `next-mdx-remote`, and `gray-matter`.
+- Once UI components, styles, tokens, and icons maintained in `src/once-ui/`.
+- Yarn Classic lockfile (`yarn.lock`) and ESLint 8 with the Next.js configuration.
+
+## Run locally
+
+Use a Node.js version supported by Next.js 15. The framework minimum is [Node.js 18.18](https://nextjs.org/docs/15/pages/getting-started/installation); use a currently supported Node.js LTS release for development.
+
+Install Yarn Classic (1.x), then:
+
+```bash
+git clone https://github.com/perkovz/zp_portfolio.git
+cd zp_portfolio
+yarn install --frozen-lockfile
+yarn dev
 ```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+
+Open [localhost:3000](http://localhost:3000).
+
+No project-specific environment variables are currently required. `.env.example` is a placeholder, so copying it is optional. The layout uses `next/font/google` for Inter and Source Code Pro, which requires access to Google Fonts during a build.
+
+### Available commands
+
+- `yarn dev` — start the development server.
+- `yarn build` — create a production build.
+- `yarn start` — serve the production build; run `yarn build` first.
+- `yarn lint` — run Next.js ESLint checks.
+- `yarn export` — alias for `next build`; it does not produce a static export.
+
+Builds currently skip ESLint checks through `next.config.mjs`, so run `yarn lint` separately. There is no automated test script or GitHub Actions workflow in the current repository. A `biome.json` configuration exists, but Biome is not installed or exposed through package scripts.
+
+## Project structure
+
+```text
+src/
+  app/
+    about/                   Biography and experience page
+    blog/posts/              Blog MDX content
+    gallery/                 Photo gallery page
+    projects/items/          Side-project MDX content
+    resources/               Site configuration and personal content
+    utils/                   MDX loading and date utilities
+    work/
+      projects/              Case-study MDX content and listing metadata
+      fairway-plus/          Dedicated Fairway+ page
+      [slug]/                Other case-study pages
+    og/                      Open Graph image endpoint
+    layout.tsx               Fonts, metadata, theme, and shared layout
+    page.tsx                 Home page
+    robots.ts                Robots configuration
+    sitemap.ts               Route and content sitemap
+  components/                Portfolio components and MDX rendering
+    work/fairway/            Fairway+ case study, tour, video, and data
+  once-ui/                   Bundled UI components, styles, and tokens
+  pages/api/                 Authentication and cookie-check endpoints
+public/
+  images/                    Photography, project images, and MP4 videos
+  fonts/                     Local font assets
+  trademark/                 Logo assets
 ```
 
-**2. Install dependencies**
-```
-npm install
-```
+## Updating content and appearance
 
-**3. Run dev server**
-```
-npm run dev
-```
+- **Site settings:** edit `src/app/resources/config.js` for enabled routes, the site domain (`baseURL`), theme, effects, header display options, and route protection. Metadata callers add the HTTPS scheme to `baseURL`.
+- **Personal content:** edit `src/app/resources/content.js` for the profile, social links, home copy, about sections, gallery, and blog/work labels.
+- **Side-project labels:** edit `src/app/resources/content-projects.js`.
+- **Writing:** add or edit `.mdx` files in `src/app/blog/posts/`.
+- **Work:** add or edit `.mdx` files in `src/app/work/projects/`.
+- **Side projects:** add or edit `.mdx` files in `src/app/projects/items/`.
+- **Media:** place assets under `public/images/` and reference them as `/images/...`.
+- **UI foundations:** edit `src/once-ui/` for shared components, icons, styles, and design tokens.
 
-**4. Edit config**
-```
-src/app/resources/config
-```
+MDX filenames become URL slugs. Copy an existing file in the same content collection to preserve its frontmatter format: `title`, `publishedAt`, and `summary`, plus fields such as `image`, `images`, `team`, `tag`, and `link` as needed. Work and side-project cards are sorted newest first.
 
-**5. Edit content**
-```
-src/app/resources/content
-```
+For **Fairway+**, update both `src/app/work/projects/fairway-plus.mdx` (card metadata) and `src/components/work/fairway/` (page content and presentation). The current hero uses `fairway-first-login-marketing.mp4` and `fairway-first-login-poster.jpg` under `public/images/projects/fairway/`.
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+### Optional template features
 
-# **Features**
+The Mailchimp component and newsletter configuration remain in the repository, but newsletter rendering is commented out on the home page and the Mailchimp action is still a placeholder. The home-page blog preview is also commented out; the `/blog` page remains enabled.
 
-## **Once UI**
-- All tokens, components & features of [Once UI](https://once-ui.com)
+Route protection is implemented by the client-side `RouteGuard` and `src/pages/api/` endpoints. The configured protected path currently has no matching case-study file. This is a template-level presentation gate, not server-side access control for confidential content.
 
-## **SEO**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+## Deployment
 
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+For Vercel, import **this repository**, select the Next.js framework preset, and use the repository root. The production build command is `yarn build`; use the tracked Yarn lockfile for dependency installation.
 
-## **Content**
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+When deploying to another domain, update `baseURL` in `src/app/resources/config.js` so generated metadata points to that domain. The project can also run on a Node.js host with `yarn build` followed by `yarn start`.
 
-## **Localization**
-- A localized version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+## Credits and license
 
-# **Authors**
+Adapted from Magic Portfolio by Lorant Toth and Zsofia Komaromi, built with Once UI.
 
-Connect with us on Threads or LinkedIn.
+The repository's [LICENSE](LICENSE) declares **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
 
-Lorant Toth: [Threads](https://www.threads.net/@lorant.one), [LinkedIn](https://www.linkedin.com/in/tothlorant/)  
-Zsofia Komaromi: [Threads](https://www.threads.net/@zsofia_kom), [LinkedIn](https://www.linkedin.com/in/zsofiakomaromi/)
-
-Localization added by [François Hernandez](https://github.com/francoishernandez)
-
-# **Get involved**
-
-- Join the [Design Engineers Club on Discord](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with us!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
-
-# **License**
-
-Distributed under the CC BY-NC 4.0 License.
-- Commercial usage is not allowed.
-- Attribution is required.
-
-See `LICENSE.txt` for more information.
-
-# **Deploy with Vercel**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fcover.png)
