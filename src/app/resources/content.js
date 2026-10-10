@@ -116,8 +116,8 @@ const about = {
         ],
         images: [
           {
-            src: "/images/projects/fairway/fairway-first-login-marketing.mp4",
-            alt: "Fairway+ first login.",
+            src: "/images/projects/fairway/fairway-story.mp4",
+            alt: "Fairway+: ask less, know more.",
             width: 16,
             height: 9,
           },

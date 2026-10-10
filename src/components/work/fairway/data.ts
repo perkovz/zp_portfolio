@@ -1,5 +1,5 @@
 export const metaItems = [
-  { label: "Role", value: "UX/UI", note: "Research and product direction: partner-led" },
+  { label: "Role", value: "Art direction and Product design", note: "Worked in a team with Product manager and Mobile developer" },
   { label: "Platform", value: "iOS · Android", note: "Native app shell" },
   { label: "Status", value: "Shipped", note: "Google Play and the App Store" },
   { label: "AI", value: "Prism", note: "Epicor’s proprietary assistant" },
