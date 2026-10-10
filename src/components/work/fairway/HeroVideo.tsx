@@ -44,6 +44,10 @@ export function HeroVideo({
       style={{
         aspectRatio,
         background,
+        minWidth: 0,
+        maxWidth: "100%",
+        width: "100%",
+        position: "relative",
       }}
     >
       {reduceMotion ? (
@@ -51,8 +55,11 @@ export function HeroVideo({
           src={poster}
           alt={label}
           style={{
+            position: "absolute",
+            inset: 0,
             width: "100%",
             height: "100%",
+            maxWidth: "100%",
             objectFit,
             objectPosition: "center",
             display: "block",
@@ -68,8 +75,11 @@ export function HeroVideo({
           poster={poster}
           aria-label={label}
           style={{
+            position: "absolute",
+            inset: 0,
             width: "100%",
             height: "100%",
+            maxWidth: "100%",
             objectFit,
             objectPosition: "center",
             display: "block",
