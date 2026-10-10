@@ -1,6 +1,8 @@
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
 import { GuidedHero } from "./GuidedHero";
 import { HeroVideo } from "./HeroVideo";
+import { OnboardingScroll } from "./OnboardingScroll";
+import closingStyles from "./closing-hero.module.css";
 import {
   decisions,
   execSummary,
@@ -70,6 +72,10 @@ export function FairwayCaseStudy() {
       </Button>
 
       <HeroVideo />
+
+      <Button href="/work/fairway-plus/camera-match" variant="secondary" weight="default" size="m" suffixIcon="chevronRight">
+        Try Camera Match prototype
+      </Button>
 
       <Column id="overview" gap="l" paddingY="l">
         <SectionLabel n="01 — Summary" title="Overview" />
@@ -149,7 +155,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="flows" gap="xl" paddingY="l">
-        <SectionLabel n="04 — Flows" title="Six surfaces, one thread." />
+        <SectionLabel n="04 — Flows" title="Five surfaces, one thread." />
         {flowSections.map((flow) => (
           <Column key={flow.id} id={flow.id} gap="l">
             <Column gap="8" maxWidth="s">
@@ -165,14 +171,35 @@ export function FairwayCaseStudy() {
                 {flow.summary}
               </Text>
             </Column>
-            <Grid columns="3" tabletColumns="3" mobileColumns="1" gap="l">
-              {flow.screens.map((screen, i) => (
-                <Phone key={screen.label} {...screen} index={i} />
-              ))}
-            </Grid>
+            {flow.kind === "onboarding" ? (
+              <OnboardingScroll />
+            ) : flow.kind === "hero" ? (
+              <SmartImage
+                src={"hero" in flow ? flow.hero : ""}
+                alt={"heroAlt" in flow ? flow.heroAlt : flow.title}
+                aspectRatio="1745 / 1135"
+                objectFit="cover"
+                unoptimized
+                radius="xl"
+                sizes="(max-width: 960px) 100vw, 1120px"
+              />
+            ) : (
+              <Grid columns="3" tabletColumns="3" mobileColumns="1" gap="l">
+                {flow.screens.map((screen, i) => (
+                  <Phone key={screen.label} {...screen} index={i} />
+                ))}
+              </Grid>
+            )}
           </Column>
         ))}
       </Column>
+
+      <figure className={closingStyles.bleed}>
+        <img
+          src="/images/projects/fairway/closing-hero.jpg"
+          alt="Camera Match flow: capture, identify, locate, kit, and repair list across overlapping phones"
+        />
+      </figure>
 
       <Column id="outcomes" gap="l" paddingY="l">
         <SectionLabel n="05 — Outcomes" title="Shipped. Usage validation comes next." />

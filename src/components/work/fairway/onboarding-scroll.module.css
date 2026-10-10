@@ -1,0 +1,42 @@
+.track {
+  position: relative;
+  height: 150vh;
+}
+
+.sticky {
+  position: sticky;
+  top: 12vh;
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1280 / 832;
+  width: 100%;
+  border-radius: clamp(28px, 6vw, 72px);
+  background:
+    linear-gradient(in oklab 180deg, oklab(18.9% -0.033 -0.001) 0%, oklab(14.3% -0.003 -0.010) 50%, oklab(9.8% 0.001 -0.004) 100%),
+    #050506;
+}
+
+.frame {
+  position: absolute;
+  inset: -6% 0;
+  width: 100%;
+  height: 112%;
+  object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    height: auto;
+  }
+
+  .sticky {
+    position: relative;
+    top: auto;
+  }
+}
