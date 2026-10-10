@@ -12,6 +12,7 @@ type HeroVideoProps = {
   label?: string;
   aspectRatio?: string;
   background?: string;
+  objectFit?: "contain" | "cover";
 };
 
 export function HeroVideo({
@@ -20,6 +21,7 @@ export function HeroVideo({
   label = "Fairway+ first login",
   aspectRatio = "16 / 9",
   background = "#0A0A0A",
+  objectFit = "contain",
 }: HeroVideoProps) {
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -37,6 +39,8 @@ export function HeroVideo({
       fillWidth
       overflow="hidden"
       radius="m"
+      horizontal="center"
+      vertical="center"
       style={{
         aspectRatio,
         background,
@@ -46,7 +50,13 @@ export function HeroVideo({
         <img
           src={poster}
           alt={label}
-          style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit,
+            objectPosition: "center",
+            display: "block",
+          }}
         />
       ) : (
         <video
@@ -57,7 +67,13 @@ export function HeroVideo({
           preload="metadata"
           poster={poster}
           aria-label={label}
-          style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit,
+            objectPosition: "center",
+            display: "block",
+          }}
         >
           <source src={src} type="video/mp4" />
         </video>
