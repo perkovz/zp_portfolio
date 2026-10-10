@@ -1,7 +1,6 @@
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
 import { GuidedHero } from "./GuidedHero";
 import { HeroVideo } from "./HeroVideo";
-import { OnboardingScroll } from "./OnboardingScroll";
 import closingStyles from "./closing-hero.module.css";
 import {
   decisions,
@@ -72,10 +71,6 @@ export function FairwayCaseStudy() {
       </Button>
 
       <HeroVideo />
-
-      <Button href="/work/fairway-plus/camera-match" variant="secondary" weight="default" size="m" suffixIcon="chevronRight">
-        Try Camera Match prototype
-      </Button>
 
       <Column id="overview" gap="l" paddingY="l">
         <SectionLabel n="01 — Summary" title="Overview" />
@@ -155,7 +150,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="flows" gap="xl" paddingY="l">
-        <SectionLabel n="04 — Flows" title="Five surfaces, one thread." />
+        <SectionLabel n="04 — Flows" title="Five steps, one thread" />
         {flowSections.map((flow) => (
           <Column key={flow.id} id={flow.id} gap="l">
             <Column gap="8" maxWidth="s">
@@ -171,9 +166,7 @@ export function FairwayCaseStudy() {
                 {flow.summary}
               </Text>
             </Column>
-            {flow.kind === "onboarding" ? (
-              <OnboardingScroll />
-            ) : flow.kind === "hero" ? (
+            {flow.kind === "hero" ? (
               <SmartImage
                 src={"hero" in flow ? flow.hero : ""}
                 alt={"heroAlt" in flow ? flow.heroAlt : flow.title}

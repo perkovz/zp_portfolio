@@ -6,9 +6,9 @@ export const metaItems = [
 ];
 
 export const execSummary = [
-  "Fairway+ is an AI assistant for retail associates, built at Epicor with Ace Hardware as its lead customer. It helps an associate answer an in-the-moment product question—price, aisle, availability—before the customer walks away.",
-  "I designed the end-to-end interaction system: the conversational model, answer hierarchy, disambiguation behavior, in-thread comparison, and product details. Research and product direction were partner-led. My task was turning “put AI in the app” into an experience that works one-handed on a noisy store floor.",
-  "Fairway+ is the app; Prism is the AI inside it and across other Epicor products. Onboarding introduces Prism explicitly so associates understand which product they opened and which assistant they are talking to.",
+  "Fairway+ is an AI assistant for retail associates, built at Epicor with Ace Hardware as its lead customer.",
+  "The main purpose of Fairway+ is to empower associates so they can help customers with their projects.",
+  "I've designed the end-to-end interaction system: conversational model, answer hierarchy, disambiguation, in-thread comparison, product details.",
 ];
 
 export const problemPoints = [
@@ -74,7 +74,9 @@ export const flowSections = [
     title: "Onboarding",
     summary:
       "Enterprise setup, not consumer signup. The device is connected to a store instance before anyone signs in, keeping first run short and operational.",
-    kind: "onboarding" as const,
+    kind: "hero" as const,
+    hero: shot("onboarding-end.jpg?v=2"),
+    heroAlt: "Fairway+ onboarding: store signup behind the welcome screen",
     screens: [],
   },
   {
@@ -84,7 +86,7 @@ export const flowSections = [
     summary:
       "A greeting and one input remove everything between the associate and the first question. Home is not a dashboard; it is the beginning of a conversation.",
     kind: "hero" as const,
-    hero: shot("home-hero.jpg"),
+    hero: shot("home-hero.jpg?v=2"),
     heroAlt: "Fairway+ splash, ready home, and first reply on three phones",
     screens: [],
   },
@@ -95,7 +97,7 @@ export const flowSections = [
     summary:
       "A question is typed in the aisle and answered in the same thread: one product with aisle and price, or a short set to compare—without leaving the conversation.",
     kind: "hero" as const,
-    hero: shot("message-hero.jpg"),
+    hero: shot("message-hero.jpg?v=2"),
     heroAlt: "A hammer request loading, then a single match and a short comparison set",
     screens: [],
   },
@@ -106,7 +108,7 @@ export const flowSections = [
     summary:
       "When the request is still broad, Prism narrows it progressively: a focused question, optional filters, and a short set of matching products.",
     kind: "hero" as const,
-    hero: shot("followup-hero.jpg"),
+    hero: shot("followup-hero.jpg?v=2"),
     heroAlt: "Saw-blade follow-up, refine sheet, and matching product list",
     screens: [],
   },
@@ -116,10 +118,10 @@ export const flowSections = [
     title: "Details",
     summary:
       "One tap reveals the information a short answer cannot hold: imagery, item and UPC identifiers, aisle location, availability, features, and specifications.",
-    kind: "phones" as const,
-    screens: [
-      { label: "Product detail", caption: "Carousel, location, identifiers, and product features", state: "Detail", image: shot("product-detail.png") },
-    ],
+    kind: "hero" as const,
+    hero: shot("product-detail.png?v=2"),
+    heroAlt: "Product details for a framing hammer, with specifications on the screen behind",
+    screens: [],
   },
 ];
 
