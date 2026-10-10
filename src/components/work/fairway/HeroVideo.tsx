@@ -6,7 +6,21 @@ import { Flex } from "@/once-ui/components";
 const POSTER = "/images/projects/fairway/fairway-first-login-poster.jpg";
 const MP4 = "/images/projects/fairway/fairway-first-login-marketing.mp4";
 
-export function HeroVideo() {
+type HeroVideoProps = {
+  src?: string;
+  poster?: string;
+  label?: string;
+  aspectRatio?: string;
+  background?: string;
+};
+
+export function HeroVideo({
+  src = MP4,
+  poster = POSTER,
+  label = "Fairway+ first login",
+  aspectRatio = "16 / 9",
+  background = "#0A0A0A",
+}: HeroVideoProps) {
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
@@ -24,14 +38,14 @@ export function HeroVideo() {
       overflow="hidden"
       radius="m"
       style={{
-        aspectRatio: "16 / 9",
-        background: "#0A0A0A",
+        aspectRatio,
+        background,
       }}
     >
       {reduceMotion ? (
         <img
-          src={POSTER}
-          alt="Fairway+ first login"
+          src={poster}
+          alt={label}
           style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
         />
       ) : (
@@ -41,11 +55,11 @@ export function HeroVideo() {
           loop
           playsInline
           preload="metadata"
-          poster={POSTER}
-          aria-label="Fairway+ first login"
+          poster={poster}
+          aria-label={label}
           style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
         >
-          <source src={MP4} type="video/mp4" />
+          <source src={src} type="video/mp4" />
         </video>
       )}
     </Flex>
