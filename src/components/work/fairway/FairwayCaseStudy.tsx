@@ -3,7 +3,6 @@ import { GuidedHero } from "./GuidedHero";
 import { HeroVideo } from "./HeroVideo";
 import closingStyles from "./closing-hero.module.css";
 import {
-  decisions,
   execSummary,
   flowSections,
   metaItems,
@@ -131,31 +130,12 @@ export function FairwayCaseStudy() {
         </Grid>
       </Column>
 
-      <Column id="decisions" gap="l" paddingY="l">
-        <SectionLabel n="03 — Decisions" title="Six calls that held the product together." />
-        <Column gap="l">
-          {decisions.map((decision) => (
-            <Grid key={decision.index} columns="4" tabletColumns="1" mobileColumns="1" gap="m">
-              <Column gap="4">
-                <Text variant="label-default-s" onBackground="brand-medium">
-                  {decision.index}
-                </Text>
-                <Heading as="h3" variant="heading-strong-m">
-                  {decision.title}
-                </Heading>
-                <Text variant="label-default-s" onBackground="neutral-weak">
-                  {decision.premise}
-                </Text>
-              </Column>
-              <Column style={{ gridColumn: "span 3" }}>
-                <Text variant="body-default-l" onBackground="neutral-weak">
-                  {decision.body}
-                </Text>
-              </Column>
-            </Grid>
-          ))}
-        </Column>
-      </Column>
+      <figure className={closingStyles.bleed}>
+        <img
+          src="/images/projects/fairway/store-floor.jpg"
+          alt="On the store floor: an associate with a phone and a box of fasteners listens as a customer points at packed shelves"
+        />
+      </figure>
 
       <Column id="flows" gap="xl" paddingY="l">
         <SectionLabel n="04 — Flows" title="Five steps, one thread" />

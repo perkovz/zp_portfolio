@@ -40,6 +40,14 @@
   line-height: 1.45;
 }
 
+.contribution {
+  margin: 20px 0 0;
+  max-width: 34ch;
+  color: #c5cdc9;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
 .instructions {
   margin-top: auto;
   padding-top: 48px;

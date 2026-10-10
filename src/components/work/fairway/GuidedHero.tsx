@@ -138,6 +138,10 @@ export function GuidedHero({ assetBase = "/fairway/shots" }: GuidedHeroProps) {
         <p className={styles.summary}>
           An AI sales assistant that turns a customer question into the right product, evidence, and next step.
         </p>
+        <p className={styles.contribution}>
+          I built interactive prototypes and tested them in Paper and in code, so we could click through timing, empty
+          states, and recovery paths before they shipped.
+        </p>
         <div className={styles.instructions}>
           <p>Use Next, or pick a step, to move through the product story.</p>
         </div>
