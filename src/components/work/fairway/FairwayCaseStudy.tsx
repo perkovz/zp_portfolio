@@ -166,23 +166,15 @@ export function FairwayCaseStudy() {
                 {flow.summary}
               </Text>
             </Column>
-            {flow.kind === "hero" ? (
-              <SmartImage
-                src={"hero" in flow ? flow.hero : ""}
-                alt={"heroAlt" in flow ? flow.heroAlt : flow.title}
-                aspectRatio="1745 / 1135"
-                objectFit="cover"
-                unoptimized
-                radius="xl"
-                sizes="(max-width: 960px) 100vw, 1120px"
-              />
-            ) : (
-              <Grid columns="3" tabletColumns="3" mobileColumns="1" gap="l">
-                {flow.screens.map((screen, i) => (
-                  <Phone key={screen.label} {...screen} index={i} />
-                ))}
-              </Grid>
-            )}
+            <SmartImage
+              src={flow.hero}
+              alt={flow.heroAlt}
+              aspectRatio="1745 / 1135"
+              objectFit="cover"
+              unoptimized
+              radius="xl"
+              sizes="(max-width: 960px) 100vw, 1120px"
+            />
           </Column>
         ))}
       </Column>
