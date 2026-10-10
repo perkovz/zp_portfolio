@@ -1,6 +1,7 @@
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
 import { GuidedHero } from "./GuidedHero";
 import { HeroVideo } from "./HeroVideo";
+import closingStyles from "./closing-hero.module.css";
 import {
   decisions,
   execSummary,
@@ -149,7 +150,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="flows" gap="xl" paddingY="l">
-        <SectionLabel n="04 — Flows" title="Six surfaces, one thread." />
+        <SectionLabel n="04 — Flows" title="Five steps, one thread" />
         {flowSections.map((flow) => (
           <Column key={flow.id} id={flow.id} gap="l">
             <Column gap="8" maxWidth="s">
@@ -165,14 +166,25 @@ export function FairwayCaseStudy() {
                 {flow.summary}
               </Text>
             </Column>
-            <Grid columns="3" tabletColumns="3" mobileColumns="1" gap="l">
-              {flow.screens.map((screen, i) => (
-                <Phone key={screen.label} {...screen} index={i} />
-              ))}
-            </Grid>
+            <SmartImage
+              src={flow.hero}
+              alt={flow.heroAlt}
+              aspectRatio="1745 / 1135"
+              objectFit="cover"
+              unoptimized
+              radius="xl"
+              sizes="(max-width: 960px) 100vw, 1120px"
+            />
           </Column>
         ))}
       </Column>
+
+      <figure className={closingStyles.bleed}>
+        <img
+          src="/images/projects/fairway/closing-hero.jpg"
+          alt="Camera Match flow: capture, identify, locate, kit, and repair list across overlapping phones"
+        />
+      </figure>
 
       <Column id="outcomes" gap="l" paddingY="l">
         <SectionLabel n="05 — Outcomes" title="Shipped. Usage validation comes next." />

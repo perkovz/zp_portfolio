@@ -6,9 +6,9 @@ export const metaItems = [
 ];
 
 export const execSummary = [
-  "Fairway+ is an AI assistant for retail associates, built at Epicor with Ace Hardware as its lead customer. It helps an associate answer an in-the-moment product question—price, aisle, availability—before the customer walks away.",
-  "I designed the end-to-end interaction system: the conversational model, answer hierarchy, disambiguation behavior, in-thread comparison, and product details. Research and product direction were partner-led. My task was turning “put AI in the app” into an experience that works one-handed on a noisy store floor.",
-  "Fairway+ is the app; Prism is the AI inside it and across other Epicor products. Onboarding introduces Prism explicitly so associates understand which product they opened and which assistant they are talking to.",
+  "Fairway+ is an AI assistant for retail associates, built at Epicor with Ace Hardware as its lead customer.",
+  "The main purpose of Fairway+ is to empower associates so they can help customers with their projects.",
+  "I've designed the end-to-end interaction system: conversational model, answer hierarchy, disambiguation, in-thread comparison, product details.",
 ];
 
 export const problemPoints = [
@@ -74,11 +74,10 @@ export const flowSections = [
     title: "Onboarding",
     summary:
       "Enterprise setup, not consumer signup. The device is connected to a store instance before anyone signs in, keeping first run short and operational.",
-    screens: [
-      { label: "Server configuration", caption: "Tenant, server, and service URL", state: "Config", image: shot("signup.png") },
-      { label: "Login", caption: "Credentials and store selection", state: "Auth", image: shot("login.png") },
-      { label: "Welcome to Fairway+", caption: "Introduce Prism before the first question", state: "First run", image: shot("welcome.png") },
-    ],
+    kind: "hero" as const,
+    hero: shot("onboarding-end.jpg?v=2"),
+    heroAlt: "Fairway+ onboarding: store signup behind the welcome screen",
+    screens: [],
   },
   {
     id: "flow-home",
@@ -86,57 +85,43 @@ export const flowSections = [
     title: "Home",
     summary:
       "A greeting and one input remove everything between the associate and the first question. Home is not a dashboard; it is the beginning of a conversation.",
-    screens: [
-      { label: "Welcome to Prism", caption: "Introduce the assistant by name", state: "Splash", image: shot("splash.png") },
-      { label: "Ready to ask", caption: "A greeting followed by one clear input", state: "Ready", image: shot("home-ready.png") },
-      { label: "First reply", caption: "A broad faucet request becomes a focused conversation", state: "Answered", image: shot("home-faucet.png") },
-    ],
+    kind: "hero" as const,
+    hero: shot("home-hero.jpg?v=2"),
+    heroAlt: "Fairway+ splash, ready home, and first reply on three phones",
+    screens: [],
   },
   {
     id: "flow-message",
     number: "02",
     title: "Message",
     summary:
-      "Text is the default in noisy stores; voice remains an equal-access alternative. Both are sized for one-handed use while the associate handles a product or assists a customer.",
-    screens: [
-      { label: "Voice compose", caption: "Microphone active for a spoken request", state: "Voice", image: shot("voice.png") },
-      { label: "Text compose", caption: "Query entered and ready to send", state: "Typing", image: shot("text.png") },
-      { label: "Sent · loading", caption: "Request committed while Prism prepares a response", state: "Pending", image: shot("message.png") },
-    ],
-  },
-  {
-    id: "flow-response",
-    number: "03",
-    title: "Response",
-    summary:
-      "A vague request becomes an aisle-and-price answer in the thread. Product details remain attached to the response, and comparison stays inside the conversation.",
-    screens: [
-      { label: "Loading", caption: "Prism processes the request", state: "Pending", image: shot("response-loading.png") },
-      { label: "Aisle + price", caption: "The immediate answer appears first", state: "Answered", image: shot("one-product.png") },
-      { label: "Compare table", caption: "Relevant product differences shown in-thread", state: "Compare", image: shot("compare.png") },
-    ],
+      "A question is typed in the aisle and answered in the same thread: one product with aisle and price, or a short set to compare—without leaving the conversation.",
+    kind: "hero" as const,
+    hero: shot("message-hero.jpg?v=2"),
+    heroAlt: "A hammer request loading, then a single match and a short comparison set",
+    screens: [],
   },
   {
     id: "flow-followup",
-    number: "04",
+    number: "03",
     title: "Follow-up",
     summary:
-      "When the request is still broad, Prism narrows it progressively: a focused question, a family selection, optional filters, and a short set of matching products.",
-    screens: [
-      { label: "Clarify", caption: "Related products presented as choices", state: "Follow-up", image: shot("followup.png") },
-      { label: "Refine sheet", caption: "Material and length filters", state: "Refine", image: shot("followup-drawer.png") },
-      { label: "Related products", caption: "A short list of matching sets", state: "Results", image: shot("followup-products.png") },
-    ],
+      "When the request is still broad, Prism narrows it progressively: a focused question, optional filters, and a short set of matching products.",
+    kind: "hero" as const,
+    hero: shot("followup-hero.jpg?v=2"),
+    heroAlt: "Saw-blade follow-up, refine sheet, and matching product list",
+    screens: [],
   },
   {
     id: "flow-details",
-    number: "05",
+    number: "04",
     title: "Details",
     summary:
       "One tap reveals the information a short answer cannot hold: imagery, item and UPC identifiers, aisle location, availability, features, and specifications.",
-    screens: [
-      { label: "Product detail", caption: "Carousel, location, identifiers, and product features", state: "Detail", image: shot("product-detail.png") },
-    ],
+    kind: "hero" as const,
+    hero: shot("product-detail.png?v=2"),
+    heroAlt: "Product details for a framing hammer, with specifications on the screen behind",
+    screens: [],
   },
 ];
 
