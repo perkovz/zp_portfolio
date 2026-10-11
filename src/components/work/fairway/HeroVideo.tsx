@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Flex } from "@/once-ui/components";
+import { useEffect, useRef, useState } from "react";
+import { Flex, IconButton } from "@/once-ui/components";
 
 const POSTER = "/images/projects/fairway/fairway-first-login-poster.jpg";
 const MP4 = "/images/projects/fairway/fairway-first-login-marketing.mp4";
@@ -13,6 +13,7 @@ type HeroVideoProps = {
   aspectRatio?: string;
   background?: string;
   objectFit?: "contain" | "cover";
+  soundToggle?: boolean;
 };
 
 export function HeroVideo({
@@ -22,8 +23,11 @@ export function HeroVideo({
   aspectRatio = "16 / 9",
   background = "#0A0A0A",
   objectFit = "contain",
+  soundToggle = false,
 }: HeroVideoProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [muted, setMuted] = useState(true);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -32,6 +36,17 @@ export function HeroVideo({
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
   }, []);
+
+  const toggleSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const nextMuted = !muted;
+    video.muted = nextMuted;
+    setMuted(nextMuted);
+    if (!nextMuted) {
+      void video.play();
+    }
+  };
 
   return (
     <Flex
@@ -47,6 +62,8 @@ export function HeroVideo({
         minWidth: 0,
         maxWidth: "100%",
         width: "100%",
+        margin: 0,
+        overflow: "hidden",
         position: "relative",
       }}
     >
@@ -60,6 +77,7 @@ export function HeroVideo({
             width: "100%",
             height: "100%",
             maxWidth: "100%",
+            maxHeight: "100%",
             objectFit,
             objectPosition: "center",
             display: "block",
@@ -67,8 +85,9 @@ export function HeroVideo({
         />
       ) : (
         <video
+          ref={videoRef}
           autoPlay
-          muted
+          muted={muted}
           loop
           playsInline
           preload="metadata"
@@ -80,6 +99,7 @@ export function HeroVideo({
             width: "100%",
             height: "100%",
             maxWidth: "100%",
+            maxHeight: "100%",
             objectFit,
             objectPosition: "center",
             display: "block",
@@ -87,6 +107,22 @@ export function HeroVideo({
         >
           <source src={src} type="video/mp4" />
         </video>
+      )}
+      {soundToggle && !reduceMotion && (
+        <IconButton
+          icon={muted ? "speakerOff" : "speaker"}
+          variant="secondary"
+          size="m"
+          tooltip={muted ? "Turn sound on" : "Mute"}
+          aria-label={muted ? "Turn sound on" : "Mute"}
+          onClick={toggleSound}
+          style={{
+            position: "absolute",
+            bottom: "0.75rem",
+            right: "0.75rem",
+            zIndex: 1,
+          }}
+        />
       )}
     </Flex>
   );

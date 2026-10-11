@@ -21,6 +21,9 @@ import {
   HiCalendarDays,
   HiClipboard,
   HiArrowRight,
+  HiSpeakerWave,
+  HiSpeakerXMark,
+  HiPlay,
 } from "react-icons/hi2";
 
 import {
@@ -65,4 +68,7 @@ export const iconLibrary: Record<string, IconType> = {
   x: FaXTwitter,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+  speaker: HiSpeakerWave,
+  speakerOff: HiSpeakerXMark,
+  play: HiPlay,
 };

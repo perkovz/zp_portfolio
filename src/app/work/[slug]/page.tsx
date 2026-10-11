@@ -15,8 +15,9 @@ interface WorkParams {
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
+  const dedicatedSlugs = new Set(["fairway-plus", "ai-design-lab"]);
   return posts
-    .filter((post) => post.slug !== "fairway-plus")
+    .filter((post) => !dedicatedSlugs.has(post.slug))
     .map((post) => ({
       slug: post.slug,
     }));

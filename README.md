@@ -12,12 +12,14 @@ All six main sections are enabled in `src/app/resources/config.js`:
 
 - `/` — introduction and work cards, ordered by publication date.
 - `/about` — biography, work experience, education, and technical skills.
-- `/work` — six case studies: Fairway+, Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
+- `/work` — seven case studies: Propello AI Design Lab, Fairway+, Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
 - `/projects` — personal products and experiments; currently Subha Choghadiya Muhurta, a Chromium extension.
 - `/blog` — four MDX articles about design systems, design/development collaboration, and design tools.
 - `/gallery` — a photo collection configured in the content file.
 
 Fairway+ has a dedicated React case-study page at `/work/fairway-plus`. It includes a first-login hero video with a poster fallback for reduced motion, a three-step interactive product tour, and sections covering the problem, design decisions, flows, outcomes, and reflections. Its MDX file supplies the listing metadata; the dedicated page supplies the case-study presentation.
+
+Propello AI Design Lab has a dedicated React page at `/work/ai-design-lab`. It covers a code-first prototyping workspace initiated in Epicor’s Retail unit: challenge, approach, designing inside a working product environment, impact, and takeaway. Listing metadata lives in the MDX file; presentation lives in `src/components/work/ai-design-lab/`. The hero uses `design-excellence.mp4` with `cover.png` as the reduced-motion poster.
 
 The site uses a dark theme with emerald branding and an orange accent. It includes responsive navigation, image/video project cards, generated page metadata and structured data, an Open Graph image endpoint, a sitemap, and robots configuration.
 
@@ -70,6 +72,7 @@ src/
     utils/                   MDX loading and date utilities
     work/
       projects/              Case-study MDX content and listing metadata
+      ai-design-lab/         Dedicated AI Design Lab page
       fairway-plus/          Dedicated Fairway+ page
       [slug]/                Other case-study pages
     og/                      Open Graph image endpoint
@@ -79,6 +82,7 @@ src/
     sitemap.ts               Route and content sitemap
   components/                Portfolio components and MDX rendering
     work/fairway/            Fairway+ case study, tour, video, and data
+    work/ai-design-lab/      AI Design Lab case study and data
   once-ui/                   Bundled UI components, styles, and tokens
   pages/api/                 Authentication and cookie-check endpoints
 public/
@@ -101,6 +105,8 @@ public/
 MDX filenames become URL slugs. Copy an existing file in the same content collection to preserve its frontmatter format: `title`, `publishedAt`, and `summary`, plus fields such as `image`, `images`, `team`, `tag`, and `link` as needed. Work and side-project cards are sorted newest first.
 
 For **Fairway+**, update both `src/app/work/projects/fairway-plus.mdx` (card metadata) and `src/components/work/fairway/` (page content and presentation). The current hero uses `fairway-first-login-marketing.mp4` and `fairway-first-login-poster.jpg` under `public/images/projects/fairway/`.
+
+For **Propello AI Design Lab**, update `src/app/work/projects/ai-design-lab.mdx` (card metadata) and `src/components/work/ai-design-lab/` (page content). The hero uses `design-excellence.mp4` with `cover.png` as the reduced-motion poster, both under `public/images/projects/ai-design-lab/`.
 
 ### Optional template features
 
