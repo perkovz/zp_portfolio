@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { HeroVideo } from "@/components/work/fairway/HeroVideo";
 import { DemoVideo } from "./DemoVideo";

@@ -105,6 +105,9 @@ const about = {
             Designed Epicor Fairway+, an AI assistant for store clerks now on Google Play. Voice in and voice out, plain-language questions, live inventory and solutions.
           </>,
           <>
+            Created the Propello AI Design Lab, a code-first workspace where Retail teams generate and validate functional prototypes from Kendo UI and Figma libraries instead of static screens.
+          </>,
+          <>
             Designed core Decor Fusion Mobile flows, including inventory transfer, barcode scanning, filtering, physical inventory, invoice detail, customer CRM, and purchase ordering for paint and decorating retailers on the floor or in the warehouse.
           </>,
           <>
@@ -118,6 +121,12 @@ const about = {
           {
             src: "/images/projects/fairway/fairway-hero.mp4",
             alt: "Fairway+: ask less, know more.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/ai-design-lab/design-excellence.mp4",
+            alt: "Propello AI Design Lab: code-first prototyping.",
             width: 16,
             height: 9,
           },
