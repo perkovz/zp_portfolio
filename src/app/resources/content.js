@@ -116,7 +116,7 @@ const about = {
         ],
         images: [
           {
-            src: "/images/projects/fairway/fairway-story.mp4",
+            src: "/images/projects/fairway/fairway-hero.mp4",
             alt: "Fairway+: ask less, know more.",
             width: 16,
             height: 9,

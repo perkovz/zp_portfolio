@@ -70,11 +70,11 @@ export function FairwayCaseStudy() {
       </Button>
 
       <HeroVideo
-        src="/images/projects/fairway/fairway-story.mp4"
-        poster="/images/projects/fairway/fairway-story-poster.jpg"
-        label="Fairway+: a customer is looking, then Prism answers"
+        src="/images/projects/fairway/fairway-hero.mp4"
+        poster="/images/projects/fairway/fairway-hero-poster.jpg"
+        label="Fairway+ product film"
         aspectRatio="16 / 9"
-        background="#EEF1F6"
+        background="#E8E8EC"
         objectFit="cover"
       />
 
