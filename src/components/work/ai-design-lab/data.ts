@@ -3,7 +3,7 @@ export const description =
   "Improving design quality through functional, code-first prototyping.";
 
 export const metaItems = [
-  { label: "Role", value: "Initiator", note: "Senior Product Designer, Epicor Retail" },
+  { label: "Role", value: "Creator", note: "Senior Product Designer, Epicor Retail" },
   { label: "Product", value: "Propello", note: "Retail Operations, Inventory & Commerce" },
   { label: "Method", value: "Code-first prototyping", note: "Validate inside a working product environment" },
   { label: "Stack", value: "React · Tailwind · Kendo UI · Figma", note: "Prompts generate from the design system, not from scratch" },
@@ -28,7 +28,10 @@ export const challengePoints = [
 export const approachPoints = [
   {
     title: "A code-first workspace",
-    body: "The Propello AI Design Lab is built with React and Tailwind and connected to Kendo UI components and Figma libraries — so prototypes live in the same environment as the product.",
+    body: [
+      "The Propello AI Design Lab is built with React and Tailwind and connected to Kendo UI components and Figma libraries.",
+      "This enables live prototypes in the same environment as the product.",
+    ],
   },
   {
     title: "Prompts that use the system",
@@ -71,24 +74,24 @@ export const demos = {
     src: "/images/projects/ai-design-lab/linking-products.webm",
     label: "Linking products demo",
     caption:
-      "Linking products — a Propello flow brought to life in the lab before committing.",
+      "Linking products feature was a good example of a feature that sounded and looked great as a static user flow, but was just 'ok' once it was built in Design Lab",
   },
   customerPosSearch: {
     src: "/images/projects/ai-design-lab/customer-pos-search.webm",
     label: "Customer POS search demo",
     caption:
-      "Customer POS search — a product idea running as a functional prototype.",
+      "Customer POS search - brainstorming product ideas as a functional prototypes.",
   },
   arStatements: {
     src: "/images/projects/ai-design-lab/ar-statements-viewer.mp4",
     label: "AR statements viewer demo",
     caption:
-      "AR statements viewer — a larger flow prototyped in the lab before committing.",
+      "AR statements viewer; an example of the whole feature flow in AI design lab",
   },
 };
 
 export const takeaway = [
   "The Propello AI Design Lab shifts design from producing static representations of a future product to actively shaping the product through functional experimentation.",
   "By combining AI-assisted generation, React and Tailwind, Kendo UI, and Figma libraries, the lab creates a shared environment where teams can move quickly while preserving design-system consistency and product quality.",
-  "The result is a more connected design-to-code workflow—one that helps teams validate ideas earlier, improve usability continuously, and deliver better experiences with greater confidence.",
+  "The result is a more connected design-to-code workflow. The one that helps teams validate ideas earlier, improve usability continuously, and deliver better experiences with greater confidence.",
 ];

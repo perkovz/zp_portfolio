@@ -1,4 +1,4 @@
-import { Button, Column, Flex, Grid, Heading, SmartLink, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { HeroVideo } from "@/components/work/fairway/HeroVideo";
 import { DemoVideo } from "./DemoVideo";
 import {
@@ -56,7 +56,7 @@ export function AiDesignLabCaseStudy() {
       </Column>
 
       <Column id="overview" gap="l" paddingY="l">
-        <SectionLabel n="01 — Summary" title="Overview" />
+        <SectionLabel n="01 Summary" title="Overview" />
         <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
           <Column gap="m">
             {execSummary.map((paragraph, i) => (
@@ -86,7 +86,7 @@ export function AiDesignLabCaseStudy() {
       </Column>
 
       <Column id="challenge" gap="l" paddingY="l">
-        <SectionLabel n="02 — Challenge" title="Static screens hide the real problems." />
+        <SectionLabel n="02 Challenge" title="Static screens hide the real problems." />
         <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
           {challengePoints.map((point, i) => (
             <Column key={point.title} gap="12">
@@ -102,10 +102,19 @@ export function AiDesignLabCaseStudy() {
             </Column>
           ))}
         </Grid>
+        <SmartImage
+          src="/images/projects/ai-design-lab/annotated-work.png"
+          alt="Annotated Create Children screens covering attribute groups, dropdowns, and selection states"
+          aspectRatio="3747 / 2274"
+          objectFit="contain"
+          radius="m"
+          unoptimized
+          sizes="(max-width: 960px) 100vw, 1120px"
+        />
       </Column>
 
       <Column id="approach" gap="l" paddingY="l">
-        <SectionLabel n="03 — Approach" title="A workspace that starts in code." />
+        <SectionLabel n="03 Approach" title="A workspace that starts in code." />
         <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
           {approachPoints.map((point, i) => (
             <Column key={point.title} gap="12" padding="l" border="neutral-medium" radius="l">
@@ -115,16 +124,27 @@ export function AiDesignLabCaseStudy() {
               <Heading as="h3" variant="heading-strong-m">
                 {point.title}
               </Heading>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {point.body}
-              </Text>
+              {(Array.isArray(point.body) ? point.body : [point.body]).map((paragraph) => (
+                <Text key={paragraph.slice(0, 32)} variant="body-default-m" onBackground="neutral-weak">
+                  {paragraph}
+                </Text>
+              ))}
             </Column>
           ))}
         </Grid>
+        <SmartImage
+          src="/images/projects/ai-design-lab/kendo-ui.png"
+          alt="Kendo UI component library in Figma, the system the lab generates from"
+          aspectRatio="3837 / 2013"
+          objectFit="contain"
+          radius="m"
+          unoptimized
+          sizes="(max-width: 960px) 100vw, 1120px"
+        />
       </Column>
 
       <Column id="environment" gap="l" paddingY="l">
-        <SectionLabel n="04 — In the product" title="Designing in a real product environment." />
+        <SectionLabel n="04 In the product" title="Designing in a real product environment." />
         <Column maxWidth="m">
           <Text variant="heading-default-m">{environmentIntro}</Text>
         </Column>
@@ -158,7 +178,7 @@ export function AiDesignLabCaseStudy() {
       </Column>
 
       <Column id="impact" gap="l" paddingY="l">
-        <SectionLabel n="05 — Impact" title="Faster iteration, without treating quality as optional." />
+        <SectionLabel n="05 Impact" title="Faster iteration, without treating quality as optional." />
         <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
           {impactPoints.map((point) => (
             <Column key={point.title} gap="12">
@@ -185,7 +205,7 @@ export function AiDesignLabCaseStudy() {
       </Column>
 
       <Column id="takeaway" gap="l" paddingY="l">
-        <SectionLabel n="06 — Takeaway" title="Shape the product, don’t just picture it." />
+        <SectionLabel n="06 Takeaway" title="Shape the product, don’t just picture it." />
         <Column gap="m" maxWidth="m">
           {takeaway.map((paragraph, i) => (
             <Text
@@ -209,7 +229,7 @@ export function AiDesignLabCaseStudy() {
           </Heading>
         </SmartLink>
         <Text variant="body-default-m" onBackground="neutral-weak">
-          An in-store AI assistant for Ace Hardware associates — designed so a vague floor question returns aisle, price, and stock before the customer walks away.
+          An in-store AI assistant for Ace Hardware associates designed so a vague floor question returns aisle, price, and stock before the customer walks away.
         </Text>
       </Column>
     </Column>
