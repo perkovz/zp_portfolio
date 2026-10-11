@@ -227,7 +227,7 @@ export function AiDesignLabCaseStudy() {
         </Text>
         <SmartLink href="/work/fairway-plus">
           <Heading as="h2" variant="heading-strong-l">
-            Fairway+: Redesigning the Store-floor Experience.
+            Fairway+ AI Store Assistant
           </Heading>
         </SmartLink>
         <Text variant="body-default-m" onBackground="neutral-weak">

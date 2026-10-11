@@ -2,7 +2,7 @@ import { FairwayCaseStudy } from "@/components/work/fairway/FairwayCaseStudy";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 
-const title = "Fairway+: Redesigning the Store-floor Experience.";
+const title = "Fairway+ AI Store Assistant";
 const description =
   "An in-store AI assistant for Ace Hardware associates — designed at Epicor so a vague floor question returns aisle, price, and stock before the customer walks away.";
 
