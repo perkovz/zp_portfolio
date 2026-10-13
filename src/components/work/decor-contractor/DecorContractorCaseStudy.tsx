@@ -24,6 +24,7 @@ import {
 import { BrandingShowcase } from "./BrandingShowcase";
 import { BrandEvolutionShowcase } from "./BrandEvolutionShowcase";
 import { BrandPlatformShowcase } from "./BrandPlatformShowcase";
+import { HeroVideo } from "@/components/work/fairway/HeroVideo";
 
 function SectionLabel({ n, title: heading }: { n: string; title: string }) {
   return (
@@ -58,29 +59,14 @@ export function DecorContractorCaseStudy() {
         Projects
       </Button>
 
-      <Flex
-        fillWidth
-        horizontal="center"
-        vertical="center"
-        radius="l"
-        border="neutral-medium"
-        style={{
-          aspectRatio: "16 / 9",
-          background: "var(--neutral-alpha-weak)",
-        }}
-      >
-        <Column gap="8" horizontal="center" padding="l">
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            Hero
-          </Text>
-          <Heading as="h2" variant="heading-strong-m">
-            Visuals coming soon
-          </Heading>
-          <Text variant="body-default-m" onBackground="neutral-weak">
-            Drop assets in public/images/projects/decor-contractor
-          </Text>
-        </Column>
-      </Flex>
+      <HeroVideo
+        src="/images/projects/decor-contractor/payments-promo.mp4"
+        poster="/images/projects/decor-contractor/payments-promo.jpg"
+        label="Decor Contractor payments experience"
+        aspectRatio="16 / 9"
+        background="#062D37"
+        objectFit="cover"
+      />
 
       <Column gap="12" maxWidth="m">
         <Text variant="label-default-s" onBackground="brand-medium">

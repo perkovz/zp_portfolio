@@ -110,7 +110,7 @@ For **Fairway+**, update both `src/app/work/projects/fairway-plus.mdx` (card met
 
 For **Propello AI Design Lab**, update `src/app/work/projects/ai-design-lab.mdx` (card metadata) and `src/components/work/ai-design-lab/` (page content). The hero uses `design-excellence.mp4` with `cover.png` as the reduced-motion poster, both under `public/images/projects/ai-design-lab/`.
 
-For **Decor Contractor Portal**, update both `src/app/work/projects/decor-contractor.mdx` (card metadata) and `src/components/work/decor-contractor/` (page content). Place hero, screens, and video under `public/images/projects/decor-contractor/`. The write-up is in place; visuals are still a placeholder.
+For **Decor Contractor Portal**, update both `src/app/work/projects/decor-contractor.mdx` (card metadata) and `src/components/work/decor-contractor/` (page content). The hero uses `payments-promo.mp4` with `payments-promo.jpg` as its poster, both under `public/images/projects/decor-contractor/`.
 
 ### Optional template features
 
@@ -129,4 +129,3 @@ When deploying to another domain, update `baseURL` in `src/app/resources/config.
 Adapted from Magic Portfolio by Lorant Toth and Zsofia Komaromi, built with Once UI.
 
 The repository's [LICENSE](LICENSE) declares **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
-
