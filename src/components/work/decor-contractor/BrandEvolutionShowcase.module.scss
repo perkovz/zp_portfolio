@@ -1,0 +1,169 @@
+.frame {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  background: #f6f9f9;
+  color: #082d36;
+  font-family: var(--font-primary), Inter, sans-serif;
+}
+
+.eyebrowAccent {
+  position: absolute;
+  left: 5.313%;
+  top: 8.333%;
+  width: 3.438%;
+  height: 0.556%;
+  min-height: 2px;
+  border-radius: 999px;
+  background: #0aa894;
+}
+
+.eyebrow,
+.headline,
+.intro {
+  position: absolute;
+  margin: 0;
+}
+
+.eyebrow {
+  left: 9.688%;
+  top: 7.13%;
+  color: #08776d;
+  font-size: 1.458cqw;
+  font-weight: 600;
+  line-height: 1.979cqw;
+}
+
+.headline {
+  left: 5.208%;
+  top: 14.259%;
+  width: 88.542%;
+  color: #082d36;
+  font-size: 4.115cqw;
+  font-weight: 700;
+  line-height: 5.417cqw;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.intro {
+  left: 5.469%;
+  top: 26.111%;
+  width: 66%;
+  color: #54757a;
+  font-size: 1.563cqw;
+  font-weight: 400;
+  line-height: 2.083cqw;
+}
+
+.stages {
+  position: absolute;
+  top: 36.019%;
+  left: 5.208%;
+}
+
+.stage {
+  position: absolute;
+  top: 0;
+  width: 22.917cqw;
+  height: 25.885cqw;
+  text-align: center;
+}
+
+.stage:nth-child(1) {
+  left: 0;
+}
+
+.stage:nth-child(2) {
+  left: 32.5cqw;
+}
+
+.stage:nth-child(3) {
+  left: 64.948cqw;
+}
+
+.logo {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: block;
+  width: 22.917cqw;
+  height: 22.917cqw;
+}
+
+.stage strong {
+  position: absolute;
+  top: 24.115cqw;
+  left: 50%;
+  color: #1d565d;
+  font-size: 1.094cqw;
+  font-weight: 600;
+  line-height: 1.51cqw;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.arrow {
+  position: absolute;
+  top: 7.031cqw;
+  left: 26.146cqw;
+  color: #0d9488;
+  font-size: 4.635cqw;
+  font-weight: 400;
+  line-height: 5.313cqw;
+}
+
+.stage:nth-child(2) .arrow {
+  left: 25.885cqw;
+}
+
+.divider {
+  position: absolute;
+  top: 83.704%;
+  left: 5.417%;
+  width: 89.375%;
+  height: 1px;
+  background: #c5d6d8;
+}
+
+.points {
+  position: absolute;
+  top: 86.481%;
+  left: 5.781%;
+  display: grid;
+  grid-template-columns: repeat(3, 26.771cqw);
+  gap: 5.781cqw;
+}
+
+.point {
+  display: grid;
+  grid-template-columns: 3.333cqw minmax(0, 1fr);
+  align-items: start;
+}
+
+.pointNumber {
+  color: #079b8c;
+  font-size: 1.302cqw;
+  font-weight: 700;
+  line-height: 1.667cqw;
+}
+
+.point strong {
+  display: block;
+  color: #0f3740;
+  font-size: 1.302cqw;
+  font-weight: 600;
+  line-height: 1.667cqw;
+}
+
+.point p {
+  max-width: 23.542cqw;
+  margin: 0.365cqw 0 0;
+  color: #5e7b80;
+  font-size: 1.146cqw;
+  font-weight: 400;
+  line-height: 1.667cqw;
+}
