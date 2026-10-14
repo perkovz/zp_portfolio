@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button, Column, Flex, Grid, Heading, SmartLink, Text } from "@/once-ui/components";
 import {
   authSteps,
@@ -79,6 +80,48 @@ export function DecorContractorCaseStudy() {
           {description}
         </Text>
       </Column>
+
+      <Image
+        src="/images/projects/decor-contractor/paint-job.png"
+        alt="Professional painter applying paint to an interior wall"
+        width={1920}
+        height={1080}
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style={{
+          display: "block",
+          width: "100%",
+          height: "auto",
+          borderRadius: "var(--radius-m)",
+        }}
+      />
+
+      <Image
+        src="/images/projects/decor-contractor/interior-painter-break.png"
+        alt="Professional painter taking a break while working in an interior"
+        width={1920}
+        height={1080}
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style={{
+          display: "block",
+          width: "100%",
+          height: "auto",
+          borderRadius: "var(--radius-m)",
+        }}
+      />
+
+      <Image
+        src="/images/projects/decor-contractor/paint-store-interior.png"
+        alt="Contractor walking through a modern paint store"
+        width={1920}
+        height={1080}
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style={{
+          display: "block",
+          width: "100%",
+          height: "auto",
+          borderRadius: "var(--radius-m)",
+        }}
+      />
 
       <Column id="overview" gap="l" paddingY="l">
         <SectionLabel n="01 Summary" title="Overview" />
@@ -269,6 +312,19 @@ export function DecorContractorCaseStudy() {
               The invitation flow used Microsoft Entra ID for authentication. A key product-design constraint was that the portal could control the invitation, branding, redirect destination, onboarding, and application session — and nothing more. This allowed the product to provide a branded, understandable entry point without pretending to own a security flow it could not control.
             </Text>
           </Column>
+          <Image
+            src="/images/projects/decor-contractor/entra-id.png"
+            alt="Microsoft Entra ID authentication and Decor Contractor access flow"
+            width={6049}
+            height={2906}
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              borderRadius: "var(--radius-m)",
+            }}
+          />
           <Column gap="0">
             {authSteps.map((step, i) => (
               <Flex
