@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { Column, Flex, IconButton, Text } from "@/once-ui/components";
 
 function sourceType(src: string) {
-  return src.endsWith(".webm") ? "video/webm" : "video/mp4";
+  if (src.endsWith(".webm")) return "video/webm";
+  if (src.endsWith(".mov")) return "video/quicktime";
+  return "video/mp4";
 }
 
 type DemoVideoProps = {
