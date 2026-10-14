@@ -1,5 +1,6 @@
 import { getPosts } from "@/app/utils/utils";
 import { baseURL, routes as routesConfig } from "@/app/resources";
+import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 
 export default async function sitemap() {
   const blogs = getPosts(["src", "app", "blog", "posts"]).map((post) => ({
@@ -7,10 +8,12 @@ export default async function sitemap() {
     lastModified: post.metadata.publishedAt,
   }));
 
-  const works = getPosts(["src", "app", "work", "projects"]).map((post) => ({
-    url: `${baseURL}/work/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
-  }));
+  const works = getPosts(["src", "app", "work", "projects"])
+    .filter((post) => isWorkProjectVisible(post.slug))
+    .map((post) => ({
+      url: `${baseURL}/work/${post.slug}`,
+      lastModified: post.metadata.publishedAt,
+    }));
 
   const sideProjects = getPosts(["src", "app", "projects", "items"]).map((post) => ({
     url: `${baseURL}/projects/${post.slug}`,

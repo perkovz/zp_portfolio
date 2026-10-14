@@ -1,4 +1,5 @@
 import { getPosts } from "@/app/utils/utils";
+import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 import { Column } from "@/once-ui/components";
 import { ProjectCard } from "@/components";
 
@@ -11,7 +12,7 @@ export function Projects({ range, exclude = [] }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   const sortedProjects = allProjects
-    .filter((post) => !exclude.includes(post.slug))
+    .filter((post) => isWorkProjectVisible(post.slug) && !exclude.includes(post.slug))
     .sort((a, b) => {
       return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
     });

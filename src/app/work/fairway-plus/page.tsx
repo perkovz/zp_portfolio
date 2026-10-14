@@ -1,12 +1,19 @@
+import { notFound } from "next/navigation";
 import { FairwayCaseStudy } from "@/components/work/fairway/FairwayCaseStudy";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
+import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 
 const title = "Fairway+ AI Store Assistant";
+const slug = "fairway-plus";
 const description =
   "An in-store AI assistant for Ace Hardware associates — designed at Epicor so a vague floor question returns aisle, price, and stock before the customer walks away.";
 
 export async function generateMetadata() {
+  if (!isWorkProjectVisible(slug)) {
+    return { robots: { index: false, follow: false } };
+  }
+
   const ogImage = `https://${baseURL}/images/projects/fairway/cover.jpg`;
   return {
     title,
@@ -28,6 +35,10 @@ export async function generateMetadata() {
 }
 
 export default function FairwayPlus() {
+  if (!isWorkProjectVisible(slug)) {
+    notFound();
+  }
+
   return (
     <>
       <script

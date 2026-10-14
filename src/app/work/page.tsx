@@ -1,4 +1,5 @@
 import { getPosts } from "@/app/utils/utils";
+import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 import { Column } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 import { baseURL } from "@/app/resources";
@@ -34,7 +35,9 @@ export async function generateMetadata() {
 }
 
 export default function Work() {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+  let allProjects = getPosts(["src", "app", "work", "projects"]).filter((project) =>
+    isWorkProjectVisible(project.slug),
+  );
 
   return (
     <Column maxWidth="m">

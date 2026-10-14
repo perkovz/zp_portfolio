@@ -1,11 +1,18 @@
+import { notFound } from "next/navigation";
 import { AiDesignLabCaseStudy } from "@/components/work/ai-design-lab/AiDesignLabCaseStudy";
 import { description, title } from "@/components/work/ai-design-lab/data";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
+import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 
 const ogImage = `https://${baseURL}/images/projects/ai-design-lab/cover.png`;
+const slug = "ai-design-lab";
 
 export async function generateMetadata() {
+  if (!isWorkProjectVisible(slug)) {
+    return { robots: { index: false, follow: false } };
+  }
+
   return {
     title,
     description,
@@ -26,6 +33,10 @@ export async function generateMetadata() {
 }
 
 export default function AiDesignLab() {
+  if (!isWorkProjectVisible(slug)) {
+    notFound();
+  }
+
   return (
     <>
       <script
