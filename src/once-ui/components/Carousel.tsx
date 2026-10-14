@@ -14,6 +14,7 @@ interface CarouselProps extends React.ComponentProps<typeof Flex> {
   aspectRatio?: string;
   sizes?: string;
   revealedByDefault?: boolean;
+  poster?: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -22,6 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({
   aspectRatio = "16 / 9",
   sizes,
   revealedByDefault = false,
+  poster,
   ...rest
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -95,6 +97,7 @@ const Carousel: React.FC<CarouselProps> = ({
           alt={images[activeIndex]?.alt}
           aspectRatio={aspectRatio}
           src={images[activeIndex]?.src}
+          poster={poster}
           style={{
             ...(images.length > 1 && {
               cursor: "pointer",

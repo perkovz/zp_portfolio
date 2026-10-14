@@ -16,6 +16,7 @@ export interface SmartImageProps extends React.ComponentProps<typeof Flex> {
   unoptimized?: boolean;
   sizes?: string;
   priority?: boolean;
+  poster?: string;
 }
 
 const SmartImage: React.FC<SmartImageProps> = ({
@@ -28,6 +29,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
   src,
   unoptimized = false,
   priority,
+  poster,
   sizes = "100vw",
   ...rest
 }) => {
@@ -129,6 +131,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
             loop
             muted
             playsInline
+            poster={poster}
             style={{
               width: "100%",
               height: "100%",

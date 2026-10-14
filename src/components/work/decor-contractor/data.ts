@@ -1,18 +1,18 @@
-export const title = "Decor Contractor Portal";
+export const title = "Decor Contractor";
 export const headline = "Making contractor account management faster, clearer, and more dependable";
 export const description =
-  "A contractor portal for Epicor Decor that extends the supplier relationship beyond the store counter — products, pricing, payments, invoices, and account information.";
+  "Decor Contractor extends the supplier relationship from the store counter to the job site";
 
 export const metaItems = [
   { label: "Role", value: "End to end", note: "Strategy, UX flows, interaction, content, design system" },
-  { label: "Product", value: "Decor Contractor Portal", note: "Epicor Decor — paint and decorating retail" },
+  { label: "Product", value: "Decor Contractor", note: "Epicor Decor — paint and decorating retail" },
   { label: "Audience", value: "Contractors", note: "Jobsite, truck, and after-hours account work" },
   { label: "Focus", value: "Account relationship", note: "Lookup, invoices, payments, and identity" },
 ];
 
 export const execSummary = [
   "Contractors often manage several jobs, purchase materials repeatedly, and rely on supplier accounts to keep work moving. The Decor Contractor portal was designed to extend that supplier relationship beyond the store counter, giving contractors faster access to products, pricing, payments, invoices, and account information.",
-  "The challenge was not simply to add more features. It was to make a complex business system feel clear and useful in the moments contractors need it most—while purchasing materials, checking prices, paying balances, or resolving account issues.",
+  "The challenge was to make complex business processes (purchasing materials, checking prices, paying balances) feel clear and useful where contractors spend the most time: on the job site.",
 ];
 
 export const challengeIntro =

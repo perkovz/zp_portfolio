@@ -12,7 +12,7 @@ All six main sections are enabled in `src/app/resources/config.js`:
 
 - `/` — introduction and work cards, ordered by publication date.
 - `/about` — biography, work experience, education, and technical skills.
-- `/work` — eight case studies: Propello AI Design Lab, Fairway+, Decor Contractor Portal, Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
+- `/work` — eight case studies: Propello AI Design Lab, Fairway+, Decor Contractor, Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
 - `/projects` — personal products and experiments; currently Subha Choghadiya Muhurta, a Chromium extension.
 - `/blog` — four MDX articles about design systems, design/development collaboration, and design tools.
 - `/gallery` — a photo collection configured in the content file.
@@ -110,7 +110,7 @@ For **Fairway+**, update both `src/app/work/projects/fairway-plus.mdx` (card met
 
 For **Propello AI Design Lab**, update `src/app/work/projects/ai-design-lab.mdx` (card metadata) and `src/components/work/ai-design-lab/` (page content). The hero uses `design-excellence.mp4` with `cover.png` as the reduced-motion poster, both under `public/images/projects/ai-design-lab/`.
 
-For **Decor Contractor Portal**, update both `src/app/work/projects/decor-contractor.mdx` (card metadata) and `src/components/work/decor-contractor/` (page content). The hero uses `payments-promo.mp4` with `payments-promo.jpg` as its poster, both under `public/images/projects/decor-contractor/`.
+For **Decor Contractor**, update both `src/app/work/projects/decor-contractor.mdx` (card metadata) and `src/components/work/decor-contractor/` (page content). The hero uses `payments-promo.mp4` with `payments-promo.jpg` as its poster, both under `public/images/projects/decor-contractor/`.
 
 ### Optional template features
 

@@ -14,6 +14,7 @@ interface ProjectCardProps {
   href: string;
   priority?: boolean;
   images: string[];
+  poster?: string;
   title: string;
   content: string;
   description: string;
@@ -24,6 +25,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
   images = [],
+  poster,
   title,
   content,
   description,
@@ -38,6 +40,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           src: image,
           alt: title,
         }))}
+        poster={poster}
       />
       <Flex
         mobileDirection="column"

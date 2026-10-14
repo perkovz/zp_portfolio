@@ -1,5 +1,3 @@
-import { InlineCode } from "@/once-ui/components";
-
 const person = {
   firstName: "Zvonimir",
   lastName: "Perkovic",
@@ -55,9 +53,7 @@ const home = {
   headline: <>Full-stack Product Designer</>,
   subline: (
     <>
-      I'm Zvonimir, a Senior Product designer at{" "}
-      <InlineCode>EPICOR SOFTWARE</InlineCode> where I craft
-      intuitive user experiences for Retail products.
+      Senior Product Designer working at the intersection of AI systems, enterprise software, and operational design. I design how people, workflows, data, and intelligent systems work together.
     </>
   ),
 };
