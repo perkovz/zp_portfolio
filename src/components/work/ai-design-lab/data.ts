@@ -71,13 +71,13 @@ export const impactPoints = [
 
 export const demos = {
   linkingProducts: {
-    src: "/images/projects/ai-design-lab/linking-products.mov",
+    src: "/images/projects/ai-design-lab/linking-products.mp4",
     label: "Linking products demo",
     caption:
       "Linking products feature was a good example of a feature that sounded and looked great as a static user flow, but was just 'ok' once it was built in Design Lab",
   },
   customerPosSearch: {
-    src: "/images/projects/ai-design-lab/customer-pos-search.mov",
+    src: "/images/projects/ai-design-lab/customer-pos-search.mp4",
     label: "Customer POS search demo",
     caption:
       "Customer POS search - brainstorming product ideas as a functional prototypes.",

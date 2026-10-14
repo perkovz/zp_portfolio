@@ -3,12 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Column, Flex, IconButton, Text } from "@/once-ui/components";
 
-function sourceType(src: string) {
-  if (src.endsWith(".webm")) return "video/webm";
-  if (src.endsWith(".mov")) return "video/quicktime";
-  return "video/mp4";
-}
-
 type DemoVideoProps = {
   src: string;
   label: string;
@@ -88,6 +82,7 @@ export function DemoVideo({ src, label, caption, load = "visible" }: DemoVideoPr
         {showVideo && (
           <video
             ref={videoRef}
+            src={src}
             muted
             loop
             playsInline
@@ -105,9 +100,7 @@ export function DemoVideo({ src, label, caption, load = "visible" }: DemoVideoPr
               objectPosition: "center",
               display: "block",
             }}
-          >
-            <source src={src} type={sourceType(src)} />
-          </video>
+          />
         )}
         {showPlay && (
           <Column gap="12" horizontal="center">

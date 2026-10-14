@@ -104,15 +104,20 @@ export function AiDesignLabCaseStudy() {
             </Column>
           ))}
         </Grid>
-        <SmartImage
-          src="/images/projects/ai-design-lab/annotated-work.png"
-          alt="Annotated Create Children screens covering attribute groups, dropdowns, and selection states"
-          aspectRatio="3747 / 2274"
-          objectFit="contain"
-          radius="m"
-          unoptimized
-          sizes="(max-width: 960px) 100vw, 1120px"
-        />
+        <Column gap="12" fillWidth>
+          <SmartImage
+            src="/images/projects/ai-design-lab/annotated-work.png"
+            alt="Annotated Create Children screens covering attribute groups, dropdowns, and selection states"
+            aspectRatio="3747 / 2274"
+            objectFit="contain"
+            radius="m"
+            unoptimized
+            sizes="(max-width: 960px) 100vw, 1120px"
+          />
+          <Text variant="body-default-s" onBackground="neutral-weak">
+            Annotated user flow
+          </Text>
+        </Column>
       </Column>
 
       <Column id="approach" gap="l" paddingY="l">
@@ -134,15 +139,20 @@ export function AiDesignLabCaseStudy() {
             </Column>
           ))}
         </Grid>
-        <SmartImage
-          src="/images/projects/ai-design-lab/kendo-ui.png"
-          alt="Kendo UI component library in Figma, the system the lab generates from"
-          aspectRatio="3837 / 2013"
-          objectFit="contain"
-          radius="m"
-          unoptimized
-          sizes="(max-width: 960px) 100vw, 1120px"
-        />
+        <Column gap="12" fillWidth>
+          <SmartImage
+            src="/images/projects/ai-design-lab/kendo-ui.png"
+            alt="Kendo UI component library in Figma, the system the lab generates from"
+            aspectRatio="3837 / 2013"
+            objectFit="contain"
+            radius="m"
+            unoptimized
+            sizes="(max-width: 960px) 100vw, 1120px"
+          />
+          <Text variant="body-default-s" onBackground="neutral-weak">
+            Kendo UI Figma component library, connected with AI design lab
+          </Text>
+        </Column>
       </Column>
 
       <Column id="environment" gap="l" paddingY="l">
