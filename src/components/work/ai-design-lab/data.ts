@@ -1,6 +1,6 @@
 export const title = "Propello AI Design Lab";
 export const description =
-  "Improving design quality through functional, code-first prototyping.";
+  "Improving design quality through functional code-first prototyping.";
 
 export const metaItems = [
   { label: "Role", value: "Creator", note: "Senior Product Designer, Epicor Retail" },
@@ -39,7 +39,10 @@ export const approachPoints = [
   },
   {
     title: "From Figma into a live interface",
-    body: "Figma layouts and feature flows can also be brought into the workspace and transformed into live, interactive interfaces with minimal effort.",
+    body: [
+      "Figma layouts and feature flows can also be brought into the workspace and transformed into live, interactive interfaces with minimal effort.",
+      "High-level feature view, documentation and collaboration stays in Figma, while interactions move to code.",
+    ],
   },
 ];
 
@@ -47,7 +50,7 @@ export const environmentIntro =
   "The most important shift is that design validation happens inside a working product environment rather than through static screens alone.";
 
 export const capabilities = [
-  "Generate working prototypes from basic prompts",
+  "Generate working prototypes from static screens",
   "Interact with realistic user flows early",
   "Test ideas before development is complete",
   "Identify usability issues sooner",
@@ -61,11 +64,11 @@ export const environmentClose =
 export const impactPoints = [
   {
     title: "Closer to a testable experience",
-    body: "The Design Lab helped establish a faster and more quality-focused way of working within the Retail unit. By bringing design, prototyping, and validation closer together, it reduced the distance between an idea and an experience that could actually be tested.",
+    body: "By bringing design, prototyping, and validation closer together, the Design Lab reduced the distance between an idea and a testable experience.",
   },
   {
     title: "Speed without trading away quality",
-    body: "The approach supported faster iteration without treating speed and quality as competing goals. Teams could explore more options, discover issues earlier, and continue refining the experience until they reached a stronger solution.",
+    body: "The approach enabled faster iteration, earlier issue discovery, and stronger solutions without trading away quality.",
   },
 ];
 

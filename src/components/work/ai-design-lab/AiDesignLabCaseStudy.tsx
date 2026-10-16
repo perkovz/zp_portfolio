@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { HeroVideo } from "@/components/work/fairway/HeroVideo";
 import { DemoVideo } from "./DemoVideo";
+import { LabShots } from "./LabShots";
+import styles from "./case-study.module.css";
 import {
   approachPoints,
   capabilities,
@@ -38,15 +41,20 @@ export function AiDesignLabCaseStudy() {
         Projects
       </Button>
 
-      <HeroVideo
-        src="/images/projects/ai-design-lab/design-excellence.mp4"
-        poster="/images/projects/ai-design-lab/cover.png"
-        label="Design Excellence with AI Design Lab"
-        aspectRatio="16 / 9"
-        background="#0C0E0C"
-        objectFit="contain"
-        soundToggle
-      />
+      <Column gap="12" fillWidth>
+        <HeroVideo
+          src="/images/projects/ai-design-lab/design-excellence.mp4"
+          poster="/images/projects/ai-design-lab/cover.png"
+          label="Design Excellence with AI Design Lab"
+          aspectRatio="16 / 9"
+          background="#0C0E0C"
+          objectFit="contain"
+          soundToggle
+        />
+        <Text variant="body-default-s" onBackground="neutral-weak">
+          Unmute for full experience
+        </Text>
+      </Column>
 
       <Column gap="12" maxWidth="m">
         <Heading as="h1" variant="display-strong-m">
@@ -87,6 +95,8 @@ export function AiDesignLabCaseStudy() {
         </Grid>
       </Column>
 
+      <LabShots />
+
       <Column id="challenge" gap="l" paddingY="l">
         <SectionLabel n="02 Challenge" title="Static screens hide the real problems." />
         <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
@@ -105,15 +115,21 @@ export function AiDesignLabCaseStudy() {
           ))}
         </Grid>
         <Column gap="12" fillWidth>
-          <SmartImage
-            src="/images/projects/ai-design-lab/annotated-work.png"
-            alt="Annotated Create Children screens covering attribute groups, dropdowns, and selection states"
-            aspectRatio="3747 / 2274"
-            objectFit="contain"
-            radius="m"
-            unoptimized
-            sizes="(max-width: 960px) 100vw, 1120px"
-          />
+          <div className={styles.fullBleedMedia}>
+            <Image
+              src="/images/projects/ai-design-lab/annotated-work.png"
+              alt="Annotated Create Children screens covering attribute groups, dropdowns, and selection states"
+              width={4000}
+              height={2000}
+              unoptimized
+              sizes="100vw"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+              }}
+            />
+          </div>
           <Text variant="body-default-s" onBackground="neutral-weak">
             Annotated user flow
           </Text>
@@ -207,12 +223,6 @@ export function AiDesignLabCaseStudy() {
           src={demos.customerPosSearch.src}
           label={demos.customerPosSearch.label}
           caption={demos.customerPosSearch.caption}
-        />
-        <DemoVideo
-          src={demos.arStatements.src}
-          label={demos.arStatements.label}
-          caption={demos.arStatements.caption}
-          load="click"
         />
       </Column>
 

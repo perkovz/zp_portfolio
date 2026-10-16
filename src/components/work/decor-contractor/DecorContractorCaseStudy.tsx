@@ -342,6 +342,44 @@ export function DecorContractorCaseStudy() {
             ))}
           </Column>
         </Column>
+
+        <Column id="micro-interactions" gap="l">
+          <Column gap="12" maxWidth="m">
+            <FlowHeading n="05.5" title="Micro interactions and transitions that excite" />
+            <Text variant="body-default-m" onBackground="neutral-weak">
+              Thoughtful microinteractions added clarity, feedback, and moments of delight to an otherwise utilitarian B2B SaaS experience.
+            </Text>
+          </Column>
+          <Flex
+            as="figure"
+            fillWidth
+            overflow="hidden"
+            radius="m"
+            horizontal="center"
+            vertical="center"
+            style={{
+              aspectRatio: "16 / 9",
+              background: "#062D37",
+              margin: 0,
+            }}
+          >
+            <video
+              src="/images/projects/decor-contractor/payment-failed.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Decor Contractor payment failure micro interaction"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
+          </Flex>
+        </Column>
       </Column>
 
       <Column id="system" gap="l" paddingY="l">

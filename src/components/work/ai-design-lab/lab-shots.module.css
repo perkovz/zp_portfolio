@@ -1,0 +1,46 @@
+.bleed {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+  margin-top: calc(var(--responsive-space-xl) / -2);
+  margin-bottom: calc(var(--responsive-space-xl) / -2);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  gap: 1.7vw;
+  transform: translate(-51.55vw, -50%);
+}
+
+.shot {
+  position: relative;
+  flex: 0 0 66.55vw;
+  aspect-ratio: 2555 / 1411;
+  overflow: hidden;
+}
+
+.shot img {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .bleed {
+    aspect-ratio: 4 / 3;
+  }
+
+  .track {
+    gap: 2.5vw;
+    transform: translate(-78vw, -50%);
+  }
+
+  .shot {
+    flex-basis: 88vw;
+  }
+}
