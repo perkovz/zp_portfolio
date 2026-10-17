@@ -24,6 +24,7 @@ export function BrandPlatformShowcase() {
           src={`${imagePath}/platform-halation.svg`}
           width={820}
           height={820}
+          quality={90}
           alt=""
         />
 
@@ -44,6 +45,7 @@ export function BrandPlatformShowcase() {
             src={`${imagePath}/platform-ios-home.png`}
             width={219}
             height={434}
+            quality={90}
             alt="Decor Contractor icon on an iOS home screen"
           />
           <strong>iOS</strong>
@@ -55,6 +57,7 @@ export function BrandPlatformShowcase() {
             src={`${imagePath}/platform-android-home.png`}
             width={244}
             height={434}
+            quality={90}
             alt="Decor Contractor icon on an Android home screen"
           />
           <strong>ANDROID</strong>
@@ -76,6 +79,7 @@ export function BrandPlatformShowcase() {
                   src={`${imagePath}/${treatment.image}`}
                   width={215}
                   height={215}
+                  quality={90}
                   alt=""
                 />
                 <strong>{treatment.label}</strong>

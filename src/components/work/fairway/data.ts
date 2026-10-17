@@ -75,7 +75,7 @@ export const flowSections = [
     summary:
       "Enterprise setup, not consumer signup. The device is connected to a store instance before anyone signs in, keeping first run short and operational.",
     kind: "hero" as const,
-    hero: shot("onboarding-end.jpg?v=2"),
+    hero: shot("onboarding-hero.jpg"),
     heroAlt: "Fairway+ onboarding: store signup behind the welcome screen",
     screens: [],
   },
@@ -86,7 +86,7 @@ export const flowSections = [
     summary:
       "A greeting and one input remove everything between the associate and the first question. Home is not a dashboard; it is the beginning of a conversation.",
     kind: "hero" as const,
-    hero: shot("home-hero.jpg?v=2"),
+    hero: shot("home-hero.jpg"),
     heroAlt: "Fairway+ splash, ready home, and first reply on three phones",
     screens: [],
   },
@@ -97,7 +97,7 @@ export const flowSections = [
     summary:
       "A question is typed in the aisle and answered in the same thread: one product with aisle and price, or a short set to compare—without leaving the conversation.",
     kind: "hero" as const,
-    hero: shot("message-hero.jpg?v=2"),
+    hero: shot("message-hero.jpg"),
     heroAlt: "A hammer request loading, then a single match and a short comparison set",
     screens: [],
   },
@@ -108,7 +108,7 @@ export const flowSections = [
     summary:
       "When the request is still broad, Prism narrows it progressively: a focused question, optional filters, and a short set of matching products.",
     kind: "hero" as const,
-    hero: shot("followup-hero.jpg?v=2"),
+    hero: shot("followup-hero.jpg"),
     heroAlt: "Saw-blade follow-up, refine sheet, and matching product list",
     screens: [],
   },
@@ -119,7 +119,7 @@ export const flowSections = [
     summary:
       "One tap reveals the information a short answer cannot hold: imagery, item and UPC identifiers, aisle location, availability, features, and specifications.",
     kind: "hero" as const,
-    hero: shot("product-detail.png?v=2"),
+    hero: shot("product-detail.png"),
     heroAlt: "Product details for a framing hammer, with specifications on the screen behind",
     screens: [],
   },

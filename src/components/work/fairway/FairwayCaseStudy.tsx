@@ -158,18 +158,20 @@ export function FairwayCaseStudy() {
               alt={flow.heroAlt}
               aspectRatio="1745 / 1135"
               objectFit="cover"
-              unoptimized
               radius="xl"
-              sizes="(max-width: 960px) 100vw, 1120px"
+              sizes="(max-width: 960px) 100vw, 1440px"
             />
           </Column>
         ))}
       </Column>
 
       <figure className={closingStyles.bleed}>
-        <img
+        <SmartImage
           src="/images/projects/fairway/closing-hero.jpg"
           alt="Camera Match flow: capture, identify, locate, kit, and repair list across overlapping phones"
+          aspectRatio="5 / 3"
+          objectFit="cover"
+          sizes="100vw"
         />
       </figure>
 
@@ -190,6 +192,14 @@ export function FairwayCaseStudy() {
             </Column>
           ))}
         </Grid>
+        <SmartImage
+          src="/images/projects/fairway/google-play.png"
+          alt="Fairway+ on Google Play: ask without a SKU, get aisle and price, then open product details"
+          aspectRatio="16 / 9"
+          objectFit="cover"
+          radius="xl"
+          sizes="(max-width: 960px) 100vw, 1440px"
+        />
       </Column>
 
       <Column id="reflection" gap="l" paddingY="l">

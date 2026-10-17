@@ -28,6 +28,7 @@ export function LabShots() {
               alt={shot.alt}
               fill
               sizes="(max-width: 768px) 88vw, 67vw"
+              quality={90}
               unoptimized
             />
           </div>

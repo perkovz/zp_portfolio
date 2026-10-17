@@ -17,6 +17,7 @@ export interface SmartImageProps extends React.ComponentProps<typeof Flex> {
   sizes?: string;
   priority?: boolean;
   poster?: string;
+  quality?: number;
 }
 
 const SmartImage: React.FC<SmartImageProps> = ({
@@ -30,6 +31,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
   unoptimized = false,
   priority,
   poster,
+  quality = 90,
   sizes = "100vw",
   ...rest
 }) => {
@@ -158,6 +160,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
             alt={alt}
             priority={priority}
             sizes={sizes}
+            quality={quality}
             unoptimized={unoptimized}
             fill
             style={{
@@ -211,6 +214,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                 alt={alt}
                 fill
                 sizes="90vw"
+                quality={quality}
                 unoptimized={unoptimized}
                 style={{
                   objectFit: "contain",

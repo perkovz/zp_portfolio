@@ -2,7 +2,7 @@
 
 import React, { forwardRef, useState, useEffect, ReactNode } from "react";
 import classNames from "classnames";
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons/lib";
 import { iconLibrary } from "../icons";
 import { ColorScheme, ColorWeight } from "../types";
 import { Flex, Tooltip } from ".";

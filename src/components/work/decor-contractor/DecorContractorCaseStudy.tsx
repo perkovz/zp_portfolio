@@ -86,6 +86,7 @@ export function DecorContractorCaseStudy() {
         alt="Professional painter applying paint to an interior wall"
         width={1920}
         height={1080}
+        quality={90}
         sizes="(max-width: 1200px) 100vw, 1200px"
         style={{
           display: "block",
@@ -100,6 +101,7 @@ export function DecorContractorCaseStudy() {
         alt="Professional painter taking a break while working in an interior"
         width={1920}
         height={1080}
+        quality={90}
         sizes="(max-width: 1200px) 100vw, 1200px"
         style={{
           display: "block",
@@ -114,6 +116,7 @@ export function DecorContractorCaseStudy() {
         alt="Contractor walking through a modern paint store"
         width={1920}
         height={1080}
+        quality={90}
         sizes="(max-width: 1200px) 100vw, 1200px"
         style={{
           display: "block",
@@ -317,6 +320,7 @@ export function DecorContractorCaseStudy() {
             alt="Microsoft Entra ID authentication and Decor Contractor access flow"
             width={6049}
             height={2906}
+            quality={90}
             sizes="(max-width: 1200px) 100vw, 1200px"
             style={{
               display: "block",

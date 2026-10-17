@@ -121,6 +121,7 @@ export function AiDesignLabCaseStudy() {
               alt="Annotated Create Children screens covering attribute groups, dropdowns, and selection states"
               width={4000}
               height={2000}
+              quality={90}
               unoptimized
               sizes="100vw"
               style={{

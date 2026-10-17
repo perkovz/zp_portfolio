@@ -50,10 +50,10 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Zvonimir Perkovic portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Full-stack Product Designer</>,
+  headline: <>Zvonimir Perkovic</>,
   subline: (
     <>
-      Senior Product Designer working at the intersection of AI systems, enterprise software, and operational design. I design how people, workflows, data, and intelligent systems work together.
+      Senior Product Designer working at the intersection of AI systems and enterprise software. I design how people, workflows, data, and intelligent systems work together.
     </>
   ),
 };
@@ -93,24 +93,23 @@ const about = {
         company: "Epicor Software",
         timeframe: "Apr 2025 – Present",
         role: "Senior Product Designer",
+        summary: (
+          <>
+            Designed for Retail Operations, Inventory and Commerce; with the focus on improving product quality and velocity of two development and a large product management team.
+          </>
+        ),
         achievements: [
           <>
-            Design for Retail Operations, Inventory &amp; Commerce: Epicor&apos;s flagship Propello and Decor products.
+            Shaped Propello’s core modules; Sales/POS, Product Management, Customers, Accounts Receivable, and most utilities such as Integrations and Scheduling.
           </>,
           <>
-            Designed Epicor Fairway+, an AI assistant for store clerks now on Google Play. Voice in and voice out, plain-language questions, live inventory and solutions.
+            Designed Epicor Fairway+, an AI assistant for store associates. Epicor Prism AI analyses and answers inventory and project based questions from a prompt, voice, or a photo.
           </>,
           <>
-            Created the Propello AI Design Lab, a code-first workspace where Retail teams generate and validate functional prototypes from Kendo UI and Figma libraries instead of static screens.
+            Set the UX foundation for Decor Fusion and the Contractor app: information architecture, navigation, mobile workflows, and design tokens. Frontend architecture recommendations were adopted by Engineering.
           </>,
           <>
-            Designed core Decor Fusion Mobile flows, including inventory transfer, barcode scanning, filtering, physical inventory, invoice detail, customer CRM, and purchase ordering for paint and decorating retailers on the floor or in the warehouse.
-          </>,
-          <>
-            Designed the Decor Contractor App, so contractors can deal with the store on their own time: check invoices, pay, and order product without a phone call to the counter.
-          </>,
-          <>
-            Designed Propello flows across Softgoods, Price Review, POS, Customers, Accounts Receivable, and Product management — the daily work of independent retailers, not just the happy path at checkout.
+            Built the AI Design Lab, a prototyping workshop where product designers turn Figma flows into functional React Native prototypes. Codex generates the code; the designer iterates until the flow is ready for sign-off.
           </>,
         ],
         images: [
@@ -123,6 +122,13 @@ const about = {
           {
             src: "/images/projects/ai-design-lab/design-excellence.mp4",
             alt: "Propello AI Design Lab: code-first prototyping.",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/decor-contractor/payments-promo.mp4",
+            poster: "/images/projects/decor-contractor/payments-promo.jpg",
+            alt: "Decor Contractor payment experience.",
             width: 16,
             height: 9,
           },

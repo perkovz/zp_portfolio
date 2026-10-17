@@ -20,6 +20,7 @@ export function BrandingShowcase() {
         src={`${imagePath}/brand-ellipse-large.svg`}
         width="1500"
         height="1500"
+        quality={90}
         alt=""
       />
       <Image
@@ -27,6 +28,7 @@ export function BrandingShowcase() {
         src={`${imagePath}/brand-ellipse-small.svg`}
         width="1040"
         height="1040"
+        quality={90}
         alt=""
       />
       <Image
@@ -34,6 +36,7 @@ export function BrandingShowcase() {
         src={`${imagePath}/brand-grid-inner.svg`}
         width="840"
         height="840"
+        quality={90}
         alt=""
       />
       <Image
@@ -41,6 +44,7 @@ export function BrandingShowcase() {
         src={`${imagePath}/brand-grid-middle.svg`}
         width="975"
         height="975"
+        quality={90}
         alt=""
       />
       <Image
@@ -48,6 +52,7 @@ export function BrandingShowcase() {
         src={`${imagePath}/brand-grid-outer.svg`}
         width="1110"
         height="1110"
+        quality={90}
         alt=""
       />
 
@@ -82,6 +87,7 @@ export function BrandingShowcase() {
           src={`${imagePath}/contractor-group.png`}
           width="753"
           height="751"
+          quality={90}
           alt=""
         />
       </div>
@@ -91,6 +97,7 @@ export function BrandingShowcase() {
           src={`${imagePath}/fusion-group.png`}
           width="759"
           height="751"
+          quality={90}
           alt=""
         />
       </div>

@@ -252,6 +252,11 @@ export default function About() {
                     >
                       {experience.role}
                     </Text>
+                    {"summary" in experience && experience.summary && (
+                      <Text variant="body-default-m" marginBottom="m">
+                        {experience.summary}
+                      </Text>
+                    )}
                     <Column as="ul" gap="16">
                       {experience.achievements.map(
                         (achievement: JSX.Element, index: number) => (
@@ -283,6 +288,7 @@ export default function About() {
                               sizes={image.width.toString()}
                               alt={image.alt}
                               src={image.src}
+                              poster={image.poster}
                             />
                           </Flex>
                         ))}

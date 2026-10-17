@@ -49,6 +49,7 @@ export function BrandEvolutionShowcase() {
               src={`${imagePath}/${stage.image}`}
               width="440"
               height="440"
+              quality={90}
               alt=""
             />
             <strong>{stage.label}</strong>

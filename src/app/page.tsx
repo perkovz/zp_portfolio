@@ -71,15 +71,15 @@ export default function Home() {
           }),
         }}
       />
-      <Column fillWidth paddingY="l" gap="m">
-        <Column maxWidth="s">
+      <Column fillWidth paddingY="l" gap="m" horizontal="center">
+        <Column fillWidth maxWidth="s" horizontal="center" align="center">
           <RevealFx
             translateY="4"
             fillWidth
-            horizontal="start"
+            horizontal="center"
             paddingBottom="m"
           >
-            <Heading wrap="balance" variant="display-strong-l">
+            <Heading align="center" wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
@@ -87,10 +87,11 @@ export default function Home() {
             translateY="8"
             delay={0.2}
             fillWidth
-            horizontal="start"
+            horizontal="center"
             paddingBottom="m"
           >
             <Text
+              align="center"
               wrap="balance"
               onBackground="neutral-weak"
               variant="heading-default-xl"
@@ -98,7 +99,7 @@ export default function Home() {
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx translateY="12" delay={0.4} horizontal="start">
+          <RevealFx translateY="12" delay={0.4} horizontal="center">
             <Button
               id="about"
               data-border="rounded"
