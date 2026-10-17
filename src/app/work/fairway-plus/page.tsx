@@ -4,10 +4,10 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 
-const title = "Fairway+ AI Store Assistant";
+const title = "Bringing AI to the Store Floor with Fairway+";
 const slug = "fairway-plus";
 const description =
-  "An in-store AI assistant for Ace Hardware associates — designed at Epicor so a vague floor question returns aisle, price, and stock before the customer walks away.";
+  "An AI in-store assistant designed to minimize store trips and help customers with their projects.";
 
 export async function generateMetadata() {
   if (!isWorkProjectVisible(slug)) {

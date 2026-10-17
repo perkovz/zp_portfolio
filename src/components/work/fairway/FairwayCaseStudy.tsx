@@ -1,4 +1,5 @@
-import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { FlowSlider } from "./FlowSlider";
 import { GuidedHero } from "./GuidedHero";
 import { HeroVideo } from "./HeroVideo";
 import closingStyles from "./closing-hero.module.css";
@@ -8,46 +9,10 @@ import {
   metaItems,
   outcomes,
   problemPoints,
+  processIntro,
+  processTitle,
   reflectionPoints,
 } from "./data";
-
-function Phone({
-  image,
-  label,
-  caption,
-  state,
-  index,
-}: {
-  image: string;
-  label: string;
-  caption: string;
-  state: string;
-  index: number;
-}) {
-  return (
-    <Column gap="12" fillWidth>
-      <SmartImage
-        src={image}
-        alt={label}
-        aspectRatio="9 / 19"
-        objectFit="contain"
-        unoptimized
-        radius="l"
-        sizes="(max-width: 960px) 90vw, 280px"
-      />
-      <Flex gap="8" vertical="center">
-        <Text variant="label-default-s" onBackground="neutral-weak" style={{ fontVariantNumeric: "tabular-nums" }}>
-          {String(index + 1).padStart(2, "0")}
-        </Text>
-        <Text variant="label-default-m">{label}</Text>
-      </Flex>
-      <Text variant="body-default-s" onBackground="neutral-weak">
-        {caption}
-      </Text>
-      <Tag size="s" variant="neutral" label={state} />
-    </Column>
-  );
-}
 
 function SectionLabel({ n, title }: { n: string; title: string }) {
   return (
@@ -68,6 +33,15 @@ export function FairwayCaseStudy() {
       <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
         Projects
       </Button>
+
+      <Column gap="12" maxWidth="m">
+        <Heading as="h1" variant="display-strong-s">
+          Bringing AI to the Store Floor with Fairway+
+        </Heading>
+        <Text variant="body-default-l" onBackground="neutral-weak">
+          An AI in-store assistant designed to minimize store trips and help customers with their projects.
+        </Text>
+      </Column>
 
       <HeroVideo
         src="/images/projects/fairway/fairway-hero.mp4"
@@ -111,7 +85,7 @@ export function FairwayCaseStudy() {
       <GuidedHero assetBase="/images/projects/fairway" />
 
       <Column id="problem" gap="l" paddingY="l">
-        <SectionLabel n="02 — Problem" title="Three constraints from the floor." />
+        <SectionLabel n="02 — Problem" title="Three constraints from the floor" />
         <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
           {problemPoints.map((point, i) => (
             <Column key={point.title} gap="12">
@@ -135,6 +109,22 @@ export function FairwayCaseStudy() {
           alt="On the store floor: an associate with a phone and a box of fasteners listens as a customer points at packed shelves"
         />
       </figure>
+
+      <Column id="process" gap="l" paddingY="l">
+        <SectionLabel n="03 — Design process" title={processTitle} />
+        <Text variant="body-default-m" onBackground="neutral-weak" style={{ maxWidth: "40rem" }}>
+          {processIntro}
+        </Text>
+        <SmartImage
+          src="/images/projects/fairway/competitive-research.png"
+          alt="Competitive review: cover, findings, and how Rundoo, Lowe’s, and Home Depot answer"
+          aspectRatio="16 / 9"
+          objectFit="cover"
+          radius="xl"
+          sizes="(max-width: 960px) 100vw, 1440px"
+        />
+        <FlowSlider />
+      </Column>
 
       <Column id="flows" gap="xl" paddingY="l">
         <SectionLabel n="04 — Flows" title="Five steps, one thread" />
@@ -165,6 +155,18 @@ export function FairwayCaseStudy() {
         ))}
       </Column>
 
+      <Column id="camera" gap="l" paddingY="l">
+        <SectionLabel n="05 — Camera" title="Start with a click" />
+        <Column gap="m" style={{ maxWidth: "40rem" }}>
+          <Text variant="body-default-m" onBackground="neutral-weak">
+            Customers often aren’t aware of every product a job needs. The fastest way we found to help is AI-powered snap-and-search: a photo starts the match, then the thread fills in the rest of the kit.
+          </Text>
+          <Text variant="body-default-m" onBackground="neutral-weak">
+            Here’s a quick preview of the feature. The full flow stays internal.
+          </Text>
+        </Column>
+      </Column>
+
       <figure className={closingStyles.bleed}>
         <SmartImage
           src="/images/projects/fairway/closing-hero.jpg"
@@ -176,7 +178,7 @@ export function FairwayCaseStudy() {
       </figure>
 
       <Column id="outcomes" gap="l" paddingY="l">
-        <SectionLabel n="05 — Outcomes" title="Shipped. Usage validation comes next." />
+        <SectionLabel n="06 — Outcomes" title="Shipped and in beta-testing" />
         <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
           {outcomes.map((item) => (
             <Column key={item.label} gap="8" padding="l" border="neutral-medium" radius="l">
@@ -203,7 +205,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="reflection" gap="l" paddingY="l">
-        <SectionLabel n="06 — Reflection" title="What I’d keep, and what I’d test next." />
+        <SectionLabel n="07 — Reflection" title="What I’d keep, and what I’d test next" />
         <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
           {reflectionPoints.map((point) => (
             <Column key={point.title} gap="12">
