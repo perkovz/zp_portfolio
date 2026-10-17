@@ -1,4 +1,6 @@
-import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, SmartImage, Text } from "@/once-ui/components";
+import { getNextWorkProject } from "@/app/work/getNextWorkProject";
+import { NextProject } from "@/components/work/NextProject";
 import { FlowSlider } from "./FlowSlider";
 import { GuidedHero } from "./GuidedHero";
 import { HeroVideo } from "./HeroVideo";
@@ -28,6 +30,8 @@ function SectionLabel({ n, title }: { n: string; title: string }) {
 }
 
 export function FairwayCaseStudy() {
+  const nextProject = getNextWorkProject("fairway-plus");
+
   return (
     <Column fillWidth maxWidth="xl" gap="xl" paddingBottom="xl">
       <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
@@ -39,7 +43,7 @@ export function FairwayCaseStudy() {
           Bringing AI to the Store Floor with Fairway+
         </Heading>
         <Text variant="body-default-l" onBackground="neutral-weak">
-          An AI in-store assistant designed to minimize store trips and help customers with their projects.
+          AI assistant for hardware store associates designed to help customers get everything the first time.
         </Text>
       </Column>
 
@@ -127,7 +131,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="flows" gap="xl" paddingY="l">
-        <SectionLabel n="04 — Flows" title="Five steps, one thread" />
+        <SectionLabel n="04 — Flows" title="Four steps, one thread" />
         {flowSections.map((flow) => (
           <Column key={flow.id} id={flow.id} gap="l">
             <Column gap="8" maxWidth="s">
@@ -159,8 +163,19 @@ export function FairwayCaseStudy() {
         <SectionLabel n="05 — Camera" title="Start with a click" />
         <Column gap="m" style={{ maxWidth: "40rem" }}>
           <Text variant="body-default-m" onBackground="neutral-weak">
-            Customers often aren’t aware of every product a job needs. The fastest way we found to help is AI-powered snap-and-search: a photo starts the match, then the thread fills in the rest of the kit.
+            Customers often aren’t aware of every product a job needs. The fastest way to help them is AI-powered snap-and-search:
           </Text>
+          <Column as="ul" gap="8">
+            <Text as="li" variant="body-default-m" onBackground="neutral-weak">
+              A clerk starts with a photo
+            </Text>
+            <Text as="li" variant="body-default-m" onBackground="neutral-weak">
+              AI responds with a product
+            </Text>
+            <Text as="li" variant="body-default-m" onBackground="neutral-weak">
+              The customer follows up with a project description
+            </Text>
+          </Column>
           <Text variant="body-default-m" onBackground="neutral-weak">
             Here’s a quick preview of the feature. The full flow stays internal.
           </Text>
@@ -220,19 +235,7 @@ export function FairwayCaseStudy() {
         </Grid>
       </Column>
 
-      <Column gap="12" paddingY="xl" style={{ borderTop: "1px solid var(--neutral-alpha-medium)" }}>
-        <Text variant="label-default-s" onBackground="neutral-weak">
-          Next project
-        </Text>
-        <SmartLink href="/work/smart-shower">
-          <Heading as="h2" variant="heading-strong-l">
-            Prototyping an Advanced Shower GUI with Figma and Crank Storyboard
-          </Heading>
-        </SmartLink>
-        <Text variant="body-default-m" onBackground="neutral-weak">
-          Research, design, prototyping, and usability testing for a flexible embedded shower interface built with Crank Storyboard.
-        </Text>
-      </Column>
+      {nextProject && <NextProject {...nextProject} />}
     </Column>
   );
 }

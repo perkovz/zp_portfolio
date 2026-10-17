@@ -4,6 +4,7 @@ import { description, title } from "@/components/work/ai-design-lab/data";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { isWorkProjectVisible } from "@/app/work/projectVisibility";
+import { getNextWorkProject } from "@/app/work/getNextWorkProject";
 
 const ogImage = `https://${baseURL}/images/projects/ai-design-lab/cover.png`;
 const slug = "ai-design-lab";
@@ -54,7 +55,7 @@ export default function AiDesignLab() {
           }),
         }}
       />
-      <AiDesignLabCaseStudy />
+      <AiDesignLabCaseStudy nextProject={getNextWorkProject("ai-design-lab")} />
     </>
   );
 }

@@ -7,7 +7,7 @@ import { isWorkProjectVisible } from "@/app/work/projectVisibility";
 const title = "Bringing AI to the Store Floor with Fairway+";
 const slug = "fairway-plus";
 const description =
-  "An AI in-store assistant designed to minimize store trips and help customers with their projects.";
+  "AI assistant for hardware store associates designed to help customers get everything the first time.";
 
 export async function generateMetadata() {
   if (!isWorkProjectVisible(slug)) {

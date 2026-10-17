@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, SmartImage, Text } from "@/once-ui/components";
+import { NextProject } from "@/components/work/NextProject";
 import { HeroVideo } from "@/components/work/fairway/HeroVideo";
 import { DemoVideo } from "./DemoVideo";
 import { LabShots } from "./LabShots";
@@ -34,7 +35,15 @@ function SectionLabel({ n, title: heading }: { n: string; title: string }) {
   );
 }
 
-export function AiDesignLabCaseStudy() {
+type AiDesignLabCaseStudyProps = {
+  nextProject?: {
+    href: string;
+    title: string;
+    summary: string;
+  } | null;
+};
+
+export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps) {
   return (
     <Column fillWidth maxWidth="xl" gap="xl" paddingBottom="xl">
       <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
@@ -242,19 +251,7 @@ export function AiDesignLabCaseStudy() {
         </Column>
       </Column>
 
-      <Column gap="12" paddingY="xl" style={{ borderTop: "1px solid var(--neutral-alpha-medium)" }}>
-        <Text variant="label-default-s" onBackground="neutral-weak">
-          Next project
-        </Text>
-        <SmartLink href="/work/fairway-plus">
-          <Heading as="h2" variant="heading-strong-l">
-            Fairway+ AI Store Assistant
-          </Heading>
-        </SmartLink>
-        <Text variant="body-default-m" onBackground="neutral-weak">
-          An in-store AI assistant for Ace Hardware associates designed so a vague floor question returns aisle, price, and stock before the customer walks away.
-        </Text>
-      </Column>
+      {nextProject && <NextProject {...nextProject} />}
     </Column>
   );
 }

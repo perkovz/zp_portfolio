@@ -34,15 +34,6 @@ const shot = (name: string) => `/images/projects/fairway/${name}`;
 
 export const flowSections = [
   {
-    id: "flow-onboarding",
-    number: "00",
-    title: "Onboarding",
-    summary:
-      "Enterprise setup, not consumer signup. The device is connected to a store instance before anyone signs in, keeping first run short and operational.",
-    hero: shot("onboarding-hero.jpg"),
-    heroAlt: "Fairway+ onboarding: store signup behind the welcome screen",
-  },
-  {
     id: "flow-home",
     number: "01",
     title: "Home",
@@ -102,7 +93,7 @@ export const reflectionPoints = [
   },
   {
     title: "The floor mattered more than the demo",
-    body: "Type-first input and opt-in speech came from picturing a noisy aisle with a customer waiting. Those decisions made the demo less theatrical and the shipped product more usable—a trade I would make again.",
+    body: "Image first, speech second, type as the last option came from picturing a busy clerk with a customer waiting. I would make that trade again.",
   },
   {
     title: "What I would pressure-test next",

@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Button, Column, Flex, Grid, Heading, SmartLink, Text } from "@/once-ui/components";
+import { Button, Column, Flex, Grid, Heading, Text } from "@/once-ui/components";
+import { getNextWorkProject } from "@/app/work/getNextWorkProject";
+import { NextProject } from "@/components/work/NextProject";
 import {
   authSteps,
   challengeClose,
@@ -54,6 +56,8 @@ function FlowHeading({ n, title: heading }: { n: string; title: string }) {
 }
 
 export function DecorContractorCaseStudy() {
+  const nextProject = getNextWorkProject("decor-contractor");
+
   return (
     <Column fillWidth maxWidth="xl" gap="xl" paddingBottom="xl">
       <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
@@ -473,19 +477,7 @@ export function DecorContractorCaseStudy() {
         </Column>
       </Column>
 
-      <Column gap="12" paddingY="xl" style={{ borderTop: "1px solid var(--neutral-alpha-medium)" }}>
-        <Text variant="label-default-s" onBackground="neutral-weak">
-          Next project
-        </Text>
-        <SmartLink href="/work/ai-design-lab">
-          <Heading as="h2" variant="heading-strong-l">
-            Propello AI Design Lab
-          </Heading>
-        </SmartLink>
-        <Text variant="body-default-m" onBackground="neutral-weak">
-          A code-first prototyping workspace where Retail teams generate and validate functional prototypes instead of static screens.
-        </Text>
-      </Column>
+      {nextProject && <NextProject {...nextProject} />}
     </Column>
   );
 }

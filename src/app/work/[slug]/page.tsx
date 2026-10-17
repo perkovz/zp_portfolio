@@ -6,6 +6,8 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { getNextWorkProject } from "@/app/work/getNextWorkProject";
+import { NextProject } from "@/components/work/NextProject";
 
 interface WorkParams {
   params: Promise<{
@@ -79,6 +81,7 @@ export default async function Project({ params }: WorkParams) {
     post.metadata.team?.map((person) => ({
       src: person.avatar,
     })) || [];
+  const nextProject = getNextWorkProject(post.slug);
 
   return (
     <Column as="section" maxWidth="m" horizontal="center" gap="l">
@@ -128,6 +131,7 @@ export default async function Project({ params }: WorkParams) {
         </Flex> */}
         <CustomMDX source={post.content} />
       </Column>
+      {nextProject && <NextProject {...nextProject} />}
       <ScrollToHash />
     </Column>
   );
