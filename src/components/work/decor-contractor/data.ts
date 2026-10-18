@@ -15,6 +15,13 @@ export const execSummary = [
   "The challenge was to make complex business processes (purchasing materials, checking prices, paying balances) feel clear and useful where contractors spend the most time: on the job site.",
 ];
 
+export const problem = {
+  title: "Account work that only worked at a desk",
+  subtitle: "Contractors had a dated web app, and not much of one",
+  description:
+    "Invoices, payments, and account lookups lived in a desktop portal with limited functionality. A contractor on a job site, in a truck, or between jobs had no way to use them without sitting down at a computer. The work was to modernize those features and put them in a mobile app they could open on the go.",
+};
+
 export const challengeIntro =
   "The existing experience brought together several high-value workflows. These workflows had different levels of urgency and complexity. A contractor checking the price of a product on a jobsite needed speed. Someone paying a statement needed confidence and accurate financial context. Someone accepting an invitation needed a clear transition between the portal and Microsoft’s authentication system.";
 

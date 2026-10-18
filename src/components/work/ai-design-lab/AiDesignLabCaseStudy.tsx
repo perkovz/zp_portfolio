@@ -50,6 +50,15 @@ export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps)
         Projects
       </Button>
 
+      <Column gap="12" maxWidth="m">
+        <Heading as="h1" variant="display-strong-m">
+          {title}
+        </Heading>
+        <Text variant="body-default-l" onBackground="neutral-weak">
+          {description}
+        </Text>
+      </Column>
+
       <Column gap="12" fillWidth>
         <HeroVideo
           src="/images/projects/ai-design-lab/design-excellence.mp4"
@@ -62,15 +71,6 @@ export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps)
         />
         <Text variant="body-default-s" onBackground="neutral-weak">
           Unmute for full experience
-        </Text>
-      </Column>
-
-      <Column gap="12" maxWidth="m">
-        <Heading as="h1" variant="display-strong-m">
-          {title}
-        </Heading>
-        <Text variant="body-default-l" onBackground="neutral-weak">
-          {description}
         </Text>
       </Column>
 
@@ -186,23 +186,20 @@ export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps)
         <Column maxWidth="m">
           <Text variant="heading-default-m">{environmentIntro}</Text>
         </Column>
-        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="12">
+        <Column gap="12">
           {capabilities.map((capability, i) => (
-            <Flex
-              key={capability}
-              gap="16"
-              vertical="start"
-              padding="l"
-              border="neutral-medium"
-              radius="l"
-            >
-              <Text variant="label-default-s" onBackground="brand-medium" style={{ fontVariantNumeric: "tabular-nums" }}>
-                {String(i + 1).padStart(2, "0")}
+            <Flex key={capability} gap="8" vertical="start">
+              <Text
+                variant="body-default-m"
+                onBackground="brand-medium"
+                style={{ fontVariantNumeric: "tabular-nums", flexShrink: 0 }}
+              >
+                {String(i + 1).padStart(2, "0")}/
               </Text>
               <Text variant="body-default-m">{capability}</Text>
             </Flex>
           ))}
-        </Grid>
+        </Column>
         <Column maxWidth="m">
           <Text variant="body-default-m" onBackground="neutral-weak">
             {environmentClose}
@@ -218,7 +215,9 @@ export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps)
       <Column id="impact" gap="l" paddingY="l">
         <SectionLabel n="05 Impact" title="Faster iteration, without treating quality as optional." />
         <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
-          {impactPoints.map((point) => (
+          {impactPoints
+            .filter((point) => point.title !== "Speed without trading away quality")
+            .map((point) => (
             <Column key={point.title} gap="12">
               <Heading as="h3" variant="heading-strong-m">
                 {point.title}
@@ -233,6 +232,22 @@ export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps)
           src={demos.customerPosSearch.src}
           label={demos.customerPosSearch.label}
           caption={demos.customerPosSearch.caption}
+        />
+        <Column gap="12" maxWidth="m">
+          <Heading as="h3" variant="heading-strong-m">
+            Speed without trading away quality
+          </Heading>
+          <Text variant="body-default-m" onBackground="neutral-weak">
+            The approach enabled faster iteration, earlier issue discovery, and stronger solutions without trading away quality.
+          </Text>
+        </Column>
+        <SmartImage
+          src="/images/projects/ai-design-lab/measuring-the-impact.jpg"
+          alt="Measuring the impact: 12 or more decisions revised across four feature projects, three per project on average"
+          aspectRatio="16 / 9"
+          objectFit="contain"
+          radius="m"
+          sizes="(max-width: 960px) 100vw, 1120px"
         />
       </Column>
 

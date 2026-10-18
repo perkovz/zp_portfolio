@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button, Column, Flex, Grid, Heading, Text } from "@/once-ui/components";
+import { Button, Carousel, Column, Flex, Grid, Heading, Text } from "@/once-ui/components";
 import { getNextWorkProject } from "@/app/work/getNextWorkProject";
 import { NextProject } from "@/components/work/NextProject";
 import {
@@ -17,6 +17,7 @@ import {
   metaItems,
   outcomes,
   paymentRevisions,
+  problem,
   reflectionQuestions,
   scannerFeatures,
   scannerPath,
@@ -64,6 +65,15 @@ export function DecorContractorCaseStudy() {
         Projects
       </Button>
 
+      <Column gap="12" maxWidth="m">
+        <Heading as="h1" variant="display-strong-m">
+          {title}
+        </Heading>
+        <Text variant="body-default-l" onBackground="neutral-weak">
+          {headline}
+        </Text>
+      </Column>
+
       <HeroVideo
         src="/images/projects/decor-contractor/payments-promo.mp4"
         poster="/images/projects/decor-contractor/payments-promo.jpg"
@@ -71,63 +81,6 @@ export function DecorContractorCaseStudy() {
         aspectRatio="16 / 9"
         background="#062D37"
         objectFit="cover"
-      />
-
-      <Column gap="12" maxWidth="m">
-        <Text variant="label-default-s" onBackground="brand-medium">
-          {title}
-        </Text>
-        <Heading as="h1" variant="display-strong-m">
-          {headline}
-        </Heading>
-        <Text variant="body-default-l" onBackground="neutral-weak">
-          {description}
-        </Text>
-      </Column>
-
-      <Image
-        src="/images/projects/decor-contractor/paint-job.png"
-        alt="Professional painter applying paint to an interior wall"
-        width={1920}
-        height={1080}
-        quality={90}
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style={{
-          display: "block",
-          width: "100%",
-          height: "auto",
-          borderRadius: "var(--radius-m)",
-        }}
-      />
-
-      <Image
-        src="/images/projects/decor-contractor/interior-painter-break.png"
-        alt="Professional painter taking a break while working in an interior"
-        width={1920}
-        height={1080}
-        quality={90}
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style={{
-          display: "block",
-          width: "100%",
-          height: "auto",
-          borderRadius: "var(--radius-m)",
-        }}
-      />
-
-      <Image
-        src="/images/projects/decor-contractor/paint-store-interior.png"
-        alt="Contractor walking through a modern paint store"
-        width={1920}
-        height={1080}
-        quality={90}
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style={{
-          display: "block",
-          width: "100%",
-          height: "auto",
-          borderRadius: "var(--radius-m)",
-        }}
       />
 
       <Column id="overview" gap="l" paddingY="l">
@@ -143,6 +96,9 @@ export function DecorContractorCaseStudy() {
                 {paragraph}
               </Text>
             ))}
+            <Text variant="body-default-l" onBackground="neutral-weak">
+              {contribution}
+            </Text>
           </Column>
           <Column gap="0">
             {metaItems.map((item) => (
@@ -158,37 +114,90 @@ export function DecorContractorCaseStudy() {
             ))}
           </Column>
         </Grid>
+
+        <Column gap="12" fillWidth>
+          <Carousel
+            indicator="line"
+            aspectRatio="16 / 9"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            images={[
+              {
+                src: "/images/projects/decor-contractor/paint-job.png",
+                alt: "Professional painter applying paint to an interior wall",
+              },
+              {
+                src: "/images/projects/decor-contractor/interior-painter-break.png",
+                alt: "Professional painter taking a break while working in an interior",
+              },
+              {
+                src: "/images/projects/decor-contractor/paint-store-interior.png",
+                alt: "Contractor walking through a modern paint store",
+              },
+            ]}
+          />
+          <Text variant="body-default-s" onBackground="neutral-weak">
+            {description}
+          </Text>
+        </Column>
+      </Column>
+
+      <Column id="problem" gap="l" paddingY="l">
+        <Text variant="label-default-s" onBackground="brand-medium">
+          02 Problem
+        </Text>
+        <Column gap="12" maxWidth="m">
+          <Heading as="h2" variant="display-strong-s">
+            {problem.title}
+          </Heading>
+          <Text variant="heading-default-m">{problem.subtitle}</Text>
+        </Column>
+        <Image
+          src="/images/projects/decor-contractor/problem-definition.png"
+          alt="The dated contractor web portal, a desktop payment screen with limited account tools"
+          width={1920}
+          height={1080}
+          quality={90}
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          style={{
+            display: "block",
+            width: "100%",
+            height: "auto",
+            borderRadius: "var(--radius-m)",
+          }}
+        />
+        <Column gap="12" maxWidth="m">
+          <Text variant="body-default-l" onBackground="neutral-weak">
+            {problem.description}
+          </Text>
+        </Column>
       </Column>
 
       <Column id="challenge" gap="l" paddingY="l">
-        <SectionLabel n="02 Challenge" title="High-value workflows, competing urgencies." />
+        <SectionLabel n="03 Challenge" title="High-value workflows, competing urgencies." />
         <Column gap="m" maxWidth="m">
           <Text variant="heading-default-m">{challengeIntro}</Text>
           <Text variant="body-default-l" onBackground="neutral-weak">
             {challengeClose}
           </Text>
         </Column>
-        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="12">
+        <Column gap="12" maxWidth="m">
           {existingWorkflows.map((workflow, i) => (
-            <Flex
-              key={workflow}
-              gap="16"
-              vertical="start"
-              padding="l"
-              border="neutral-medium"
-              radius="l"
-            >
-              <Text variant="label-default-s" onBackground="brand-medium" style={{ fontVariantNumeric: "tabular-nums" }}>
-                {String(i + 1).padStart(2, "0")}
+            <Flex key={workflow} gap="6">
+              <Text
+                variant="body-default-m"
+                onBackground="brand-medium"
+                style={{ fontVariantNumeric: "tabular-nums", width: "44px", flexShrink: 0 }}
+              >
+                {String(i + 1).padStart(2, "0")}/
               </Text>
               <Text variant="body-default-m">{workflow}</Text>
             </Flex>
           ))}
-        </Grid>
+        </Column>
       </Column>
 
       <Column id="direction" gap="l" paddingY="l">
-        <SectionLabel n="03 Direction" title="An account relationship, not an ordering tool." />
+        <SectionLabel n="04 Direction" title="An account relationship, not an ordering tool." />
         <Column maxWidth="m">
           <Text variant="heading-default-m">{directionIntro}</Text>
         </Column>
@@ -207,13 +216,6 @@ export function DecorContractorCaseStudy() {
             </Column>
           ))}
         </Grid>
-      </Column>
-
-      <Column id="branding" gap="l" paddingY="l">
-        <SectionLabel n="04 Branding" title="A stronger identity." />
-        <BrandingShowcase />
-        <BrandEvolutionShowcase />
-        <BrandPlatformShowcase />
       </Column>
 
       <Column id="workflows" gap="xl" paddingY="l">
@@ -390,8 +392,15 @@ export function DecorContractorCaseStudy() {
         </Column>
       </Column>
 
+      <Column id="branding" gap="l" paddingY="l">
+        <SectionLabel n="06 Branding" title="A stronger identity." />
+        <BrandingShowcase />
+        <BrandEvolutionShowcase />
+        <BrandPlatformShowcase />
+      </Column>
+
       <Column id="system" gap="l" paddingY="l">
-        <SectionLabel n="06 System" title="Building consistency through the design system." />
+        <SectionLabel n="07 System" title="Building consistency through the design system." />
         <Column gap="m" maxWidth="m">
           <Text variant="heading-default-m">
             The portal’s workflows depended on repeated patterns: buttons, selectable rows, payment methods, checkboxes, dividers, headers, and confirmation states.
@@ -423,7 +432,7 @@ export function DecorContractorCaseStudy() {
       </Column>
 
       <Column id="outcome" gap="l" paddingY="l">
-        <SectionLabel n="07 Outcome" title="A connected account experience." />
+        <SectionLabel n="08 Outcome" title="A connected account experience." />
         <Column maxWidth="m">
           <Text variant="heading-default-m">
             The project produced a clearer and more coherent contractor experience across product discovery, payments, authentication, and account management.
@@ -444,7 +453,7 @@ export function DecorContractorCaseStudy() {
       </Column>
 
       <Column id="reflection" gap="l" paddingY="l">
-        <SectionLabel n="08 Reflection" title="Enterprise design is often about reducing uncertainty." />
+        <SectionLabel n="09 Reflection" title="Enterprise design is often about reducing uncertainty." />
         <Column gap="m" maxWidth="m">
           <Text variant="heading-default-m">
             A contractor does not necessarily need more information. They need the right information at the right moment.
@@ -466,15 +475,6 @@ export function DecorContractorCaseStudy() {
             </Flex>
           ))}
         </Grid>
-      </Column>
-
-      <Column id="contribution" gap="l" paddingY="l">
-        <SectionLabel n="09 Contribution" title="What I owned." />
-        <Column maxWidth="m">
-          <Text variant="body-default-l" onBackground="neutral-weak">
-            {contribution}
-          </Text>
-        </Column>
       </Column>
 
       {nextProject && <NextProject {...nextProject} />}
