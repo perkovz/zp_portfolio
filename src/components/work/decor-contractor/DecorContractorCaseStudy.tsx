@@ -182,7 +182,7 @@ export function DecorContractorCaseStudy() {
         </Column>
         <Column gap="12" maxWidth="m">
           {existingWorkflows.map((workflow, i) => (
-            <Flex key={workflow} gap="6">
+            <Flex key={workflow} style={{ gap: 6 }}>
               <Text
                 variant="body-default-m"
                 onBackground="brand-medium"
