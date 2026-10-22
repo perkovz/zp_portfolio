@@ -1,165 +1,112 @@
-export const title = "Decor Contractor";
-export const headline = "Making contractor account management faster, clearer, and more dependable";
+export const title = "Decor Contractor: the store counter on the job site";
+export const headline = "Mobile account, payments, and ordering for contractors.";
 export const description =
-  "Decor Contractor extends the supplier relationship from the store counter to the job site";
+  "Decor Contractor brings the supplier account relationship out of the desktop portal and into the moments that keep a job moving.";
 
 export const metaItems = [
-  { label: "Role", value: "End to end", note: "Strategy, UX flows, interaction, content, design system" },
-  { label: "Product", value: "Decor Contractor", note: "Epicor Decor — paint and decorating retail" },
-  { label: "Audience", value: "Contractors", note: "Jobsite, truck, and after-hours account work" },
-  { label: "Focus", value: "Account relationship", note: "Lookup, invoices, payments, and identity" },
+  { label: "Role", value: "Lead product designer", note: "Strategy, IA, flows, content, interaction, and Mobile Core adoption" },
+  { label: "Team", value: "Product, engineering, identity, supplier operations", note: "Cross-functional partners across account, payment, and access workflows" },
+  { label: "Timeline", value: "Three phased releases", note: "Mobile foundations, payments, then ordering" },
+  { label: "Status", value: "Phase 1 shipped", note: "Payments and ordering are sequenced as the next releases" },
 ];
 
-export const execSummary = [
-  "Contractors often manage several jobs, purchase materials repeatedly, and rely on supplier accounts to keep work moving. The Decor Contractor portal was designed to extend that supplier relationship beyond the store counter, giving contractors faster access to products, pricing, payments, invoices, and account information.",
-  "The challenge was to make complex business processes (purchasing materials, checking prices, paying balances) feel clear and useful where contractors spend the most time: on the job site.",
-];
-
-export const problem = {
-  title: "Account work that only worked at a desk",
-  subtitle: "Contractors had a dated web app, and not much of one",
-  description:
-    "Invoices, payments, and account lookups lived in a desktop portal with limited functionality. A contractor on a job site, in a truck, or between jobs had no way to use them without sitting down at a computer. The work was to modernize those features and put them in a mobile app they could open on the go.",
+export const protagonist = {
+  name: "Maya",
+  label: "A representative contractor",
+  title: "4:30 PM. One wall left. One price question.",
+  body: "Maya is finishing a paint job when the homeowner asks for one more room. She needs the current price of a product, then has to clear an account balance before tomorrow’s pickup. The old portal makes both tasks a desk job. Every extra step risks a store trip, a call to the counter, or a delayed order.",
+  note: "Maya is a composite scenario used to frame the jobsite workflow.",
 };
 
-export const challengeIntro =
-  "The existing experience brought together several high-value workflows. These workflows had different levels of urgency and complexity. A contractor checking the price of a product on a jobsite needed speed. Someone paying a statement needed confidence and accurate financial context. Someone accepting an invitation needed a clear transition between the portal and Microsoft’s authentication system.";
+export const problem = {
+  title: "A supplier relationship that disappeared outside the store",
+  subtitle: "The old portal made contractors leave the work to manage the work.",
+  description:
+    "Pricing, invoices, payment methods, and account history lived in a desktop-first portal. On site, a contractor could not confidently check a price or pay a statement without a laptop, a counter call, or a return trip. That friction costs the contractor time and leaves the supplier carrying avoidable payment and support load.",
+};
 
-export const challengeClose =
-  "The design needed to support all of these moments without making the product feel like a collection of disconnected enterprise screens.";
-
-export const existingWorkflows = [
-  "Finding products and checking current pricing",
-  "Scanning barcodes for faster product lookup",
-  "Reviewing invoices and transaction history",
-  "Paying a statement or account balance",
-  "Managing payment methods",
-  "Signing in through Microsoft Entra ID",
-  "Supporting supplier relationships beyond individual transactions",
-];
-
-export const directionIntro =
-  "Research into contractor-focused supplier platforms suggested that the portal should behave less like a simple ordering tool and more like an ongoing account relationship. This direction helped frame the portal around continuity: helping contractors pick up where they left off, rather than forcing them to reconstruct context every time they return.";
-
-export const directionPoints = [
+export const tensionPoints = [
   {
-    title: "Convenient account access",
-    body: "Give existing customers convenient access to account information and payments.",
+    title: "Desk-only account",
+    body: "A price check or invoice question became a context switch: find a computer, call the counter, or wait until after the job.",
   },
   {
-    title: "Faster repeat purchasing",
-    body: "Make repeat purchasing and product lookup faster.",
+    title: "Payment anxiety",
+    body: "An unclear balance, payment method, or ACH status made a financial task feel risky when the contractor was trying to move quickly.",
   },
   {
-    title: "Connected history",
-    body: "Treat invoices, saved jobs, and purchase history as connected information.",
-  },
-  {
-    title: "Local supplier workflows",
-    body: "Design around local supplier relationships and pickup-based workflows.",
-  },
-  {
-    title: "Familiar business actions",
-    body: "Use clear language and familiar interaction patterns for complex business actions.",
+    title: "Borrowed identity",
+    body: "The product had to feel like a single experience while respecting the boundary between the portal and Microsoft Entra ID.",
   },
 ];
 
-export const scannerPath = ["Open scanner", "Detect product", "Show price"];
-
-export const scannerFeatures = [
-  "Automatic barcode detection without a shutter button",
-  "Flashlight access",
-  "A clear framing guide",
-  "Manual UPC entry as a fallback",
-  "Product-found and product-not-found states",
-  "The ability to scan another product quickly",
-  "Recovery paths for camera permission and unreadable barcodes",
+export const research = [
+  "Reviewed five contractor and supplier-platform patterns to understand how accounts, products, and pickup work connect.",
+  "Mapped the contractor journey across jobsite, truck, store aisle, counter, and after-hours account work.",
+  "Turned account, payment, and identity constraints into an information architecture instead of a collection of isolated screens.",
 ];
 
-export const paymentRevisions = [
-  "A clear statement period",
-  "Explicit payment amount",
-  "A secondary path to view statement details",
-  "Clear distinction between current balance and balance after payment",
-  "Payment-method selection and change actions",
-  "More descriptive calls to action such as “Review payment”",
-  "Accurate processing language for ACH payments",
+export const phases = [
+  { number: "01", title: "Mobile foundations", body: "Account home, navigation, product lookup, scan, and reusable Mobile Core patterns.", state: "Shipped" },
+  { number: "02", title: "Pay with confidence", body: "Statements, payment methods, review, and honest ACH status language.", state: "Next" },
+  { number: "03", title: "Order without detours", body: "Build an order flow only after account context and payment trust are in place.", state: "Planned" },
 ];
 
-export const hierarchyMoments = [
+export const workflowBeats = [
   {
-    title: "Make a payment",
-    body: "Choose what to pay.",
+    id: "scan",
+    n: "04.1",
+    title: "Scan: keep the answer in the camera",
+    claim: "When Maya needs a price, the result belongs where the question started.",
+    problem: "A conventional scan flow inserts a confirmation screen between the barcode and the answer. That is one extra decision with no value when the task is a fast price check.",
+    solution: "The scanner detects the product and returns its price in the camera context. Manual UPC entry, permission recovery, and a quick rescan path protect the fast path without trapping edge cases.",
+    outcome: "Price lookup becomes a jobsite task, not a store-counter task.",
   },
   {
-    title: "Review payment",
-    body: "Confirm the amount and method.",
+    id: "payment",
+    n: "04.2",
+    title: "Pay: trade a comforting lie for useful certainty",
+    claim: "An ACH request is not complete when the contractor presses submit.",
+    problem: "“Payment complete” sounds reassuring but overpromises. Funds can still be processing, leaving the contractor unsure what the supplier has actually received.",
+    solution: "The review step names the statement period, amount, and payment method. The confirmation says “Payment submitted” and explains what happens next.",
+    outcome: "The product earns trust by matching its language to the financial reality.",
   },
   {
-    title: "Payment submitted",
-    body: "Understand the status and next steps.",
+    id: "identity",
+    n: "04.3",
+    title: "Sign in: own the handoff, not the identity provider",
+    claim: "A branded entry point can be clear without pretending to control security.",
+    problem: "Invitation, authentication, consent, and app access span two systems. Blurring their responsibilities creates a confusing, fragile experience.",
+    solution: "The portal owns the invitation, context, redirect, onboarding, and application session. Microsoft Entra ID owns authentication and verification.",
+    outcome: "Contractors understand where they are, why they are there, and what will happen when they return.",
   },
 ];
 
 export const authSteps = [
-  "The portal creates an invitation",
-  "The contractor receives and accepts the invitation",
-  "Microsoft Entra identifies the authentication route",
-  "The contractor signs in through their organization or an appropriate fallback",
-  "Entra completes verification and consent",
-  "The user returns to the portal",
-  "The portal validates the invitation and creates the application session",
+  "Portal creates and contextualizes the invitation",
+  "Contractor accepts it from a familiar supplier touchpoint",
+  "Microsoft Entra ID authenticates and verifies the user",
+  "Portal validates access and starts the application session",
 ];
 
 export const systemStats = [
   { value: "22", label: "Buttons", note: "Mapped to semantic primary and secondary variants" },
-  { value: "26", label: "Selection rows", note: "Replaced with shared selectable row components" },
-  { value: "1", label: "Selection model", note: "Round controls for single choice, square checkboxes for multi-select" },
-  { value: "Core", label: "Shared patterns", note: "Labels, subtitles, amounts, selected states, sizing, and overflow" },
+  { value: "26", label: "Selection rows", note: "Replaced with reusable selectable-row components" },
+  { value: "1", label: "Selection model", note: "Round for one choice; square for many" },
+  { value: "Core", label: "Shared language", note: "Labels, amounts, states, sizing, and overflow" },
 ];
 
 export const systemPoints = [
-  "Round controls for single-selection payment choices",
-  "Square checkboxes for multi-selection invoice and job lists",
-  "Consistent labels, subtitles, amounts, and selected states",
-  "Corrected checkbox sizing and overflow behavior inside list rows",
+  "Mobile Core is Epicor’s shared mobile design system. It gave the product a reliable vocabulary for rows, buttons, headers, and selected states.",
+  "Round controls signal one payment method. Square checkboxes signal multiple invoices or jobs. The distinction removes an avoidable selection error.",
+  "Engineering received component-level recommendations for labels, subtitle behavior, amount alignment, sizing, and overflow so the designed states could survive implementation.",
 ];
 
-export const outcomes = [
-  {
-    title: "Faster product lookup",
-    body: "Scanning and manual UPC entry keep price checks close to the jobsite, truck, or store aisle.",
-  },
-  {
-    title: "Stronger payment context",
-    body: "A payment flow with clearer context and more accurate status language, including ACH processing time.",
-  },
-  {
-    title: "Clearer financial hierarchy",
-    body: "Multi-step screens no longer compete with repeated “payment” headings.",
-  },
-  {
-    title: "Honest identity boundaries",
-    body: "Better separation between portal-owned and identity-provider-owned experiences.",
-  },
-  {
-    title: "Shared components",
-    body: "One-off interaction designs replaced with Mobile Core patterns that future workflows can reuse.",
-  },
-  {
-    title: "A connected account",
-    body: "A shift from isolated feature screens toward an experience that supports the ongoing supplier relationship.",
-  },
-];
-
-export const reflectionQuestions = [
-  "What product is this?",
-  "What does it cost?",
-  "What exactly am I paying?",
-  "Has my payment been submitted or completed?",
-  "What happens after I accept this invitation?",
-  "Can I return to the task without losing my place?",
+export const measurementPlan = [
+  { title: "Time to a price", body: "Target: verify a product price in under 30 seconds from the jobsite. Validate with task timing after release." },
+  { title: "Payment confidence", body: "Target: reduce payment-related support contacts and review-step abandonment. Establish the baseline in Phase 2." },
+  { title: "Counter load", body: "Target: measure the share of account questions resolved in mobile rather than at the counter or by phone." },
 ];
 
 export const contribution =
-  "I worked across product strategy, UX flows, interaction design, content clarity, design-system application, and component refinement. The work included product research, payment-flow redesign, barcode-scanning exploration, authentication mapping, visual hierarchy reviews, and systematic replacement of bespoke UI patterns with reusable components.";
+  "I led the product narrative and information architecture, then translated it into mobile workflows, payment content, interaction details, Mobile Core component guidance, and build-ready recommendations with product and engineering partners.";

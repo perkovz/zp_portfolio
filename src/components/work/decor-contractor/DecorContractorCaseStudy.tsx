@@ -2,57 +2,51 @@ import Image from "next/image";
 import { Button, Carousel, Column, Flex, Grid, Heading, Text } from "@/once-ui/components";
 import { getNextWorkProject } from "@/app/work/getNextWorkProject";
 import { NextProject } from "@/components/work/NextProject";
+import { HeroVideo } from "@/components/work/fairway/HeroVideo";
+import { BrandingShowcase } from "./BrandingShowcase";
+import { DecisionShowcase } from "./DecisionShowcase";
+import { ProductInUseShowcase } from "./ProductInUseShowcase";
 import {
   authSteps,
-  challengeClose,
-  challengeIntro,
   contribution,
   description,
-  directionIntro,
-  directionPoints,
-  existingWorkflows,
-  execSummary,
   headline,
-  hierarchyMoments,
+  measurementPlan,
   metaItems,
-  outcomes,
-  paymentRevisions,
+  phases,
   problem,
-  reflectionQuestions,
-  scannerFeatures,
-  scannerPath,
+  protagonist,
+  research,
   systemPoints,
   systemStats,
+  tensionPoints,
   title,
+  workflowBeats,
 } from "./data";
-import { BrandingShowcase } from "./BrandingShowcase";
-import { BrandEvolutionShowcase } from "./BrandEvolutionShowcase";
-import { BrandPlatformShowcase } from "./BrandPlatformShowcase";
-import { HeroVideo } from "@/components/work/fairway/HeroVideo";
 
 function SectionLabel({ n, title: heading }: { n: string; title: string }) {
   return (
     <Column gap="8" marginBottom="24">
-      <Text variant="label-default-s" onBackground="brand-medium">
-        {n}
-      </Text>
-      <Heading as="h2" variant="display-strong-s">
-        {heading}
-      </Heading>
+      <Text variant="label-default-s" onBackground="brand-medium">{n}</Text>
+      <Heading as="h2" variant="display-strong-s">{heading}</Heading>
     </Column>
   );
 }
 
-function FlowHeading({ n, title: heading }: { n: string; title: string }) {
+function BeatCopy({ problem: issue, solution, outcome }: { problem: string; solution: string; outcome: string }) {
   return (
-    <Flex gap="12" vertical="center">
-      <Text variant="label-default-s" onBackground="brand-medium">
-        {n}
-      </Text>
-      <Heading as="h3" variant="heading-strong-l">
-        {heading}
-      </Heading>
-    </Flex>
+    <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="12">
+      {[
+        ["Problem", issue],
+        ["Decision", solution],
+        ["Outcome", outcome],
+      ].map(([label, body]) => (
+        <Column key={label} gap="8" padding="l" border="neutral-medium" radius="l">
+          <Text variant="label-default-s" onBackground="brand-medium">{label}</Text>
+          <Text variant="body-default-m" onBackground="neutral-weak">{body}</Text>
+        </Column>
+      ))}
+    </Grid>
   );
 }
 
@@ -66,413 +60,194 @@ export function DecorContractorCaseStudy() {
       </Button>
 
       <Column gap="12" maxWidth="m">
-        <Heading as="h1" variant="display-strong-m">
-          {title}
-        </Heading>
-        <Text variant="body-default-l" onBackground="neutral-weak">
-          {headline}
-        </Text>
+        <Heading as="h1" variant="display-strong-m">{title}</Heading>
+        <Text variant="body-default-l" onBackground="neutral-weak">{headline}</Text>
       </Column>
 
       <HeroVideo
         src="/images/projects/decor-contractor/payments-promo.mp4"
         poster="/images/projects/decor-contractor/payments-promo.jpg"
-        label="Decor Contractor payments experience"
+        label="A contractor reviewing and submitting a payment on a mobile phone"
         aspectRatio="16 / 9"
         background="#062D37"
         objectFit="cover"
       />
 
-      <Column id="overview" gap="l" paddingY="l">
-        <SectionLabel n="01 Summary" title="Overview" />
-        <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
+      <Column id="maya" gap="l" paddingY="l">
+        <SectionLabel n="01 The moment" title={protagonist.title} />
+        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
           <Column gap="m">
-            {execSummary.map((paragraph, i) => (
-              <Text
-                key={paragraph.slice(0, 32)}
-                variant={i === 0 ? "heading-default-m" : "body-default-l"}
-                onBackground={i === 0 ? "neutral-strong" : "neutral-weak"}
-              >
-                {paragraph}
-              </Text>
-            ))}
-            <Text variant="body-default-l" onBackground="neutral-weak">
-              {contribution}
-            </Text>
+            <Text variant="heading-default-m">{protagonist.body}</Text>
+            <Text variant="body-default-s" onBackground="neutral-weak">{protagonist.note}</Text>
           </Column>
           <Column gap="0">
             {metaItems.map((item) => (
               <Column key={item.label} paddingY="16" style={{ borderTop: "1px solid var(--neutral-alpha-weak)" }}>
-                <Text variant="label-default-s" onBackground="neutral-weak">
-                  {item.label.toUpperCase()}
-                </Text>
+                <Text variant="label-default-s" onBackground="neutral-weak">{item.label.toUpperCase()}</Text>
                 <Text variant="heading-strong-s">{item.value}</Text>
-                <Text variant="body-default-s" onBackground="neutral-weak">
-                  {item.note}
-                </Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">{item.note}</Text>
               </Column>
             ))}
           </Column>
         </Grid>
-
-        <Column gap="12" fillWidth>
-          <Carousel
-            indicator="line"
-            aspectRatio="16 / 9"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            images={[
-              {
-                src: "/images/projects/decor-contractor/paint-job.png",
-                alt: "Professional painter applying paint to an interior wall",
-              },
-              {
-                src: "/images/projects/decor-contractor/interior-painter-break.png",
-                alt: "Professional painter taking a break while working in an interior",
-              },
-              {
-                src: "/images/projects/decor-contractor/paint-store-interior.png",
-                alt: "Contractor walking through a modern paint store",
-              },
-            ]}
-          />
-          <Text variant="body-default-s" onBackground="neutral-weak">
-            {description}
-          </Text>
-        </Column>
       </Column>
 
       <Column id="problem" gap="l" paddingY="l">
-        <Text variant="label-default-s" onBackground="brand-medium">
-          02 Problem
-        </Text>
+        <SectionLabel n="02 The tension" title={problem.title} />
         <Column gap="12" maxWidth="m">
-          <Heading as="h2" variant="display-strong-s">
-            {problem.title}
-          </Heading>
           <Text variant="heading-default-m">{problem.subtitle}</Text>
+          <Text variant="body-default-l" onBackground="neutral-weak">{problem.description}</Text>
         </Column>
         <Image
           src="/images/projects/decor-contractor/problem-definition.png"
-          alt="The dated contractor web portal, a desktop payment screen with limited account tools"
+          alt="Redacted legacy contractor payment portal shown on a desktop browser"
           width={1920}
           height={1080}
           quality={90}
           sizes="(max-width: 1200px) 100vw, 1200px"
-          style={{
-            display: "block",
-            width: "100%",
-            height: "auto",
-            borderRadius: "var(--radius-m)",
-          }}
+          style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius-m)" }}
         />
-        <Column gap="12" maxWidth="m">
-          <Text variant="body-default-l" onBackground="neutral-weak">
-            {problem.description}
-          </Text>
-        </Column>
-      </Column>
-
-      <Column id="challenge" gap="l" paddingY="l">
-        <SectionLabel n="03 Challenge" title="High-value workflows, competing urgencies." />
-        <Column gap="m" maxWidth="m">
-          <Text variant="heading-default-m">{challengeIntro}</Text>
-          <Text variant="body-default-l" onBackground="neutral-weak">
-            {challengeClose}
-          </Text>
-        </Column>
-        <Column gap="12" maxWidth="m">
-          {existingWorkflows.map((workflow, i) => (
-            <Flex key={workflow} style={{ gap: 6 }}>
-              <Text
-                variant="body-default-m"
-                onBackground="brand-medium"
-                style={{ fontVariantNumeric: "tabular-nums", width: "44px", flexShrink: 0 }}
-              >
-                {String(i + 1).padStart(2, "0")}/
-              </Text>
-              <Text variant="body-default-m">{workflow}</Text>
-            </Flex>
+        <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
+          {tensionPoints.map((point, i) => (
+            <Column key={point.title} gap="12" padding="l" border="neutral-medium" radius="l">
+              <Text variant="label-default-s" onBackground="brand-medium">{String(i + 1).padStart(2, "0")}</Text>
+              <Heading as="h3" variant="heading-strong-m">{point.title}</Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak">{point.body}</Text>
+            </Column>
           ))}
-        </Column>
+        </Grid>
       </Column>
 
       <Column id="direction" gap="l" paddingY="l">
-        <SectionLabel n="04 Direction" title="An account relationship, not an ordering tool." />
-        <Column maxWidth="m">
-          <Text variant="heading-default-m">{directionIntro}</Text>
-        </Column>
+        <SectionLabel n="03 The thesis" title="Bring the counter to the job site." />
+        <ProductInUseShowcase />
+        <Carousel
+          indicator="line"
+          aspectRatio="16 / 9"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          images={[
+            {
+              src: "/images/projects/decor-contractor/paint-job.png",
+              alt: "Professional painter applying paint to an interior wall",
+            },
+            {
+              src: "/images/projects/decor-contractor/interior-painter-break.png",
+              alt: "Professional painter taking a break during an interior job",
+            },
+            {
+              src: "/images/projects/decor-contractor/paint-store-interior.png",
+              alt: "Contractor walking through a paint store",
+            },
+          ]}
+        />
+        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
+          <Column gap="m">
+            <Text variant="heading-default-m">
+              The product should make the supplier account useful where the work happens, not ask contractors to reconstruct their context at a desk.
+            </Text>
+            <Text variant="body-default-l" onBackground="neutral-weak">{description}</Text>
+          </Column>
+          <Column gap="12">
+            <Text variant="label-default-s" onBackground="brand-medium">Research and planning</Text>
+            {research.map((item, i) => (
+              <Flex key={item} gap="12" vertical="start">
+                <Text variant="label-default-s" onBackground="brand-medium" style={{ minWidth: "2rem" }}>{String(i + 1).padStart(2, "0")}</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak">{item}</Text>
+              </Flex>
+            ))}
+          </Column>
+        </Grid>
         <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
-          {directionPoints.map((point, i) => (
-            <Column key={point.title} gap="12" padding="l" border="neutral-medium" radius="l">
-              <Text variant="label-default-s" onBackground="brand-medium">
-                {String(i + 1).padStart(2, "0")}
-              </Text>
-              <Heading as="h3" variant="heading-strong-m">
-                {point.title}
-              </Heading>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {point.body}
-              </Text>
+          {phases.map((phase) => (
+            <Column key={phase.number} gap="12" padding="l" border="neutral-medium" radius="l">
+              <Flex horizontal="space-between" vertical="center">
+                <Text variant="label-default-s" onBackground="brand-medium">{phase.number}</Text>
+                <Text variant="label-default-s" onBackground="neutral-weak">{phase.state}</Text>
+              </Flex>
+              <Heading as="h3" variant="heading-strong-m">{phase.title}</Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak">{phase.body}</Text>
             </Column>
           ))}
         </Grid>
       </Column>
 
-      <Column id="workflows" gap="xl" paddingY="l">
-        <SectionLabel n="05 Workflows" title="Designing the moments that matter." />
-
-        <Column id="scanning" gap="l">
-          <Column gap="12" maxWidth="m">
-            <FlowHeading n="05.1" title="Fast product lookup with barcode scanning" />
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              Contractors may encounter a product in a store, truck, or jobsite and simply need to confirm its price. I designed the barcode experience around a short path. The key decision was to keep the result close to the scanning context. When the task is price checking, unnecessary confirmation screens slow the contractor down.
-            </Text>
+      <Column id="decisions" gap="xl" paddingY="l">
+        <SectionLabel n="04 The decisions" title="Make the critical moments feel obvious." />
+        {workflowBeats.map((beat) => (
+          <Column key={beat.id} id={beat.id} gap="l">
+            <Column gap="12" maxWidth="m">
+              <Text variant="label-default-s" onBackground="brand-medium">{beat.n}</Text>
+              <Heading as="h3" variant="heading-strong-l">{beat.title}</Heading>
+              <Text variant="heading-default-m">{beat.claim}</Text>
+            </Column>
+            {beat.id === "identity" ? (
+              <Image
+                src="/images/projects/decor-contractor/entra-id.png"
+                alt="Diagram showing the handoff between Decor Contractor and Microsoft Entra ID"
+                width={6049}
+                height={2906}
+                quality={90}
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius-m)" }}
+              />
+            ) : (
+              <DecisionShowcase type={beat.id as "scan" | "payment"} />
+            )}
+            <BeatCopy problem={beat.problem} solution={beat.solution} outcome={beat.outcome} />
+            {beat.id === "identity" && (
+              <Grid columns="4" tabletColumns="2" mobileColumns="1" gap="12">
+                {authSteps.map((step, i) => (
+                  <Flex key={step} gap="12" padding="l" border="neutral-medium" radius="l" vertical="start">
+                    <Text variant="label-default-s" onBackground="brand-medium">{String(i + 1).padStart(2, "0")}</Text>
+                    <Text variant="body-default-s" onBackground="neutral-weak">{step}</Text>
+                  </Flex>
+                ))}
+              </Grid>
+            )}
           </Column>
-          <Flex gap="8" wrap>
-            {scannerPath.map((step, i) => (
-              <Flex key={step} gap="8" vertical="center">
-                <Flex
-                  paddingX="16"
-                  paddingY="8"
-                  border="neutral-medium"
-                  radius="l"
-                  vertical="center"
-                  gap="8"
-                >
-                  <Text variant="label-default-s" onBackground="brand-medium">
-                    {String(i + 1).padStart(2, "0")}
-                  </Text>
-                  <Text variant="label-default-m">{step}</Text>
-                </Flex>
-                {i < scannerPath.length - 1 && (
-                  <Text variant="label-default-s" onBackground="neutral-weak">
-                    →
-                  </Text>
-                )}
-              </Flex>
-            ))}
-          </Flex>
-          <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="12">
-            {scannerFeatures.map((feature) => (
-              <Text key={feature} variant="body-default-m" onBackground="neutral-weak">
-                {feature}
-              </Text>
-            ))}
-          </Grid>
-        </Column>
-
-        <Column id="payments" gap="l">
-          <Column gap="12" maxWidth="m">
-            <FlowHeading n="05.2" title="A more trustworthy payment flow" />
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              The payment experience required more than a form and a confirmation screen. Users needed to understand exactly what they were paying, which statement period it applied to, which payment method would be used, and what would happen next.
-            </Text>
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              The confirmation state was also revised to avoid implying that an ACH payment had already settled. “Payment submitted” or “Payment sent” communicates that the request was initiated while leaving room for processing time.
-            </Text>
-          </Column>
-          <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="12">
-            {paymentRevisions.map((item, i) => (
-              <Flex
-                key={item}
-                gap="16"
-                vertical="start"
-                padding="l"
-                border="neutral-medium"
-                radius="l"
-              >
-                <Text variant="label-default-s" onBackground="brand-medium" style={{ fontVariantNumeric: "tabular-nums" }}>
-                  {String(i + 1).padStart(2, "0")}
-                </Text>
-                <Text variant="body-default-m">{item}</Text>
-              </Flex>
-            ))}
-          </Grid>
-        </Column>
-
-        <Column id="hierarchy" gap="l">
-          <Column gap="12" maxWidth="m">
-            <FlowHeading n="05.3" title="Clarifying visual hierarchy" />
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              Several payment screens originally repeated the same concept in multiple places. A screen could contain a navigation title, a large inline heading, and a summary heading that all communicated “payment.” Simplifying the hierarchy made each screen feel purposeful and reduced competition between headings.
-            </Text>
-          </Column>
-          <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
-            {hierarchyMoments.map((moment, i) => (
-              <Column key={moment.title} gap="12" padding="l" border="neutral-medium" radius="l">
-                <Text variant="label-default-s" onBackground="brand-medium">
-                  {String(i + 1).padStart(2, "0")}
-                </Text>
-                <Heading as="h3" variant="heading-strong-m">
-                  {moment.title}
-                </Heading>
-                <Text variant="body-default-m" onBackground="neutral-weak">
-                  {moment.body}
-                </Text>
-              </Column>
-            ))}
-          </Grid>
-        </Column>
-
-        <Column id="authentication" gap="l">
-          <Column gap="12" maxWidth="m">
-            <FlowHeading n="05.4" title="Authentication that respects platform boundaries" />
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              The invitation flow used Microsoft Entra ID for authentication. A key product-design constraint was that the portal could control the invitation, branding, redirect destination, onboarding, and application session — and nothing more. This allowed the product to provide a branded, understandable entry point without pretending to own a security flow it could not control.
-            </Text>
-          </Column>
-          <Image
-            src="/images/projects/decor-contractor/entra-id.png"
-            alt="Microsoft Entra ID authentication and Decor Contractor access flow"
-            width={6049}
-            height={2906}
-            quality={90}
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            style={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-              borderRadius: "var(--radius-m)",
-            }}
-          />
-          <Column gap="0">
-            {authSteps.map((step, i) => (
-              <Flex
-                key={step}
-                gap="16"
-                vertical="center"
-                paddingY="16"
-                style={{ borderTop: "1px solid var(--neutral-alpha-weak)" }}
-              >
-                <Text variant="label-default-s" onBackground="brand-medium" style={{ fontVariantNumeric: "tabular-nums" }}>
-                  {String(i + 1).padStart(2, "0")}
-                </Text>
-                <Text variant="body-default-m">{step}</Text>
-              </Flex>
-            ))}
-          </Column>
-        </Column>
-
-        <Column id="micro-interactions" gap="l">
-          <Column gap="12" maxWidth="m">
-            <FlowHeading n="05.5" title="Micro interactions and transitions that excite" />
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              Thoughtful microinteractions added clarity, feedback, and moments of delight to an otherwise utilitarian B2B SaaS experience.
-            </Text>
-          </Column>
-          <Flex
-            as="figure"
-            fillWidth
-            overflow="hidden"
-            radius="m"
-            horizontal="center"
-            vertical="center"
-            style={{
-              aspectRatio: "16 / 9",
-              background: "#062D37",
-              margin: 0,
-            }}
-          >
-            <video
-              src="/images/projects/decor-contractor/payment-failed.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Decor Contractor payment failure micro interaction"
-              style={{
-                display: "block",
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-              }}
-            />
-          </Flex>
-        </Column>
-      </Column>
-
-      <Column id="branding" gap="l" paddingY="l">
-        <SectionLabel n="06 Branding" title="A stronger identity." />
-        <BrandingShowcase />
-        <BrandEvolutionShowcase />
-        <BrandPlatformShowcase />
+        ))}
       </Column>
 
       <Column id="system" gap="l" paddingY="l">
-        <SectionLabel n="07 System" title="Building consistency through the design system." />
+        <SectionLabel n="05 The system" title="Turn good decisions into reusable behavior." />
         <Column gap="m" maxWidth="m">
-          <Text variant="heading-default-m">
-            The portal’s workflows depended on repeated patterns: buttons, selectable rows, payment methods, checkboxes, dividers, headers, and confirmation states.
-          </Text>
-          <Text variant="body-default-l" onBackground="neutral-weak">
-            I replaced hand-built interaction patterns with shared Mobile Core components across the payment experience. This improved more than visual consistency. It created a stronger relationship between the component library and real product workflows, making future changes easier to apply and reducing the risk of small interaction differences across screens.
-          </Text>
+          <Text variant="heading-default-m">Mobile Core is Epicor’s shared mobile design system. I used the payment flow to make it more precise, then documented the choices so they could travel to the next workflow.</Text>
+          <Text variant="body-default-l" onBackground="neutral-weak">{contribution}</Text>
         </Column>
+        <DecisionShowcase type="selection" />
         <Grid columns="4" tabletColumns="2" mobileColumns="1" gap="l">
           {systemStats.map((stat) => (
             <Column key={stat.label} gap="8" padding="l" border="neutral-medium" radius="l">
-              <Heading as="h3" variant="display-strong-s">
-                {stat.value}
-              </Heading>
+              <Heading as="h3" variant="display-strong-s">{stat.value}</Heading>
               <Text variant="heading-strong-s">{stat.label}</Text>
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                {stat.note}
-              </Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">{stat.note}</Text>
             </Column>
           ))}
         </Grid>
-        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="12">
-          {systemPoints.map((point) => (
-            <Text key={point} variant="body-default-m" onBackground="neutral-weak">
-              {point}
-            </Text>
-          ))}
+        <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="12">
+          {systemPoints.map((point) => <Text key={point} variant="body-default-m" onBackground="neutral-weak">{point}</Text>)}
         </Grid>
+        <Column gap="12">
+          <Text variant="label-default-s" onBackground="brand-medium">A shared product language</Text>
+          <BrandingShowcase />
+        </Column>
       </Column>
 
       <Column id="outcome" gap="l" paddingY="l">
-        <SectionLabel n="08 Outcome" title="A connected account experience." />
-        <Column maxWidth="m">
-          <Text variant="heading-default-m">
-            The project produced a clearer and more coherent contractor experience across product discovery, payments, authentication, and account management.
-          </Text>
-        </Column>
-        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
-          {outcomes.map((item) => (
+        <SectionLabel n="06 What success looks like" title="A smaller counter queue. A more confident contractor." />
+        <Flex fillWidth padding="xl" radius="l" style={{ background: "#062D37", color: "white" }}>
+          <Column gap="12" maxWidth="m">
+            <Text variant="label-default-s" style={{ color: "#56e0cb" }}>Impact framework</Text>
+            <Heading as="h3" variant="display-strong-s">Phase 1 establishes the mobile foundation. The next releases prove whether it saves time, reduces uncertainty, and takes routine account work off the counter.</Heading>
+            <Text variant="body-default-l" style={{ color: "#d6e8e7" }}>Targets below are a measurement plan to validate with production data as the later phases ship.</Text>
+          </Column>
+        </Flex>
+        <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
+          {measurementPlan.map((item) => (
             <Column key={item.title} gap="12" padding="l" border="neutral-medium" radius="l">
-              <Heading as="h3" variant="heading-strong-m">
-                {item.title}
-              </Heading>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {item.body}
-              </Text>
+              <Heading as="h3" variant="heading-strong-m">{item.title}</Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak">{item.body}</Text>
             </Column>
-          ))}
-        </Grid>
-      </Column>
-
-      <Column id="reflection" gap="l" paddingY="l">
-        <SectionLabel n="09 Reflection" title="Enterprise design is often about reducing uncertainty." />
-        <Column gap="m" maxWidth="m">
-          <Text variant="heading-default-m">
-            A contractor does not necessarily need more information. They need the right information at the right moment.
-          </Text>
-          <Text variant="body-default-l" onBackground="neutral-weak">
-            By focusing on those questions, the portal became easier to navigate without hiding the complexity of the underlying business system.
-          </Text>
-        </Column>
-        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="12">
-          {reflectionQuestions.map((question) => (
-            <Flex
-              key={question}
-              padding="l"
-              border="neutral-medium"
-              radius="l"
-              vertical="center"
-            >
-              <Text variant="heading-default-s">{question}</Text>
-            </Flex>
           ))}
         </Grid>
       </Column>
