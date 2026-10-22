@@ -16,7 +16,7 @@
   top: 5%;
   right: 6%;
   height: 90%;
-  aspect-ratio: 9 / 20;
+  aspect-ratio: 117 / 250;
   padding: clamp(0.3rem, 0.65vw, 0.55rem);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.58);
@@ -49,7 +49,6 @@
   overflow: hidden;
   border-radius: 12% / 5.4%;
   object-fit: cover;
-  transform: scale(1.065);
 }
 
 @media (max-width: 42rem) {
