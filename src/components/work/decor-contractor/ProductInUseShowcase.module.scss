@@ -14,7 +14,7 @@
 .device {
   position: absolute;
   top: 5%;
-  right: 6%;
+  right: calc(6% + 50px);
   height: 90%;
   aspect-ratio: 117 / 250;
   padding: clamp(0.3rem, 0.65vw, 0.55rem);
@@ -54,7 +54,7 @@
 @media (max-width: 42rem) {
   .device {
     top: 4%;
-    right: 4%;
+    right: calc(4% + 30px);
     height: 88%;
   }
 }

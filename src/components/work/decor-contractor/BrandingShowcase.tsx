@@ -64,7 +64,7 @@ export function BrandingShowcase() {
         <br />
         professionals
         <br />
-        behind the work.
+        behind the work
       </h3>
 
       <p className={styles.intro}>

@@ -11,11 +11,10 @@ export const metaItems = [
 ];
 
 export const protagonist = {
-  name: "Maya",
+  name: "Jason",
   label: "A representative contractor",
-  title: "4:30 PM. One wall left. One price question.",
-  body: "Maya is finishing a paint job when the homeowner asks for one more room. She needs the current price of a product, then has to clear an account balance before tomorrow’s pickup. The old portal makes both tasks a desk job. Every extra step risks a store trip, a call to the counter, or a delayed order.",
-  note: "Maya is a composite scenario used to frame the jobsite workflow.",
+  title: "4:30 PM. One wall left. One price question",
+  body: "Jason is finishing a paint job when the homeowner asks for one more room. He needs the current price of a product, then has to clear an account balance before tomorrow’s pickup. The old portal makes both tasks a desk job. Every extra step risks a store trip, a call to the counter, or a delayed order.",
 };
 
 export const problem = {
@@ -56,30 +55,48 @@ export const workflowBeats = [
   {
     id: "scan",
     n: "04.1",
-    title: "Scan: keep the answer in the camera",
-    claim: "When Maya needs a price, the result belongs where the question started.",
-    problem: "A conventional scan flow inserts a confirmation screen between the barcode and the answer. That is one extra decision with no value when the task is a fast price check.",
-    solution: "The scanner detects the product and returns its price in the camera context. Manual UPC entry, permission recovery, and a quick rescan path protect the fast path without trapping edge cases.",
-    outcome: "Price lookup becomes a jobsite task, not a store-counter task.",
+    title: "Ordering: scan the exact product in the exact amount",
+    claim: "Wrong size or amount means another trip or a loss",
+    problem: "A contractor is not browsing. They are checking a price and ordering what the job needs before they leave the aisle. Hardware and paint are specific. One screw comes in many lengths, head sizes, materials, and uses. One paint bucket is mixed for a color, then sized to the job. Contractor margins are as thin as the store’s. Too little means another trip. Too much is leftover they cannot reuse. Either way they work at a loss.",
+    solution: "The job was to find that specific product, and the right amount, right away. Camera scan, intuitive interactions, and a skimmable result do that work. No shutter button and no confirm screen. The price appears over the live camera, so the next scan is one tap away.",
+    outcome: "The contractor confirms the exact product and the exact amount before they order. No second trip, no leftover they cannot use.",
   },
   {
     id: "payment",
     n: "04.2",
-    title: "Pay: trade a comforting lie for useful certainty",
-    claim: "An ACH request is not complete when the contractor presses submit.",
-    problem: "“Payment complete” sounds reassuring but overpromises. Funds can still be processing, leaving the contractor unsure what the supplier has actually received.",
-    solution: "The review step names the statement period, amount, and payment method. The confirmation says “Payment submitted” and explains what happens next.",
-    outcome: "The product earns trust by matching its language to the financial reality.",
+    title: "Payments: ACH, on the job",
+    claim: "Make ACH primary and the easy path, and say exactly what the money is doing.",
+    problem: "Contractors could only pay on a dated web app, never during the workday. States were unclear while a payment processed.\n\nEdge cases were poorly documented, and the feedback was generic. Paint and hardware margins are thin; the store earns more when a contractor pays by ACH than by card.",
+    solution: "The new flow makes ACH the easy choice and tells the contractor what is actually happening.",
+    outcome: "Contractors can pay during the workday, not only on the web. ACH is the easy path, which is the one the store earns more on. And “Payment submitted” with timing means no one thinks the money has cleared when it has not. In build; validating with pilot contractors that they take ACH and read the state correctly before rollout.",
   },
   {
     id: "identity",
     n: "04.3",
-    title: "Sign in: own the handoff, not the identity provider",
-    claim: "A branded entry point can be clear without pretending to control security.",
+    title: "Sign in: Microsoft Entra, with less friction",
+    claim: "Customer feedback, user research and our own testing discovered critical sign-in issues that had to be resolved",
     problem: "Invitation, authentication, consent, and app access span two systems. Blurring their responsibilities creates a confusing, fragile experience.",
     solution: "The portal owns the invitation, context, redirect, onboarding, and application session. Microsoft Entra ID owns authentication and verification.",
-    outcome: "Contractors understand where they are, why they are there, and what will happen when they return.",
+    outcome: "Contractors still authenticate through Entra. They see Epicor, not a raw Microsoft handoff, and the common failure paths, especially no Microsoft account, have a designed response instead of a dead end that stops the rest of the app.",
   },
+];
+
+export const paymentSolutionPoints = [
+  "ACH takes days to settle. Confirmation changed from a done state to “Payment submitted,” with expected timing, so a contractor never thinks a payment cleared when it has not.",
+  "States, edge cases, and failure copy are specific, not generic.",
+  "Pay works from the contractor app, during the workday, not only on the web.",
+];
+
+export const scanSolutionPoints = [
+  "Scan returns the specific SKU, not a family of products.",
+  "Result is readable in the aisle: price, size, and enough detail to order.",
+  "Next scan is one tap, so a contractor can check a job list without leaving the camera.",
+];
+
+export const identitySolutionPoints = [
+  "The portal owns the invite, branding, redirect, and session. Microsoft owns verification.",
+  "Every branch is mapped so each screen says who is asking and why.",
+  "Edge cases get a specific path, not a generic error: no Microsoft account, returning user, forgotten password.",
 ];
 
 export const authSteps = [

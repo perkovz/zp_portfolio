@@ -36,7 +36,7 @@ export function BrandEvolutionShowcase() {
       <div className={styles.eyebrowAccent} />
       <p className={styles.eyebrow}>THE EVOLUTION</p>
 
-      <h3 className={styles.headline}>Familiar foundations. Sharper expression.</h3>
+      <h3 className={styles.headline}>Familiar foundations. Sharper expression</h3>
       <p className={styles.intro}>
         We retained the brush-led heritage of Decor, then developed a coordinated identity for two distinct app experiences.
       </p>

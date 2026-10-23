@@ -31,9 +31,9 @@ export function BrandPlatformShowcase() {
         <div className={styles.eyebrowAccent} />
         <p className={styles.eyebrow}>MADE FOR REAL WORLD USE</p>
         <h3 className={styles.headline}>
-          One identity.
+          One identity
           <br />
-          Every platform.
+          Every platform
         </h3>
         <p className={styles.intro}>
           Thoughtfully adapted to the places our customers discover and use Decor.
@@ -65,7 +65,7 @@ export function BrandPlatformShowcase() {
       </section>
 
       <section className={styles.system} aria-label="Decor logo treatments">
-        <h3 className={styles.systemHeadline}>One adaptable system.</h3>
+        <h3 className={styles.systemHeadline}>One adaptable system</h3>
         <p className={styles.systemIntro}>
           Real assets. A consistent language across color, inverted and monochrome treatments.
         </p>

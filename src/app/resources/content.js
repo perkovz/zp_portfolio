@@ -126,8 +126,8 @@ const about = {
             height: 9,
           },
           {
-            src: "/images/projects/decor-contractor/payments-promo.mp4",
-            poster: "/images/projects/decor-contractor/payments-promo.jpg",
+            src: "/images/projects/decor-contractor/payment-outcomes.mp4",
+            poster: "/images/projects/decor-contractor/payment-outcomes.jpg",
             alt: "Decor Contractor payment experience.",
             width: 16,
             height: 9,

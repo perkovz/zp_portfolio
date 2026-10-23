@@ -1,6 +1,6 @@
 import styles from "./DecisionShowcase.module.scss";
 
-type DecisionType = "scan" | "payment" | "selection";
+type DecisionType = "scan" | "selection";
 
 const copy = {
   scan: {
@@ -9,15 +9,7 @@ const copy = {
     after: "Answer in context",
     beforeSteps: ["Scan barcode", "Confirm product", "See price"],
     afterSteps: ["Scan barcode", "See price", "Scan another"],
-    note: "Remove the step that does not answer Maya’s question.",
-  },
-  payment: {
-    kicker: "The payment decision",
-    before: "Overpromises",
-    after: "Sets the right expectation",
-    beforeSteps: ["Review payment", "Payment complete", "Unclear settlement"],
-    afterSteps: ["Review payment", "Payment submitted", "Bank processing continues"],
-    note: "Name the status the bank can actually support.",
+    note: "Remove the step that does not answer Jason’s question.",
   },
   selection: {
     kicker: "The selection decision",
