@@ -3,6 +3,7 @@
   left: 50%;
   width: 100vw;
   max-width: 100vw;
+  max-height: 1000px;
   margin: 0 0 0 -50vw;
   background: #050506;
   overflow: hidden;
@@ -12,4 +13,23 @@
   display: block;
   width: 100%;
   height: auto;
+  max-height: 1000px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bleed :global(.fill-width) {
+  max-height: 1000px;
+}
+
+@media (min-width: 2100px) {
+  .bleed,
+  .bleed img,
+  .bleed :global(.fill-width) {
+    max-height: 1600px;
+  }
+
+  .page {
+    max-width: var(--responsive-width-l) !important;
+  }
 }
