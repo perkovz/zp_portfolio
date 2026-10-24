@@ -1,4 +1,4 @@
-import { Button, Column, Flex, Grid, Heading, SmartImage, Text } from "@/once-ui/components";
+import { Button, Column, Grid, Heading, SmartImage, Text } from "@/once-ui/components";
 import { getNextWorkProject } from "@/app/work/getNextWorkProject";
 import { NextProject } from "@/components/work/NextProject";
 import { FlowSlider } from "./FlowSlider";
@@ -57,7 +57,7 @@ export function FairwayCaseStudy() {
       />
 
       <Column id="overview" gap="l" paddingY="l">
-        <SectionLabel n="01 — Summary" title="Overview" />
+        <SectionLabel n="01 Summary" title="Overview" />
         <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
           <Column gap="m">
             {execSummary.map((paragraph, i) => (
@@ -89,7 +89,7 @@ export function FairwayCaseStudy() {
       <GuidedHero assetBase="/images/projects/fairway" />
 
       <Column id="problem" gap="l" paddingY="l">
-        <SectionLabel n="02 — Problem" title="Three constraints from the floor" />
+        <SectionLabel n="02 Problem" title="Three constraints from the floor" />
         <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
           {problemPoints.map((point, i) => (
             <Column key={point.title} gap="12">
@@ -115,7 +115,7 @@ export function FairwayCaseStudy() {
       </figure>
 
       <Column id="process" gap="l" paddingY="l">
-        <SectionLabel n="03 — Design process" title={processTitle} />
+        <SectionLabel n="03 Design process" title={processTitle} />
         <Text variant="body-default-m" onBackground="neutral-weak" style={{ maxWidth: "40rem" }}>
           {processIntro}
         </Text>
@@ -131,18 +131,13 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="flows" gap="xl" paddingY="l">
-        <SectionLabel n="04 — Flows" title="Four steps, one thread" />
+        <SectionLabel n="04 Flows" title="Four steps, one thread" />
         {flowSections.map((flow) => (
           <Column key={flow.id} id={flow.id} gap="l">
             <Column gap="8" maxWidth="s">
-              <Flex gap="12" vertical="center">
-                <Text variant="label-default-s" onBackground="brand-medium">
-                  {flow.number}
-                </Text>
-                <Heading as="h3" variant="heading-strong-l">
-                  {flow.title}
-                </Heading>
-              </Flex>
+              <Text as="h3" variant="label-default-s" onBackground="brand-medium">
+                {flow.number} {flow.title}
+              </Text>
               <Text variant="body-default-m" onBackground="neutral-weak">
                 {flow.summary}
               </Text>
@@ -160,7 +155,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="camera" gap="l" paddingY="l">
-        <SectionLabel n="05 — Camera" title="Start with a click" />
+        <SectionLabel n="05 Camera" title="Start with a click" />
         <Column gap="m" style={{ maxWidth: "40rem" }}>
           <Text variant="body-default-m" onBackground="neutral-weak">
             Customers often aren’t aware of every product a job needs. The fastest way to help them is AI-powered snap-and-search:
@@ -193,7 +188,7 @@ export function FairwayCaseStudy() {
       </figure>
 
       <Column id="outcomes" gap="l" paddingY="l">
-        <SectionLabel n="06 — Outcomes" title="Shipped and in beta-testing" />
+        <SectionLabel n="06 Outcomes" title="Shipped and in beta-testing" />
         <Grid columns="2" tabletColumns="2" mobileColumns="1" gap="l">
           {outcomes.map((item) => (
             <Column key={item.label} gap="8" padding="l" border="neutral-medium" radius="l">
@@ -220,7 +215,7 @@ export function FairwayCaseStudy() {
       </Column>
 
       <Column id="reflection" gap="l" paddingY="l">
-        <SectionLabel n="07 — Reflection" title="What I’d keep, and what I’d test next" />
+        <SectionLabel n="07 Reflection" title="What I’d keep, and what I’d test next" />
         <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="l">
           {reflectionPoints.map((point) => (
             <Column key={point.title} gap="12">

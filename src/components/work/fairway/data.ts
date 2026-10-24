@@ -47,7 +47,7 @@ export const flowSections = [
     number: "02",
     title: "Message",
     summary:
-      "A question is typed in the aisle and answered in the same thread: one product with aisle and price, or a short set to compare—without leaving the conversation.",
+      "A question is typed in the aisle and answered in the same thread: one product with aisle and price, or a short set to compare, without leaving the conversation.",
     hero: shot("message-hero.jpg"),
     heroAlt: "A hammer request loading, then a single match and a short comparison set",
   },
