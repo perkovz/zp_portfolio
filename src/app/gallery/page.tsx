@@ -1,11 +1,21 @@
+import { notFound } from "next/navigation";
 import { Flex } from "@/once-ui/components";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
-import { baseURL } from "@/app/resources";
+import { baseURL, routes } from "@/app/resources";
 import { gallery, person } from "@/app/resources/content";
 
 export async function generateMetadata() {
   const title = gallery.title;
   const description = gallery.description;
+
+  if (!routes["/gallery"]) {
+    return {
+      title,
+      description,
+      robots: { index: false, follow: false },
+    };
+  }
+
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -33,6 +43,10 @@ export async function generateMetadata() {
 }
 
 export default function Gallery() {
+  if (!routes["/gallery"]) {
+    notFound();
+  }
+
   return (
     <Flex fillWidth>
       <script
@@ -47,7 +61,7 @@ export default function Gallery() {
             url: `https://${baseURL}/gallery`,
             image: gallery.images.map((image) => ({
               "@type": "ImageObject",
-              url: `${baseURL}${image.src}`,
+              url: `https://${baseURL}${image.src}`,
               description: image.alt,
             })),
             author: {
@@ -55,7 +69,7 @@ export default function Gallery() {
               name: person.name,
               image: {
                 "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
+                url: `https://${baseURL}${person.avatar}`,
               },
             },
           }),

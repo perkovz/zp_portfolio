@@ -2,63 +2,53 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { routes, protectedRoutes } from "@/app/resources";
+import { protectedRoutes } from "@/app/resources";
 import { Flex, Spinner, Input, Button, Heading, Column } from "@/once-ui/components";
 
 interface RouteGuardProps {
   children: React.ReactNode;
 }
 
+function isProtectedPath(pathname: string | null) {
+  if (!pathname) return false;
+  return Boolean(protectedRoutes[pathname as keyof typeof protectedRoutes]);
+}
+
 const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   const pathname = usePathname();
-  const [isRouteEnabled, setIsRouteEnabled] = useState(false);
-  const [isPasswordRequired, setIsPasswordRequired] = useState(false);
+  const passwordRequired = isProtectedPath(pathname);
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
-  const [loading, setLoading] = useState(true);
+  const [checkingAuth, setCheckingAuth] = useState(passwordRequired);
 
   useEffect(() => {
-    const performChecks = async () => {
-      setLoading(true);
-      setIsRouteEnabled(false);
-      setIsPasswordRequired(false);
+    if (!passwordRequired) {
+      setCheckingAuth(false);
       setIsAuthenticated(false);
+      setError(undefined);
+      return;
+    }
 
-      const checkRouteEnabled = () => {
-        if (!pathname) return false;
+    let cancelled = false;
+    setCheckingAuth(true);
 
-        if (pathname in routes) {
-          return routes[pathname as keyof typeof routes];
-        }
+    fetch("/api/check-auth")
+      .then((response) => {
+        if (cancelled) return;
+        setIsAuthenticated(response.ok);
+        setCheckingAuth(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setIsAuthenticated(false);
+        setCheckingAuth(false);
+      });
 
-        const dynamicRoutes = ["/blog", "/work", "/projects"] as const;
-        for (const route of dynamicRoutes) {
-          if (pathname?.startsWith(route) && routes[route]) {
-            return true;
-          }
-        }
-
-        return false;
-      };
-
-      const routeEnabled = checkRouteEnabled();
-      setIsRouteEnabled(routeEnabled);
-
-      if (protectedRoutes[pathname as keyof typeof protectedRoutes]) {
-        setIsPasswordRequired(true);
-
-        const response = await fetch("/api/check-auth");
-        if (response.ok) {
-          setIsAuthenticated(true);
-        }
-      }
-
-      setLoading(false);
+    return () => {
+      cancelled = true;
     };
-
-    performChecks();
-  }, [pathname]);
+  }, [passwordRequired, pathname]);
 
   const handlePasswordSubmit = async () => {
     const response = await fetch("/api/authenticate", {
@@ -75,7 +65,11 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     }
   };
 
-  if (loading) {
+  if (!passwordRequired || isAuthenticated) {
+    return <>{children}</>;
+  }
+
+  if (checkingAuth) {
     return (
       <Flex fillWidth paddingY="128" horizontal="center">
         <Spinner />
@@ -83,36 +77,24 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     );
   }
 
-  if (!isRouteEnabled) {
-    return (
-      <Flex fillWidth paddingY="128" horizontal="center">
-        <Spinner />
-      </Flex>
-    );
-  }
-
-  if (isPasswordRequired && !isAuthenticated) {
-    return (
-      <Column paddingY="128" maxWidth={24} gap="24" center>
-        <Heading align="center" wrap="balance">
-          This page is password protected
-        </Heading>
-        <Column fillWidth gap="8" horizontal="center">
-          <Input
-            id="password"
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            errorMessage={error}
-          />
-          <Button onClick={handlePasswordSubmit}>Submit</Button>
-        </Column>
+  return (
+    <Column paddingY="128" maxWidth={24} gap="24" center>
+      <Heading align="center" wrap="balance">
+        This page is password protected
+      </Heading>
+      <Column fillWidth gap="8" horizontal="center">
+        <Input
+          id="password"
+          label="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          errorMessage={error}
+        />
+        <Button onClick={handlePasswordSubmit}>Submit</Button>
       </Column>
-    );
-  }
-
-  return <>{children}</>;
+    </Column>
+  );
 };
 
 export { RouteGuard };

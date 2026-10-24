@@ -45,7 +45,7 @@ type AiDesignLabCaseStudyProps = {
 
 export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps) {
   return (
-    <Column fillWidth maxWidth="xl" gap="xl" paddingBottom="xl">
+    <Column fillWidth maxWidth="m" gap="xl" paddingBottom="xl">
       <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
         Projects
       </Button>
@@ -136,6 +136,8 @@ export function AiDesignLabCaseStudy({ nextProject }: AiDesignLabCaseStudyProps)
               style={{
                 display: "block",
                 width: "100%",
+                maxWidth: "100%",
+                minWidth: 0,
                 height: "auto",
               }}
             />

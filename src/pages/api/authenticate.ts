@@ -4,9 +4,9 @@ import * as cookie from "cookie";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const { password } = req.body;
-    const correctPassword = "password";
+    const correctPassword = process.env.ROUTE_PASSWORD;
 
-    if (password === correctPassword) {
+    if (correctPassword && password === correctPassword) {
       res.setHeader(
         "Set-Cookie",
         cookie.serialize("authToken", "authenticated", {

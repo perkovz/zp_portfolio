@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
-import { AvatarGroup, Button, Column, Flex, Heading, SmartImage, Text } from "@/once-ui/components";
+import { Button, Column, Heading, SmartImage } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
-import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
 import { getNextWorkProject } from "@/app/work/getNextWorkProject";
 import { NextProject } from "@/components/work/NextProject";
@@ -77,10 +76,6 @@ export default async function Project({ params }: WorkParams) {
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
   const nextProject = getNextWorkProject(post.slug);
 
   return (
@@ -123,12 +118,6 @@ export default async function Project({ params }: WorkParams) {
         />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="m">
-        {/* <Flex gap="12" marginBottom="24" vertical="center">
-          {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
-          <Text variant="body-default-m" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt)}
-          </Text>
-        </Flex> */}
         <CustomMDX source={post.content} />
       </Column>
       {nextProject && <NextProject {...nextProject} />}

@@ -14,7 +14,7 @@ const nextConfig = {
   // file, which then crashes routes like /work/[slug] in the static-paths worker.
   serverExternalPackages: ["react-icons"],
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   images: {
     localPatterns: [{ pathname: "/images/**" }],

@@ -42,8 +42,6 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({
   return <>{currentTime}</>;
 };
 
-export default TimeDisplay;
-
 export const Header = () => {
   const pathname = usePathname() ?? "";
 
@@ -121,7 +119,7 @@ export const Header = () => {
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex paddingRight="12" horizontal="end" vertical="center" textVariant="body-default-s" gap="20">
             <Flex hide="s">
-              {display.time && <TimeDisplay timeZone={person.location} />}
+              {display.time && <TimeDisplay timeZone={person.timezone} />}
             </Flex>
           </Flex>
         </Flex>

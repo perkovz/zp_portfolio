@@ -8,14 +8,14 @@ Built from [Magic Portfolio](https://github.com/once-ui-system/magic-portfolio) 
 
 ## Current site
 
-All six main sections are enabled in `src/app/resources/config.js`:
+Five main sections are enabled in `src/app/resources/config.js`. Gallery is disabled and returns 404.
 
 - `/` — introduction and work cards, ordered by publication date.
 - `/about` — biography, work experience, education, and technical skills.
-- `/work` — eight case studies: Propello AI Design Lab, Fairway+, Decor Contractor, Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
+- `/work` — case studies. In production, Propello AI Design Lab, Fairway+, and Decor Contractor are hidden and return 404. The public case studies are Master Lock WiFi Bridge, Master Lock Vault Enterprise web, Vault Enterprise onboarding, Moen Smart Faucet, and the smart shower GUI.
 - `/projects` — personal products and experiments; currently Subha Choghadiya Muhurta, a Chromium extension.
 - `/blog` — four MDX articles about design systems, design/development collaboration, and design tools.
-- `/gallery` — a photo collection configured in the content file.
+- `/gallery` — photo collection is still in the content file, but the route is off.
 
 Fairway+ has a dedicated React case-study page at `/work/fairway-plus`. It includes a first-login hero video with a poster fallback for reduced motion, a three-step interactive product tour, and sections covering the problem, design decisions, flows, outcomes, and reflections. Its MDX file supplies the listing metadata; the dedicated page supplies the case-study presentation.
 
@@ -47,7 +47,7 @@ yarn dev
 
 Open [localhost:3000](http://localhost:3000).
 
-No project-specific environment variables are currently required. `.env.example` is a placeholder, so copying it is optional. The layout uses `next/font/google` for Inter and Source Code Pro, which requires access to Google Fonts during a build.
+No environment variables are required for the current site. `ROUTE_PASSWORD` is optional and unused unless a path is added to `protectedRoutes`. The layout uses `next/font/google` for Inter and Source Code Pro, which requires access to Google Fonts during a build.
 
 ### Available commands
 
@@ -57,7 +57,7 @@ No project-specific environment variables are currently required. `.env.example`
 - `yarn lint` — run Next.js ESLint checks.
 - `yarn export` — alias for `next build`; it does not produce a static export.
 
-Builds currently skip ESLint checks through `next.config.mjs`, so run `yarn lint` separately. There is no automated test script or GitHub Actions workflow in the current repository. A `biome.json` configuration exists, but Biome is not installed or exposed through package scripts.
+`yarn build` also runs ESLint. There is no automated test script or GitHub Actions workflow in the current repository. A `biome.json` configuration exists, but Biome is not installed or exposed through package scripts.
 
 ## Project structure
 
@@ -95,7 +95,7 @@ public/
 
 ## Updating content and appearance
 
-- **Site settings:** edit `src/app/resources/config.js` for enabled routes, the site domain (`baseURL`), theme, effects, header display options, and route protection. Metadata callers add the HTTPS scheme to `baseURL`.
+- **Site settings:** edit `src/app/resources/config.js` for enabled routes, the site domain (`baseURL`, host only, no trailing slash), theme, effects, and header display options. Metadata callers add the HTTPS scheme to `baseURL`.
 - **Personal content:** edit `src/app/resources/content.js` for the profile, social links, home copy, about sections, gallery, and blog/work labels.
 - **Side-project labels:** edit `src/app/resources/content-projects.js`.
 - **Writing:** add or edit `.mdx` files in `src/app/blog/posts/`.
@@ -112,11 +112,11 @@ For **Propello AI Design Lab**, update `src/app/work/projects/ai-design-lab.mdx`
 
 For **Decor Contractor**, update both `src/app/work/projects/decor-contractor.mdx` (card metadata) and `src/components/work/decor-contractor/` (page content). The hero uses `payments-promo.mp4` with `payments-promo.jpg` as its poster, both under `public/images/projects/decor-contractor/`.
 
-### Optional template features
+### Unpublished work and route protection
 
-The Mailchimp component and newsletter configuration remain in the repository, but newsletter rendering is commented out on the home page and the Mailchimp action is still a placeholder. The home-page blog preview is also commented out; the `/blog` page remains enabled.
+Propello AI Design Lab, Fairway+, and Decor Contractor stay out of production through `src/middleware.ts` and `src/app/work/projectVisibility.ts`. They are available in local development. That hide is a 404, not a password prompt.
 
-Route protection is implemented by the client-side `RouteGuard` and `src/pages/api/` endpoints. The configured protected path currently has no matching case-study file. This is a template-level presentation gate, not server-side access control for confidential content.
+`protectedRoutes` is empty. The password form and `/api/authenticate` remain available if a real path is added later. Set `ROUTE_PASSWORD` before enabling one. This is a presentation gate, not server-side access control for confidential files.
 
 ## Deployment
 

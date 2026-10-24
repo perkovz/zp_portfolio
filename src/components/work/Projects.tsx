@@ -27,7 +27,7 @@ export function Projects({ range, exclude = [] }: ProjectsProps) {
         <ProjectCard
           priority={index < 2}
           key={post.slug}
-          href={`work/${post.slug}`}
+          href={`/work/${post.slug}`}
           images={post.metadata.images}
           poster={post.metadata.image}
           title={post.metadata.title}

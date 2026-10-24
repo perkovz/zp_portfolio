@@ -180,7 +180,7 @@ export function DecorContractorCaseStudy() {
   const nextProject = getNextWorkProject("decor-contractor");
 
   return (
-    <Column fillWidth maxWidth="xl" gap="xl" paddingBottom="xl">
+    <Column fillWidth maxWidth="m" gap="xl" paddingBottom="xl">
       <Button href="/work" variant="tertiary" weight="default" size="m" prefixIcon="chevronLeft">
         Projects
       </Button>
@@ -234,15 +234,17 @@ export function DecorContractorCaseStudy() {
           <Text variant="heading-default-m">{problem.subtitle}</Text>
           <Text variant="body-default-l" onBackground="neutral-weak">{problem.description}</Text>
         </Column>
-        <Image
-          src="/images/projects/decor-contractor/problem-definition.png"
-          alt="Redacted legacy contractor payment portal shown on a desktop browser"
-          width={1920}
-          height={1080}
-          quality={90}
-          sizes="(max-width: 1200px) 100vw, 1200px"
-          style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius-m)" }}
-        />
+        <div style={{ width: "100%", minWidth: 0, overflow: "hidden" }}>
+          <Image
+            src="/images/projects/decor-contractor/problem-definition.png"
+            alt="Redacted legacy contractor payment portal shown on a desktop browser"
+            width={1920}
+            height={1080}
+            quality={90}
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            style={{ display: "block", width: "100%", maxWidth: "100%", minWidth: 0, height: "auto", borderRadius: "var(--radius-m)" }}
+          />
+        </div>
         <Grid columns="3" tabletColumns="1" mobileColumns="1" gap="l">
           {tensionPoints.map((point, i) => (
             <Column key={point.title} gap="12" padding="l" border="neutral-medium" radius="l">
@@ -298,15 +300,17 @@ export function DecorContractorCaseStudy() {
             </Column>
             {beat.id === "identity" ? (
               <Column gap="12">
-                <Image
-                  src="/images/projects/decor-contractor/entra-id.png"
-                  alt="Diagram showing the handoff between Decor Contractor and Microsoft Entra ID"
-                  width={6049}
-                  height={2906}
-                  quality={90}
-                  sizes="(max-width: 1200px) 100vw, 1200px"
-                  style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius-m)" }}
-                />
+                <div style={{ width: "100%", minWidth: 0, overflow: "hidden" }}>
+                  <Image
+                    src="/images/projects/decor-contractor/entra-id.png"
+                    alt="Diagram showing the handoff between Decor Contractor and Microsoft Entra ID"
+                    width={6049}
+                    height={2906}
+                    quality={90}
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    style={{ display: "block", width: "100%", maxWidth: "100%", minWidth: 0, height: "auto", borderRadius: "var(--radius-m)" }}
+                  />
+                </div>
                 <Text variant="label-default-s" onBackground="neutral-weak">One of four detailed user flows, mapping all friction points and their resolution</Text>
               </Column>
             ) : beat.id === "payment" ? (
@@ -343,11 +347,11 @@ export function DecorContractorCaseStudy() {
         vertical="center"
         horizontal="center"
         style={{
-          position: "relative",
-          left: "50%",
           width: "100vw",
+          maxWidth: "100vw",
+          marginLeft: "calc(50% - 50vw)",
           minHeight: "min(70vh, 52rem)",
-          transform: "translateX(-50%)",
+          overflow: "hidden",
           background: "var(--neutral-alpha-weak)",
         }}
       >

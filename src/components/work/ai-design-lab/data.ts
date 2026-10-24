@@ -85,12 +85,6 @@ export const demos = {
     caption:
       "Customer POS search - brainstorming product ideas as a functional prototypes.",
   },
-  arStatements: {
-    src: "/images/projects/ai-design-lab/ar-statements-viewer.mp4",
-    label: "AR statements viewer demo",
-    caption:
-      "AR statements viewer; an example of the whole feature flow in AI design lab",
-  },
 };
 
 export const takeaway = [

@@ -21,7 +21,7 @@ export async function generateMetadata() {
       title: `${person.firstName}'s Portfolio`,
       description:
         "Zvonimir Perkovic is a full-stack product designer from Cleveland, OH specialized in connected smart home products.",
-      url: baseURL,
+      url: `https://${baseURL}`,
       siteName: `${person.firstName}'s Portfolio`,
       locale: "en_US",
       type: "website",
@@ -45,19 +45,6 @@ const primary = Inter({
   subsets: ["latin"],
   display: "swap",
 });
-
-type FontConfig = {
-  variable: string;
-};
-
-/*
-	Replace with code for secondary and tertiary fonts
-	from https://once-ui.com/customize
-*/
-const secondary: FontConfig | undefined = undefined;
-const tertiary: FontConfig | undefined = undefined;
-/*
- */
 
 const code = Source_Code_Pro({
   variable: "--font-code",
@@ -84,12 +71,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-border={style.border}
       data-surface={style.surface}
       data-transition={style.transition}
-      className={classNames(
-        primary.variable,
-        secondary ? secondary.variable : "",
-        tertiary ? tertiary.variable : "",
-        code.variable
-      )}
+      className={classNames(primary.variable, code.variable)}
     >
       <ToastProvider>
         <Column

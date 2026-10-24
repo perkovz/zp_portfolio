@@ -1,4 +1,4 @@
-const baseURL = "zpportfolio.vercel.app/";
+const baseURL = "zpportfolio.vercel.app";
 
 const routes = {
   "/": true,
@@ -9,11 +9,9 @@ const routes = {
   "/gallery": false,
 };
 
-// Enable password protection on selected routes
-// Set password in pages/api/authenticate.ts
-const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-};
+// Optional password gate. Leave empty unless a real route should require ROUTE_PASSWORD.
+// This is not the production hide for unpublished case studies.
+const protectedRoutes = {};
 
 const style = {
   theme: "dark", // dark | light
@@ -68,43 +66,4 @@ const display = {
   time: true,
 };
 
-const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
-  effects: {
-    mask: {
-      cursor: false,
-      x: 100,
-      y: 0,
-      radius: 100,
-    },
-    gradient: {
-      display: true,
-      x: 100,
-      y: 50,
-      width: 100,
-      height: 100,
-      tilt: -45,
-      colorStart: "accent-background-strong",
-      colorEnd: "static-transparent",
-      opacity: 100,
-    },
-    dots: {
-      display: false,
-      size: 24,
-      color: "brand-on-background-weak",
-      opacity: 100,
-    },
-    lines: {
-      display: false,
-      color: "neutral-alpha-weak",
-      opacity: 100,
-    },
-    grid: {
-      display: true,
-      color: "neutral-alpha-weak",
-      opacity: 100,
-    },
-  },
-};
-
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL };
+export { routes, protectedRoutes, effects, style, display, baseURL };

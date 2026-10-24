@@ -6,19 +6,9 @@ const person = {
   },
   role: "Product Designer",
   avatar: "/images/avatar.jpg",
-  location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Cleveland, OH",
+  timezone: "America/New_York",
   languages: ["English", "Croatian"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the
-      intersection of design, product and engineering.
-    </>
-  ),
 };
 
 const social = [
@@ -314,7 +304,7 @@ const about = {
         timeframe: "2015 - 2017",
         role: "Web and Graphic Designer",
         achievements: [
-          <>Responsible for visual design, conceptualization, and development of marketing materials for RPM's corporate
+          <>Responsible for visual design, conceptualization, and development of marketing materials for RPM&apos;s corporate
           websites, events, online campaigns, and digital products.
           </>,
           <>
@@ -359,7 +349,7 @@ const about = {
       {
         name: "University of J.J.Strossmayer",
         description: (
-          <>Masters’s Degree in Legal Studies</>
+          <>Master&apos;s Degree in Legal Studies</>
         ),
       },
     ],
@@ -372,7 +362,7 @@ const about = {
         title: "Crank Storyboard",
         description: (
           <>
-            Able to design and prototype in Crank Storyboard and create GUI's.
+            Able to design and prototype in Crank Storyboard and create GUIs.
           </>
         ),
         // optional: leave the array empty if you don't want to display images
@@ -414,7 +404,7 @@ const work = {
   label: "Work",
   title: "My projects",
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
@@ -531,4 +521,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, blog, work, gallery };
